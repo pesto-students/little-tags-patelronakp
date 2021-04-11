@@ -69,7 +69,9 @@ const Products = (props) => {
             data-lazy={product.img}
             alt={product.name}
           />
+          <div className="overlay">My Name is John</div>
         </a>
+
         {/* <div className="short-item__top">
               <div className="short-item__cols">
                 <div className="short-item__col">
