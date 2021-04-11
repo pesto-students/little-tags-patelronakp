@@ -1,0 +1,18 @@
+.bannerSlider {
+  //   width: 100%;
+  //   max-width: 95vw;
+  margin: 20px 35px;
+  display: flex;
+  overflow: hidden;
+
+  .slide {
+    width: 100%;
+
+    .vectorBG {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      top: 0;
+    }
+  }
+}
