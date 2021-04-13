@@ -20,7 +20,7 @@ const FeatureCategory = (props) => {
             <div className="catgoryDetail">
               <div className="categoryImg">
                 <a
-                  href="#"
+                  href="/"
                   style={{
                     backgroundImage: `url("/images/category/assetscat.jpg")`,
                   }}
@@ -46,7 +46,7 @@ const FeatureCategory = (props) => {
             <div className="catgoryDetail">
               <div className="categoryImg">
                 <a
-                  href="#"
+                  href="/"
                   style={{
                     backgroundImage: `url("/images/category/mencat.jpg")`,
                   }}
@@ -73,7 +73,7 @@ const FeatureCategory = (props) => {
             <div className="catgoryDetail">
               <div className="categoryImg">
                 <a
-                  href="#"
+                  href="/"
                   style={{
                     backgroundImage: `url("/images/category/kidscat.jpg")`,
                   }}
@@ -99,7 +99,7 @@ const FeatureCategory = (props) => {
             <div className="catgoryDetail">
               <div className="categoryImg">
                 <a
-                  href="#"
+                  href="/"
                   style={{
                     backgroundImage: `url("/images/category/womancat.jpg")`,
                   }}

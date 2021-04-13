@@ -78,7 +78,7 @@ const Products = (props) => {
   const prodcutItems = PrdData.slice(0, 8).map((product) => (
     <div className="item" key={product.id}>
       <div className="short-item__all">
-        <a className="short-item__image-bg" href="product_page.html">
+        <a className="short-item__image-bg" href="/">
           <img
             className="short-item__image"
             src={product.image}
@@ -101,7 +101,7 @@ const Products = (props) => {
               </div>
             </div> */}
         <h4 className="short-item__title">
-          <a className="short-item__link" href="product_page.html">
+          <a className="short-item__link" href="/">
             {product.title}
           </a>
         </h4>
