@@ -2,62 +2,62 @@ import React from "react";
 import "./styles.scss";
 import PrdData from "../../data/Products.json";
 
-const productList = [
-  {
-    id: 1,
-    img: `https://picsum.photos/262/360?random=${Math.random()}`,
-    name: "Cotton T-Shirt",
-    saleprice: "$35.99",
-    price: "$40.00",
-    isSale: true,
-  },
-  {
-    id: 2,
-    img: `https://picsum.photos/262/360?random=${Math.random()}`,
-    name: "Textured turtleneck with zip",
-    saleprice: "$25.99",
-    isNew: true,
-  },
-  {
-    id: 3,
-    img: `https://picsum.photos/262/360?random=${Math.random()}`,
-    name: "Spray wrap skirt",
-    saleprice: "$25.99",
-  },
-  {
-    id: 4,
-    img: `https://picsum.photos/262/360?random=${Math.random()}`,
-    name: "Cotton T-shirt",
-    saleprice: "$25.99",
-  },
-  {
-    id: 5,
-    img: `https://picsum.photos/262/360?random=${Math.random()}`,
-    name: "Cotton T-Shirt",
-    saleprice: "$35.99",
-    price: "$40.00",
-    isSale: true,
-  },
-  {
-    id: 6,
-    img: `https://picsum.photos/262/360?random=${Math.random()}`,
-    name: "Textured turtleneck with zip",
-    saleprice: "$25.99",
-    isNew: true,
-  },
-  {
-    id: 7,
-    img: `https://picsum.photos/262/360?random=${Math.random()}`,
-    name: "Spray wrap skirt",
-    saleprice: "$25.99",
-  },
-  {
-    id: 8,
-    img: `https://picsum.photos/262/360?random=${Math.random()}`,
-    name: "Cotton T-shirt",
-    saleprice: "$25.99",
-  },
-];
+// const productList = [
+//   {
+//     id: 1,
+//     img: `https://picsum.photos/262/360?random=${Math.random()}`,
+//     name: "Cotton T-Shirt",
+//     saleprice: "$35.99",
+//     price: "$40.00",
+//     isSale: true,
+//   },
+//   {
+//     id: 2,
+//     img: `https://picsum.photos/262/360?random=${Math.random()}`,
+//     name: "Textured turtleneck with zip",
+//     saleprice: "$25.99",
+//     isNew: true,
+//   },
+//   {
+//     id: 3,
+//     img: `https://picsum.photos/262/360?random=${Math.random()}`,
+//     name: "Spray wrap skirt",
+//     saleprice: "$25.99",
+//   },
+//   {
+//     id: 4,
+//     img: `https://picsum.photos/262/360?random=${Math.random()}`,
+//     name: "Cotton T-shirt",
+//     saleprice: "$25.99",
+//   },
+//   {
+//     id: 5,
+//     img: `https://picsum.photos/262/360?random=${Math.random()}`,
+//     name: "Cotton T-Shirt",
+//     saleprice: "$35.99",
+//     price: "$40.00",
+//     isSale: true,
+//   },
+//   {
+//     id: 6,
+//     img: `https://picsum.photos/262/360?random=${Math.random()}`,
+//     name: "Textured turtleneck with zip",
+//     saleprice: "$25.99",
+//     isNew: true,
+//   },
+//   {
+//     id: 7,
+//     img: `https://picsum.photos/262/360?random=${Math.random()}`,
+//     name: "Spray wrap skirt",
+//     saleprice: "$25.99",
+//   },
+//   {
+//     id: 8,
+//     img: `https://picsum.photos/262/360?random=${Math.random()}`,
+//     name: "Cotton T-shirt",
+//     saleprice: "$25.99",
+//   },
+// ];
 
 // {
 //   "id": 10,
