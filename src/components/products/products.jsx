@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.scss";
+import PrdData from "../../data/Products.json";
 
 const productList = [
   {
@@ -58,18 +59,35 @@ const productList = [
   },
 ];
 
+// {
+//   "id": 10,
+//   "title": "United Jeans",
+//   "price": 1899,
+//   "description": "Mens Blue Dori Style Relaxed Fit Cotton Cargo Jogger Jeans Pants",
+//   "category": "men",
+//   "image": "/images/dori_jean.jpg",
+//   "src": [
+//     "/images/dori_jean_1.jpg",
+//     "/images/dori_jean_2.jpg",
+//     "/images/dori_jean_3.jpg",
+//     "/images/dori_jean_4.jpg"
+//   ]
+// },
+
 const Products = (props) => {
-  const prodcutItems = productList.map((product) => (
+  const prodcutItems = PrdData.slice(0, 8).map((product) => (
     <div className="item" key={product.id}>
       <div className="short-item__all">
         <a className="short-item__image-bg" href="product_page.html">
           <img
             className="short-item__image"
-            src={product.img}
-            data-lazy={product.img}
-            alt={product.name}
+            src={product.image}
+            data-lazy={product.image}
+            alt={product.title}
+            height="360"
+            width="262"
           />
-          <div className="overlay">My Name is John</div>
+          <div className="overlay">{product.title}</div>
         </a>
 
         {/* <div className="short-item__top">
@@ -84,10 +102,10 @@ const Products = (props) => {
             </div> */}
         <h4 className="short-item__title">
           <a className="short-item__link" href="product_page.html">
-            {product.name}
+            {product.title}
           </a>
         </h4>
-        <span className="short-item__price">{product.saleprice}</span>
+        <span className="short-item__price">{product.price}</span>
       </div>
     </div>
   ));

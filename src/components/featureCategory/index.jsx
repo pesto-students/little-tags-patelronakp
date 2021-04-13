@@ -1,17 +1,18 @@
 import React from "react";
 import "./styles.scss";
 import vectorCollection from "../../assets/images/vector-collections.svg";
+//import ManCatImage from "../../../public/images/category/mencat.jpg";
 
 const FeatureCategory = (props) => {
   return (
     <section className="categorySection wrapper">
       <div className="row ">
-        <div class="col">
+        <div className="col">
           <div>
             <h3 className="collection-title">
-              <span class="collection-title__count">2587</span>
-              <span class="collection-title__plus">+</span>
-              <span class="collection-title__text">Products for you</span>
+              <span className="collection-title__count">2587</span>
+              <span className="collection-title__plus">+</span>
+              <span className="collection-title__text">Products for you</span>
             </h3>
           </div>
 
@@ -21,20 +22,20 @@ const FeatureCategory = (props) => {
                 <a
                   href="#"
                   style={{
-                    backgroundImage: `url("https://picsum.photos/427/560?random=${Math.random()}")`,
+                    backgroundImage: `url("/images/category/assetscat.jpg")`,
                   }}
                 ></a>
-                <span class="categoryTitle">accessories</span>
+                <span className="categoryTitle">accessories</span>
               </div>
               <div className="categoryAttributes setRight">
-                <span class="categorytype">
+                <span className="categorytype">
                   <b>new</b> accessories
                 </span>
-                <h4 class="categoryTitleBig">
+                <h4 className="categoryTitleBig">
                   Fashion for <br />
                   this summer
                 </h4>
-                <a class="collection__more read-more" href="shop.html">
+                <a className="collection__more read-more" href="shop.html">
                   Shop now
                 </a>
               </div>
@@ -47,47 +48,47 @@ const FeatureCategory = (props) => {
                 <a
                   href="#"
                   style={{
-                    backgroundImage: `url("https://picsum.photos/427/560?random=${Math.random()}")`,
+                    backgroundImage: `url("/images/category/mencat.jpg")`,
                   }}
                 ></a>
-                <span class="categoryTitle">SWETERS</span>
+                <span className="categoryTitle">Mens</span>
               </div>
               <div className="categoryAttributes setRight">
-                <span class="categorytype">
+                <span className="categorytype">
                   <b>men</b> collection
                 </span>
-                <h4 class="categoryTitleBig">
+                <h4 className="categoryTitleBig">
                   New Autumn <br />
                   Arrivals 2020
                 </h4>
-                <a class="collection__more read-more" href="shop.html">
+                <a className="collection__more read-more" href="shop.html">
                   Shop now
                 </a>
               </div>
             </div>
           </article>
         </div>
-        <div class="col">
+        <div className="col">
           <article className="categoryInfo">
             <div className="catgoryDetail">
               <div className="categoryImg">
                 <a
                   href="#"
                   style={{
-                    backgroundImage: `url("https://picsum.photos/427/560?random=${Math.random()}")`,
+                    backgroundImage: `url("/images/category/kidscat.jpg")`,
                   }}
                 ></a>
-                <span class="categoryTitle">SUIT</span>
+                <span className="categoryTitle">Kids</span>
               </div>
               <div className="categoryAttributes setRight">
-                <span class="categorytype">
+                <span className="categorytype">
                   <b>men</b> collection
                 </span>
-                <h4 class="categoryTitleBig">
+                <h4 className="categoryTitleBig">
                   Always Be <br />
                   Stylish
                 </h4>
-                <a class="collection__more read-more" href="shop.html">
+                <a className="collection__more read-more" href="shop.html">
                   Shop now
                 </a>
               </div>
@@ -100,20 +101,20 @@ const FeatureCategory = (props) => {
                 <a
                   href="#"
                   style={{
-                    backgroundImage: `url("https://picsum.photos/427/560?random=${Math.random()}")`,
+                    backgroundImage: `url("/images/category/womancat.jpg")`,
                   }}
                 ></a>
-                <span class="categoryTitle">DRESSES</span>
+                <span className="categoryTitle">Women</span>
               </div>
               <div className="categoryAttributes setRight">
-                <span class="categorytype">
+                <span className="categorytype">
                   <b>women</b> collection
                 </span>
-                <h4 class="categoryTitleBig">
+                <h4 className="categoryTitleBig">
                   Trendy Look <br />
                   For Every Day
                 </h4>
-                <a class="collection__more read-more" href="shop.html">
+                <a className="collection__more read-more" href="shop.html">
                   Shop now
                 </a>
               </div>
