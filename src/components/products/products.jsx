@@ -105,7 +105,7 @@ const Products = (props) => {
             {product.title}
           </a>
         </h4>
-        <span className="short-item__price">{product.price}</span>
+        <span className="short-item__price">Rs. {product.price.toFixed(2)}</span>
       </div>
     </div>
   ));
