@@ -81,3 +81,10 @@ section,
 time {
   display: block;
 }
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
