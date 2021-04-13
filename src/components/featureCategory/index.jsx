@@ -24,7 +24,9 @@ const FeatureCategory = (props) => {
                   style={{
                     backgroundImage: `url("/images/category/assetscat.jpg")`,
                   }}
-                ></a>
+                >
+                  &nbsp;
+                </a>
                 <span className="categoryTitle">accessories</span>
               </div>
               <div className="categoryAttributes setRight">
@@ -50,7 +52,9 @@ const FeatureCategory = (props) => {
                   style={{
                     backgroundImage: `url("/images/category/mencat.jpg")`,
                   }}
-                ></a>
+                >
+                  &nbsp;
+                </a>
                 <span className="categoryTitle">Mens</span>
               </div>
               <div className="categoryAttributes setRight">
@@ -77,7 +81,9 @@ const FeatureCategory = (props) => {
                   style={{
                     backgroundImage: `url("/images/category/kidscat.jpg")`,
                   }}
-                ></a>
+                >
+                  &nbsp;
+                </a>
                 <span className="categoryTitle">Kids</span>
               </div>
               <div className="categoryAttributes setRight">
@@ -103,7 +109,9 @@ const FeatureCategory = (props) => {
                   style={{
                     backgroundImage: `url("/images/category/womancat.jpg")`,
                   }}
-                ></a>
+                >
+                  &nbsp;
+                </a>
                 <span className="categoryTitle">Women</span>
               </div>
               <div className="categoryAttributes setRight">
