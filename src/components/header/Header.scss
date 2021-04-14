@@ -17,14 +17,7 @@
 
 	categories-menu ul li{
 		display: inline;
-	}
-
-	icon-container {
-		display: flex;
-		flex-direction: column;
-		text-align: center;
-		align-items: center;
-	}
+	}	
 
 	ul li{
 		display: inline;
@@ -51,6 +44,16 @@
 		color: black;
 		font-weight: bold;
 	}
+}
+
+.icon-container {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+}
+.link-style {
+	text-decoration: none;
 }
 
 @media (max-width: 768px) {

@@ -2,7 +2,13 @@ import './global.scss';
 import Header from './components/header/Header';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
-import {useState} from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { useState } from 'react';
+import Accessories from '../src/Pages/Accessories';
+import Kids from '../src/Pages/Kids';
+import Mens from '../src/Pages/Mens';
+import Womens from '../src/Pages/Womens';
+import Home from '../src/Pages/Home';
 
 function App() {
   const [toggleDrawer, setToggleDrawer] = useState(false);
@@ -17,11 +23,20 @@ function App() {
     backdrop = <Backdrop backDropClickHandler={backDropClickHandler}/>;
   }
   return (
-    <div className="App">
-      <Header drawerToggleClickHandler={drawerToggleClickHandler}/>
-      <SideDrawer toggleDrawer={toggleDrawer} backDropClickHandler={backDropClickHandler}/>
-      {backdrop} 
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header drawerToggleClickHandler={drawerToggleClickHandler}/>
+        <SideDrawer toggleDrawer={toggleDrawer} backDropClickHandler={backDropClickHandler}/>
+        {backdrop}
+        <Switch>
+          <Route path='/' component={Home} exact/>
+          <Route path='/mens' component={Mens}/>
+          <Route path='/womens' component={Womens}/>
+          <Route path='/kids' component={Kids}/>
+          <Route path='/accessories' component={Accessories}/>
+        </Switch>        
+      </div>      
+    </BrowserRouter>
   );
 }
 
