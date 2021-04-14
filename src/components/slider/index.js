@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.scss';
-import vectorCollection from '../../assets/images/vector-collections.svg'
+import vectorCollection from '../../assets/images/vector-collections.svg';
+
 const sliders = [
     {
         id: 1,

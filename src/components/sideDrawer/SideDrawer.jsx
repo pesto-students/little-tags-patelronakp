@@ -1,6 +1,8 @@
 import React from 'react';
-import './SideDrawer.scss';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import './SideDrawer.scss';
+import * as ROUTES from '../../constants/Routes';
 
 const SideDrawer = ({ backDropClickHandler, toggleDrawer }) => {
     let drawerClasses = 'side-drawer';
@@ -11,10 +13,10 @@ const SideDrawer = ({ backDropClickHandler, toggleDrawer }) => {
         <nav className={ drawerClasses }>
             <button className="close-btn" onClick={ backDropClickHandler }>&times;</button>
             <ul>
-                <li><a href="/">Mens</a></li>
-                <li><a href="/">Womens</a></li>
-                <li><a href="/">Kids</a></li>
-                <li><a href="/">Accessories</a></li>
+                <Link to={ROUTES.MENS_COLLECTION}>Mens</Link>
+                <Link to={ROUTES.WOMENS_COLLECTION}>Womens</Link>
+                <Link to={ROUTES.KIDS_COLLECTION}>Kids</Link>
+                <Link to={ROUTES.ACCESSORIES_COLLECTION}>Accessories</Link>
             </ul>
         </nav>
     );    

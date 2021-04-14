@@ -1,10 +1,12 @@
 import React from 'react';
-import './styles.scss';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faUser, faHeart, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
+import './styles.scss';
+import * as ROUTES from '../../constants/Routes';
 import logo from '../../assets/logo_11.png';
 import DrawerToggleButton from '../sideDrawer/DrawerToggleButton';
-import PropTypes from 'prop-types';
 
 function Header ({ drawerToggleClickHandler }) {
     return (
@@ -17,10 +19,18 @@ function Header ({ drawerToggleClickHandler }) {
             </div>
             <div className="categories-menu mr-5">
                 <ul>
-                    <li>Mens</li>
-                    <li>Womens</li>
-                    <li>Kids</li>
-                    <li>Accessories</li>
+                    <li>
+                        <Link to={ROUTES.MENS_COLLECTION}>Mens</Link>
+                    </li>
+                    <li>
+                        <Link to={ROUTES.WOMENS_COLLECTION}>Womens</Link>
+                    </li>
+                    <li>
+                        <Link to={ROUTES.KIDS_COLLECTION}>Kids</Link>
+                    </li>
+                    <li>
+                        <Link to={ROUTES.ACCESSORIES_COLLECTION}>Accessories</Link>
+                    </li>
                 </ul>
             </div>
             <div className="input-group">
