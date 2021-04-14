@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Backdrop.scss';
+import './styles.scss';
 
 const Backdrop = ({ backDropClickHandler }) => (
     <div className="backdrop" onClick={ backDropClickHandler }></div>

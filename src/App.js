@@ -1,9 +1,9 @@
 import './global.scss';
 import Header from './components/header';
 import SideDrawer from './components/sideDrawer/SideDrawer';
-import Backdrop from './components/Backdrop';
+import Backdrop from './components/backdrop';
 import { useState } from 'react';
-import Home from './screens/homeScreen'
+import Home from './components/screens/homeScreen';
 
 function App() {
   const [toggleDrawer, setToggleDrawer] = useState(false);
