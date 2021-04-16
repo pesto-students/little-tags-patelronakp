@@ -1,5 +1,5 @@
 import React from 'react';
-import './DrawerToggleButtonStyles.scss';
+import './styles.scss';
 
 const DrawerToggleButton = ({ drawerToggleClickHandler }) => (
     <button className="toggle-button" onClick={drawerToggleClickHandler}>
