@@ -29,8 +29,8 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header drawerToggleClickHandler={drawerToggleClickHandler}/>
-        <SideDrawer toggleDrawer={toggleDrawer} backDropClickHandler={backDropClickHandler}/>
+        <Header drawerToggleClickHandler={drawerToggleClickHandler} />
+        <SideDrawer toggleDrawer={toggleDrawer} backDropClickHandler={backDropClickHandler} />
         {backdrop}
         <Switch>
           <Route path={ROUTES.HOME} exact>
@@ -52,7 +52,7 @@ function App() {
             <Cart />
           </Route>
         </Switch>        
-      </div>      
+      </div>  
     </BrowserRouter>
   );
 }

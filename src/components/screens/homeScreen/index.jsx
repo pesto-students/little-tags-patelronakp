@@ -1,14 +1,14 @@
 import React from "react";
 import Slider from "../../slider";
 import FeatureCategory from "../../featureCategory";
-import Products from "../../products";
+import Product from "../../products";
 
 const Home = () => {
   return (
     <>
       <Slider />
       <FeatureCategory />
-      <Products />
+      <Product />
     </>
   );
 };
