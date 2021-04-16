@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "../../slider";
 import FeatureCategory from "../../featureCategory";
-import Product from "../../products";
+import Product from "../../featureProducts";
 
 const Home = () => {
   return (

@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './global.scss';
-import * as ROUTES from './constants/routes';
+import * as ROUTES from './constants/Routes';
 import Header from './components/header';
+import Footer from './components/footer';
 import SideDrawer from './components/sideDrawer/SideDrawer';
 import Backdrop from './components/backdrop';
 import Home from './components/screens/homeScreen';
@@ -51,8 +52,9 @@ function App() {
           <Route path={ROUTES.CART_PAGE}>
             <Cart />
           </Route>
-        </Switch>        
-      </div>  
+        </Switch>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }
