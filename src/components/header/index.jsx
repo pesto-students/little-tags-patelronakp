@@ -1,57 +1,62 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faUser, faHeart, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
+import { Link, useHistory } from 'react-router-dom';
 import './styles.scss';
-import * as ROUTES from '../../constants/Routes';
+import * as ROUTES from '../../constants/routes.jsx';
 import logo from '../../assets/logo_11.png';
 import DrawerToggleButton from '../sideDrawer/DrawerToggleButton';
 
 function Header ({ drawerToggleClickHandler }) {
+    const history = useHistory();
     return (
         <div className="header fixed-top">
             <div className="toggle-button">
                 <DrawerToggleButton drawerToggleClickHandler={ drawerToggleClickHandler }/>
             </div>
             <div className="logo">
-                <a href="/"><img src={logo} alt="Logo" /></a>
+                <Link to={ROUTES.HOME}><img src={logo} alt="Logo" /></Link>
             </div>
-            <div className="categories-menu mr-5">
-                <ul>
-                    <li>
+            <div className="header-nav">
+                <ul className="header-navlist">
+                    <li className="header-navlink">
                         <Link to={ROUTES.MENS_COLLECTION}>Mens</Link>
                     </li>
-                    <li>
+                    <li className="header-navlink">
                         <Link to={ROUTES.WOMENS_COLLECTION}>Womens</Link>
                     </li>
-                    <li>
+                    <li className="header-navlink">
                         <Link to={ROUTES.KIDS_COLLECTION}>Kids</Link>
                     </li>
-                    <li>
+                    <li className="header-navlink">
                         <Link to={ROUTES.ACCESSORIES_COLLECTION}>Accessories</Link>
                     </li>
                 </ul>
             </div>
-            <div className="input-group">
-                <input type="text" placeholder="Search Products" className="ml-8"/>
-                <span className="input-group-append">
-                    <button className="btn btn-outline-secondary bg-white ms-n3" type="button">
-                        <FontAwesomeIcon icon={faSearch}/>
-                    </button>
-                </span>
-            </div>
-            <div className="icon-container mr-3">
-                <FontAwesomeIcon icon={faUser} className="user-icon" size="2x" color="yellow"/>
-                <span>Profile</span>
-            </div>
-            <div className="icon-container mr-3">
-                <FontAwesomeIcon icon={faHeart} className="user-icon" size="2x" color="pink"/>
-                <span>Wishlist</span>
-            </div>
-            <div className="icon-container mr-3">
-                <FontAwesomeIcon icon={faShoppingBag} className="user-icon" size="2x" color="green"/>
-                <span>Bag</span>
+            <div className="header-right">
+                <ul className="user-nav">
+                    <li className="user-nav__item">
+                        <button className="user-nav__link">
+                            <span className="user-nav__icon user-nav__icon_1"></span>
+                        </button>
+                    </li>
+                    <li className="user-nav__item">
+                        <button className="user-nav__link">
+                            <span className="user-nav__icon user-nav__icon_2"></span>
+                        </button>
+                    </li>
+                    <li className="user-nav__item">
+                        <button className="user-nav__link">
+                            <span className="user-nav__icon user-nav__icon_3"></span>
+                            <span className="user-nav__text">0</span>
+                        </button>
+                    </li>
+                    <li className="user-nav__item">
+                        <button className="user-nav__link" onClick={ () => history.push('/cart') }>
+                            <span className="user-nav__icon user-nav__icon_4"></span>
+                            <span className="user-nav__text">0</span>
+                        </button>
+                    </li>
+                </ul>
             </div>
         </div>   
     )

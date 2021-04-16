@@ -5,3 +5,4 @@ export const MENS_COLLECTION = "/mens";
 export const WOMENS_COLLECTION = "/womens";
 export const KIDS_COLLECTION = "/kids";
 export const ACCESSORIES_COLLECTION = "/accessories";
+export const CART_PAGE = "/cart";

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './global.scss';
-import * as ROUTES from './constants/Routes';
+import * as ROUTES from './constants/routes';
 import Header from './components/header';
 import SideDrawer from './components/sideDrawer/SideDrawer';
 import Backdrop from './components/backdrop';
@@ -10,6 +10,7 @@ import Mens from './components/screens/categories/mens';
 import Womens from './components/screens/categories/womens';
 import Kids from './components/screens/categories/kids';
 import Accessories from './components/screens/categories/accesories';
+import Cart from './components/screens/Cart';
 
 function App() {
   const [toggleDrawer, setToggleDrawer] = useState(false);
@@ -47,8 +48,11 @@ function App() {
           <Route path={ROUTES.ACCESSORIES_COLLECTION}>
             <Accessories />
           </Route>
-        </Switch>
-      </div>
+          <Route path={ROUTES.CART_PAGE}>
+            <Cart />
+          </Route>
+        </Switch>        
+      </div>  
     </BrowserRouter>
   );
 }

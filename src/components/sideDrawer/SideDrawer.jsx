@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './SideDrawer.scss';
-import * as ROUTES from '../../constants/Routes';
+import * as ROUTES from '../../constants/routes.jsx';
 
 const SideDrawer = ({ backDropClickHandler, toggleDrawer }) => {
     let drawerClasses = 'side-drawer';
