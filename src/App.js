@@ -5,11 +5,11 @@ import * as ROUTES from './constants/Routes';
 import Header from './components/header';
 import SideDrawer from './components/sideDrawer/SideDrawer';
 import Backdrop from './components/backdrop';
-import Home from './components/screens/homeScreen';
-import Mens from './components/screens/categories/mens';
-import Womens from './components/screens/categories/womens';
-import Kids from './components/screens/categories/kids';
-import Accessories from './components/screens/categories/accesories';
+import Home from './screens/homeScreen';
+import Mens from './screens/categories/mens';
+import Womens from './screens/categories/womens';
+import Kids from './screens/categories/kids';
+import Accessories from './screens/categories/accesories';
 
 function App() {
   const [toggleDrawer, setToggleDrawer] = useState(false);
@@ -28,8 +28,8 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header drawerToggleClickHandler={drawerToggleClickHandler}/>
-        <SideDrawer toggleDrawer={toggleDrawer} backDropClickHandler={backDropClickHandler}/>
+        <Header drawerToggleClickHandler={drawerToggleClickHandler} />
+        <SideDrawer toggleDrawer={toggleDrawer} backDropClickHandler={backDropClickHandler} />
         {backdrop}
         <Switch>
           <Route path={ROUTES.HOME} exact>
@@ -47,8 +47,8 @@ function App() {
           <Route path={ROUTES.ACCESSORIES_COLLECTION}>
             <Accessories />
           </Route>
-        </Switch>        
-      </div>      
+        </Switch>
+      </div>
     </BrowserRouter>
   );
 }
