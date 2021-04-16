@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, useHistory } from 'react-router-dom';
 import './styles.scss';
-import * as ROUTES from '../../constants/routes.jsx';
+import * as ROUTES from '../../constants/Routes.jsx';
 import logo from '../../assets/logo_11.png';
 import DrawerToggleButton from '../sideDrawer/DrawerToggleButton';
 

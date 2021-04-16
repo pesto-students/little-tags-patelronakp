@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './global.scss';
-import * as ROUTES from './constants/routes';
+import * as ROUTES from './constants/Routes';
 import Header from './components/header';
 import Footer from './components/footer';
 import SideDrawer from './components/sideDrawer/SideDrawer';
