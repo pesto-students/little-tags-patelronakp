@@ -7,7 +7,6 @@ import Payment1 from "../../assets/images/payment_1.png";
 import Payment2 from "../../assets/images/payment_2.png";
 import Payment3 from "../../assets/images/payment_3.png";
 import Payment4 from "../../assets/images/payment_4.png";
-import vectorCollection from "../../assets/images/vector-collections.svg";
 
 const Footer = () => {
   return (
