@@ -1,3 +1,107 @@
 .cart {
     margin: 9rem 3.5rem;
+    
+    .count {
+        width: 109px;
+        height: 50px;
+        position: relative
+    }
+    .count__input {
+        width: 100%;
+        height: 50px;
+        padding: 0 36px;
+        display: block;
+        background: #f8f8fb;
+        font: 16px/1 Raleway, sans-serif;
+        color: #000;
+        text-align: center
+    }
+    .count__button {
+        width: 36px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        cursor: pointer
+    }
+    .count__button:after,
+    .count__button:before {
+        content: "";
+        width: 10px;
+        height: 2px;
+        margin: -1px 0 0;
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        background: #444;
+        -webkit-transition: .3s ease-out;
+        -ms-transition: .3s ease-out;
+        transition: .3s ease-out
+    }
+    
+    .count__button:after {
+        -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg)
+    }
+    
+    .count__button_minus:after {
+        display: none
+    }
+
+    .count__button:hover:after,
+    .count__button:hover:before {
+	    background: #ff8e8e
+    }
+
+    .count__button_plus {
+        left: auto;
+        right: 0
+    }
+    
+    .count__button_plus:after,
+    .count__button_plus:before {
+        margin-left: -15px
+    }
+    .wishlist__cart-col{
+        padding: 0 10px
+    }
+    .wishlist__cart-col:nth-child(1) {
+        width: 149px;
+        -webkit-flex-grow: 0;
+        flex-grow: 0;
+        -ms-flex-grow: 0;
+        -webkit-flex-shrink: 0;
+        flex-shrink: 0;
+        -ms-flex-shrink: 0
+    }
+    
+    .wishlist__cart-col:nth-child(2) {
+        width: 100%;
+        min-width: 0
+    }
+    
+    .wishlist__cart-col:nth-child(3) {
+        min-width: 90px;
+        -webkit-flex-grow: 0;
+        flex-grow: 0;
+        -ms-flex-grow: 0;
+        -webkit-flex-shrink: 0;
+        flex-shrink: 0;
+        -ms-flex-shrink: 0;
+        text-align: right
+    }
+    
+}
+
+button {
+    border:none;
+    background: none;
+    cursor: pointer;
+}
+input {
+    border:none;
+    background: none;
+    cursor: pointer;
 }

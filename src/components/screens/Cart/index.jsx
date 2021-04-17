@@ -1,64 +1,68 @@
 import React from 'react';
 import './styles.scss';
-/*const cartList = [
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimesCircle, faHeart } from '@fortawesome/free-solid-svg-icons'
+const cartList = [
     {
-
+        id: 1,
+        productName: 'Fashionee - Cotton Shirt (S)',
+        productPrice: '$35.99'
     },
     {
-        
+        id: 2,
+        productName: 'Spray Wrap Skirt',
+        productPrice: '$110.99'
     }
-]*/
+]
 
 export default function Cart(props) {
+    const cartItems = cartList.map((cart) => (
+        <div className="row mb-4" key={cart.id}>
+            <div className="col-md-4 col-lg-3 col-xl-3">
+                <div className="rounded mb-3 mb-md-0">
+                    <img className="img-fluid w-100"
+                        src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg" alt="Sample"/>
+                </div>
+            </div>
+            <div className="col-md-6 col-lg-5 col-xl-5">
+                <div className="d-flex flex-column justify-content-around h-100">
+                    <div className="mt-3 w-100">
+                        {cart.productName}
+                    </div>
+                    <div className="row w-100">
+                        <div className="col-5">
+                            {cart.productPrice}
+                        </div>
+                        <div className="col-5 count">
+                            <button onClick={()=> {}}
+                                    className="count__button count__button_minus"></button>
+                            <input className="count__input " type="text" value="1" maxLength="4" onChange={()=> {}}/>
+                            <button onClick={()=> {}}
+                                    className="count__button count__button_plus"></button>
+                        </div>                                
+                    </div>
+                </div>
+            </div>
+            <div className="col-md-2 col-lg-2 col-xl-2">
+            <div className="d-flex flex-column justify-content-around h-100">
+                <div className="ml-5">
+                    <FontAwesomeIcon icon={faTimesCircle} color="#ff8e8e"/>
+                </div>
+                <div className="p-2 flex-fill">
+                    {cart.productPrice}
+                </div>
+            </div>
+        </div>
+        </div>
+    ));
     return(
         <section className="cart">
             <div className="row">
                 <div className="col-lg-8">
-                    <div className="mb-3">
-                        <h5 className="mb-4">
-                            Cart (<span>2</span> items)
-                        </h5>
-                        <div className="row mb-4">
-                            <div className="col-md-5 col-lg-3 col-xl-3">
-                                <div className="rounded mb-3 mb-md-0">
-                                    <img className="img-fluid w-100"
-                                        src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg" alt="Sample"/>
-                                </div>
-                            </div>
-                            <div className="col-md-7 col-lg-9 col-xl-9">
-                                <div className="d-flex justify-content-between">
-                                    <div>
-                                        <h5>Blue denim shirt</h5>
-                                        <p className="mb-3 text-muted text-uppercase small">Shirt - blue</p>
-                                        <p className="mb-2 text-muted text-uppercase small">Color: blue</p>
-                                        <p className="mb-3 text-muted text-uppercase small">Size: M</p>
-                                    </div>
-                                    <div>
-                                        <div className="def-number-input number-input safari_only mb-0 w-100">
-                                            <button onClick={() => {}}
-                                                className="minus decrease">                                                                                                  
-                                            </button>
-                                            <input className="quantity" onChange={() => {}} min="0" name="quantity" value="1" type="number"/>
-                                            <button onClick={() => {}}
-                                                className="plus increase">                                                                                                  
-                                            </button>
-                                        </div>
-                                        <div className="d-flex justify-content-between align-items-center">
-                                            <div>
-                                            <a href="#!" type="button" className="card-link-secondary small text-uppercase mr-3"><i
-                                                className="fas fa-trash-alt mr-1"></i> Remove item </a>
-                                            <a href="#!" type="button" className="card-link-secondary small text-uppercase"><i
-                                                className="fas fa-heart mr-1"></i> Move to wish list </a>
-                                            </div>
-                                            <p className="mb-0"><span><strong id="summary">$17.99</strong></span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            <div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
+                    {cartItems}
+                </div>           
+                <div className="col-lg-4">
+
                 </div>
             </div>
         </section>
