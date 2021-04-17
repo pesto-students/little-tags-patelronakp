@@ -1,14 +1,18 @@
-import React from 'react';
-import './styles.scss';
+import React from "react";
+import CategoryHeader from "../../../categoryHeader";
+import CategoryProduct from "../../../categoryProducts";
+import "./styles.scss";
 
 const Womens = () => {
-    return(
-        <div className="womens-collection">
-            <h1>
-                Womens
-            </h1>
-        </div>        
-    )
-}
+  return (
+    <div className="womens-collection">
+      <CategoryHeader
+        categoryType="women"
+        categoryTitleText="Womens Collections"
+      />
+      <CategoryProduct categoryType="women" />
+    </div>
+  );
+};
 
 export default Womens;
