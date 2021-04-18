@@ -17,13 +17,12 @@ function App() {
   const [toggleDrawer, setToggleDrawer] = useState(false);
   const drawerToggleClickHandler = () => {
     setToggleDrawer(!toggleDrawer);
-  }
-
+  }  
   const backDropClickHandler = () => {
     setToggleDrawer(false);
   }
 
-  let backdrop;
+  let backdrop = null;
   if (toggleDrawer) {
     backdrop = <Backdrop backDropClickHandler={backDropClickHandler} />;
   }
