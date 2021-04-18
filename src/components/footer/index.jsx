@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="footer__main wrapper">
         <div className="row">
           <div className="col-6">
-            <h3 className="footer-title">Why buy from Urbun Touch?</h3>
+            <h3 className="footer-title">Why buy from Urban Touch?</h3>
             <p className="footer-description">
               It is a long established fact that a reader will be distracted by
               the readable content of a page when looking at its layout. The
@@ -60,47 +60,47 @@ const Footer = () => {
           </div>
         </div>
         <div className="row">
-          <div class="footer__bottom">
-            <div class="footer__cols">
-              <div class="footer__left">
-                <span class="copyrights">
+          <div className="footer__bottom">
+            <div className="footer__cols">
+              <div className="footer__left">
+                <span className="copyrights">
                   © All right reserved. Urbun Touch 2021
                 </span>
               </div>
-              <div class="footer__right">
-                <div class="payments">
-                  <div class="payments__col">
-                    <span class="payments__text">Payment methods:</span>
+              <div className="footer__right">
+                <div className="payments">
+                  <div className="payments__col">
+                    <span className="payments__text">Payment methods:</span>
                   </div>
-                  <div class="payments__col">
-                    <ul class="payments__list">
-                      <li class="payments__item">
+                  <div className="payments__col">
+                    <ul className="payments__list">
+                      <li className="payments__item">
                         <img
-                          class="payments__image"
+                          className="payments__image"
                           alt=""
                           src={Payment1}
                           data-lazy={Payment1}
                         />
                       </li>
-                      <li class="payments__item">
+                      <li className="payments__item">
                         <img
-                          class="payments__image"
+                          className="payments__image"
                           alt=""
                           src={Payment2}
                           data-lazy={Payment2}
                         />
                       </li>
-                      <li class="payments__item">
+                      <li className="payments__item">
                         <img
-                          class="payments__image"
+                          className="payments__image"
                           alt=""
                           src={Payment3}
                           data-lazy={Payment3}
                         />
                       </li>
-                      <li class="payments__item">
+                      <li className="payments__item">
                         <img
-                          class="payments__image"
+                          className="payments__image"
                           alt=""
                           src={Payment4}
                           data-lazy={Payment4}
