@@ -1,12 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import * as ROUTES from "../../constants/Routes.jsx";
+import { generatePath } from "react-router";
 import "./styles.scss";
 
-const Product = ({ id, image, title, price }) => {
+const Product = ({ id, image, title, price, categoryType }) => {
+  const productURL = generatePath(ROUTES.PRODUCT_DETAIL, {
+    categoryType,
+    id,
+    title,
+  });
   return (
     <div className="item" key={id}>
       <div className="short-item__all">
-        <a className="short-item__image-bg" href="/">
+        <Link className="short-item__image-bg" to={productURL}>
           <img
             className="short-item__image"
             src={image}
@@ -16,8 +24,7 @@ const Product = ({ id, image, title, price }) => {
             width="262"
           />
           <div className="overlay">{title}</div>
-        </a>
-
+        </Link>
         {/* <div className="short-item__top">
               <div className="short-item__cols">
                 <div className="short-item__col">
@@ -46,4 +53,5 @@ Product.prototype = {
   image: PropTypes.string,
   title: PropTypes.string,
   price: PropTypes.number,
+  categoryType: PropTypes.string,
 };

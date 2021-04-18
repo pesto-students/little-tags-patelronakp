@@ -13,13 +13,20 @@ const CategoryProduct = ({ categoryType }) => {
   }, [categoryType]);
 
   const productContent = products.map(({ id, image, title, price }) => (
-    <Product key={id} image={image} title={title} price={price} />
+    <Product
+      key={id}
+      id={id}
+      image={image}
+      title={title}
+      price={price}
+      categoryType={categoryType}
+    />
   ));
 
   return (
     <section className="productContainer">
-      <div class="col-12">
-        <span class="shop-panel__text">
+      <div className="col-12">
+        <span className="shop-panel__text">
           There are <b>{products.length}</b> products in&nbsp;this&nbsp;category
         </span>
       </div>
