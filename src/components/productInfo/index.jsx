@@ -78,8 +78,8 @@ const ProductInfo = ({ id }) => {
           </div>
           <div className="row">
             <div className="qtyButton col-4">
-              <button onClick={onAddQty}>
-                <GoPlus />
+              <button onClick={onRemoveQty}>
+                <GoDash />
               </button>
               <input
                 type="text"
@@ -87,8 +87,8 @@ const ProductInfo = ({ id }) => {
                 maxLength={2}
                 onChange={(e) => setQty(e.target.value)}
               ></input>
-              <button onClick={onRemoveQty}>
-                <GoDash />
+              <button onClick={onAddQty}>
+                <GoPlus />
               </button>
             </div>
             <div className="col-6">
