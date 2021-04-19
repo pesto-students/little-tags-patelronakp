@@ -13,7 +13,14 @@ const CategoryProduct = ({ categoryType }) => {
   }, [categoryType]);
 
   const productContent = products.map(({ id, image, title, price }) => (
-    <Product key={id} image={image} title={title} price={price} />
+    <Product
+      key={id}
+      id={id}
+      image={image}
+      title={title}
+      price={price}
+      categoryType={categoryType}
+    />
   ));
 
   return (
