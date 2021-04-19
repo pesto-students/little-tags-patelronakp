@@ -1,7 +1,7 @@
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    //justify-content: space-between;
     padding: 1.5rem 2.5rem;
     background-color: white;
 	box-shadow: 0 2px 4px rgba(0,0,0,.1);
@@ -26,6 +26,7 @@
     
 	.logo {
 		cursor: pointer;
+		margin-right: 3rem;
 	}
 
 	img {
@@ -49,10 +50,9 @@
 
 		.header-navlist {
 			margin: 0 -20px;
-			display: -webkit-box;
-			display: -webkit-flex;
-			display: -ms-flexbox;
 			display: flex;
+			margin-right: 2rem;
+			justify-content: space-between;
 
 			.header-navlink {
 				display: block;
@@ -73,43 +73,74 @@
 		
 		.user-nav {
 			margin: 0 -20px;
-			display: -webkit-box;
-			display: -webkit-flex;
-			display: -ms-flexbox;
 			display: flex;
 
-			.user-nav__item {
-				padding: 0 20px
+			.user-nav-dropdown {
+				display: flex;
+				flex-direction: column;
 			}
 
-			.user-nav__item:before {
+			.user-nav-item {
+				padding: 0 40px
+			}
+
+			.user-nav-item:before {
 				display: none
 			}
 
-			.user-nav__link:hover {
+			.user-nav-search {
+				padding: 0 20px;
+				display: flex;
+				margin-right: 10px;
+				align-items: center;
+				border-radius: 20px;
+				background-color: white;
+				border : 1px solid black;
+
+				input[type="text"] {
+					width: 200px;
+					padding: 10px;
+					outline: none;
+					padding-left: 10px;
+					border-radius: 5px;
+					border: 0;
+					font: bold 14px/16px Raleway, sans-serif;
+				}
+				.search-icon {
+					width: 16px;
+					height: 16px;
+					margin: 0 8px 0 8px;
+				}
+			}
+
+			.user-nav-search:before {
+				display: none
+			}
+
+			.user-nav-link:hover {
 				text-decoration: none;
 				color: #fff
 			}
 
-			.user-nav__link:hover .user-nav__icon:before {
+			.user-nav-link:hover .user-nav-icon:before {
 				opacity: 0
 			}
 
-			.user-nav__link:hover .user-nav__icon:after {
+			.user-nav-link:hover .user-nav-icon:after {
 				opacity: 1
 			}
 
-			.user-nav__link:hover .user-nav__text {
+			.user-nav-link:hover .user-nav-text {
 				background: #ff8e8e
 			}
 
-			.user-nav__link {
+			.user-nav-link {
 				height: 22px;
 				position: relative;
 				top: 2px;
 				white-space: nowrap;
 
-				.user-nav__text {
+				.user-nav-text {
 					min-width: 18px;
 					height: 18px;
 					margin: 2px 0 0;
@@ -120,20 +151,18 @@
 					font: bold 14px/16px Raleway, sans-serif;
 					color: #fff;
 					text-align: center;
-					-webkit-transition: .2s ease-out;
-					-ms-transition: .2s ease-out;
 					transition: .2s ease-out;
 					border-radius: 9px
 				}
 
-				.user-nav__icon {
+				.user-nav-icon {
 					display: inline-block;
 					vertical-align: top;
 					position: relative
 				}
 
-				.user-nav__icon:after,
-				.user-nav__icon:before {
+				.user-nav-icon:after,
+				.user-nav-icon:before {
 					content: "";
 					width: 100%;
 					height: 100%;
@@ -145,67 +174,75 @@
 					transition: .3s ease-out
 				}
 
-				.user-nav__icon:after {
+				.user-nav-icon:after {
 					opacity: 0;
 					z-index: 1
 				}
 
-				.user-nav__icon_1 {
+				.user-nav-icon1 {
 					width: 18px;
 					height: 18px;
 					margin: 2px 0 0
 				}
 
-				.user-nav__icon_1:before {
+				.user-nav-icon1:before {
 					background: url(../../assets/images/search.svg) 0 0/100% 100% no-repeat
 				}
 				
-				.user-nav__icon_1:after {
+				.user-nav-icon1:after {
 					background: url(../../assets/images/search__red.svg) 0 0/100% 100% no-repeat
 				}
 
-				.user-nav__icon_2 {
+				.user-nav-icon2 {
 					width: 20px;
 					height: 20px;
 					margin: 1px 0 0
 				}
 				
-				.user-nav__icon_2:before {
+				.user-nav-icon2:before {
 					background: url(../../assets/images/user.svg) 0 0/100% 100% no-repeat
 				}
 				
-				.user-nav__icon_2:after {
+				.user-nav-icon2:after {
 					background: url(../../assets/images/user__red.svg) 0 0/100% 100% no-repeat
 				}
 				
-				.user-nav__icon_3 {
+				.user-nav-icon3 {
 					width: 19px;
 					height: 18px;
 					margin: 2px 0 0
 				}
 				
-				.user-nav__icon_3:before {
+				.user-nav-icon3:before {
 					background: url(../../assets/images/heart.svg) 0 0/100% 100% no-repeat
 				}
 				
-				.user-nav__icon_3:after {
+				.user-nav-icon3:after {
 					background: url(../../assets/images/heart__red.svg) 0 0/100% 100% no-repeat
 				}
 				
-				.user-nav__icon_4 {
+				.user-nav-icon4 {
 					width: 21px;
 					height: 20px;
 					margin: 1px 0 0
 				}
 				
-				.user-nav__icon_4:before {
+				.user-nav-icon4:before {
 					background: url(../../assets/images/shopping-bag.svg) 0 0/100% 100% no-repeat
 				}
 				
-				.user-nav__icon_4:after {
+				.user-nav-icon4:after {
 					background: url(../../assets/images/shopping-bag__red.svg) 0 0/100% 100% no-repeat
 				}
 			}
+		}
+
+		.menu-item {
+			&:hover {
+			  .drop-down {
+				visibility: visible;
+			  }
+			}	  
 		}
 
 	}
