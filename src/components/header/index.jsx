@@ -1,41 +1,42 @@
-import React,  { useState, useContext } from 'react';
+import React,  { useState } from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link, useHistory } from 'react-router-dom';
 import './styles.scss';
 import * as ROUTES from '../../constants/Routes.jsx';
 import logo from '../../assets/logo_11.png';
+import SearchIcon from '../../assets/images/search.svg';
 import DrawerToggleButton from '../sideDrawer/DrawerToggleButton';
-import FirebaseContext from '../../components/firebase/context';
+import Login from '../login';
+import Dropdown from './dropdown';
 
 function Header ({ drawerToggleClickHandler }) {
-    const history = useHistory();
-    const firebase = useContext(FirebaseContext);
-    const [errorMessage, setErrorMessage] = useState('');
-    console.log(errorMessage);
-    const handleGoogleSignIn = () => {
-        firebase
-          .doGoogleSignIn()
-          .then((authUser) => {
-            // console.log({ email: authUser.email, username: authUser.displayName });
-            // console.log(authUser);
-            return firebase.user(authUser.user.uid).set({
-              email: authUser.user.email,
-              username: authUser.user.displayName,
-              roles: {},
-            });
-          })
-          .then(() => {
-            history.push(ROUTES.HOME);
-          })
-          .catch((error) => {
-            setErrorMessage(error.message);
-          });
-    };
-
-    const handleSignOut = () => {
-        firebase.doSignOut();
-    };
-
+    const history = useHistory();    
+    const isUserAuthenticated = useSelector(state => state.sessionState.authUser) ? true : false;
+    const [showLogin, setShowLogin] = useState(false);
+    const showLoginPopup = () => setShowLogin(!showLogin);
+    const userProfile = () => {
+        if(isUserAuthenticated) {
+           return(
+            <div className="menu-item">            
+                <li className="user-nav-item">
+                    <button className="user-nav-link">
+                        <span className="user-nav-icon user-nav-icon2"></span>                    
+                    </button>                                                  
+                </li>
+                <Dropdown />              
+             </div>   
+           ) 
+        } else {
+            return (
+                <li className="user-nav-item">
+                    <button className="user-nav-link" onClick={showLoginPopup}>
+                        <span className="user-nav-text">LOGIN</span>
+                    </button>
+                </li>                
+            )
+        }
+    }
     return (
         <div className="header fixed-top">
             <div className="toggle-button">
@@ -62,30 +63,26 @@ function Header ({ drawerToggleClickHandler }) {
             </div>
             <div className="header-right">
                 <ul className="user-nav">
-                    <li className="user-nav__item">
-                        <button className="user-nav__link">
-                            <span className="user-nav__icon user-nav__icon_1"></span>
+                    <li className="user-nav-search">
+                        <input type="text" placeholder="Search Products" />
+                        <img className="search-icon" src={SearchIcon} alt="Search Products" />
+                    </li>
+                    {userProfile()}                    
+                    <li className="user-nav-item">
+                        <button className="user-nav-link">
+                            <span className="user-nav-icon user-nav-icon3"></span>
+                            <span className="user-nav-text">0</span>
                         </button>
                     </li>
-                    <li className="user-nav__item">
-                        <button className="user-nav__link" onClick={handleGoogleSignIn}>
-                            <span className="user-nav__icon user-nav__icon_2"></span>
-                        </button>
-                    </li>
-                    <li className="user-nav__item">
-                        <button className="user-nav__link" onClick={handleSignOut}>
-                            <span className="user-nav__icon user-nav__icon_3"></span>
-                            <span className="user-nav__text">0</span>
-                        </button>
-                    </li>
-                    <li className="user-nav__item">
-                        <button className="user-nav__link" onClick={ () => history.push('/cart') }>
-                            <span className="user-nav__icon user-nav__icon_4"></span>
-                            <span className="user-nav__text">0</span>
+                    <li className="user-nav-item">
+                        <button className="user-nav-link" onClick={ () => history.push('/cart') }>
+                            <span className="user-nav-icon user-nav-icon4"></span>
+                            <span className="user-nav-text">0</span>
                         </button>
                     </li>
                 </ul>
             </div>
+            <Login showLogin={showLogin} handlePopupOpen={showLoginPopup} />
         </div>   
     )
 }
