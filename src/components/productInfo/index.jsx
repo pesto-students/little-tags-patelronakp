@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import ProductCarousel from "../productCarousel/index.jsx";
-import * as ROUTES from "../../constants/Routes.jsx";
-import { generatePath } from "react-router";
 import { Link } from "react-router-dom";
 import "./styles.scss";
 import { fetchProductById } from "../../services/productService.js";

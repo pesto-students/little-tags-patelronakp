@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useRouteMatch, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import CategoryHeader from "../../categoryHeader";
 import { fetchProductById } from "../../../services/productService";
 import "./styles.scss";
@@ -9,7 +8,7 @@ import ProductInfo from "../../productInfo";
 const ProductDetail = () => {
   //const match = useRouteMatch();
   const param = useParams();
-  const [product, setProduct] = useState();
+  const [, setProduct] = useState();
   const { id, title, categoryType } = param;
   console.log("Parameters pass to man cate :", title);
 
