@@ -1,3 +1,40 @@
 .cart {
     margin: 9rem 3.5rem;
+    
+    .wishlist__cart-col{
+        padding: 0 10px
+    }
+    .wishlist__cart-col:nth-child(1) {
+        width: 149px;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+    
+    .wishlist__cart-col:nth-child(2) {
+        width: 100%;
+        min-width: 0
+    }
+    
+    .wishlist__cart-col:nth-child(3) {
+        min-width: 90px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        text-align: right
+    }
+
+    .border-bottom {
+        border-bottom: 10px solid #000;
+    }
+    
+}
+
+button {
+    border:none;
+    background: none;
+    cursor: pointer;
+}
+input {
+    border:none;
+    background: none;
+    cursor: pointer;
 }

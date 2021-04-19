@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="footer__main wrapper">
         <div className="row">
           <div className="col-6">
-            <h3 className="footer-title">Why buy from Urbun Touch?</h3>
+            <h3 className="footer-title">Why buy from Urban Touch?</h3>
             <p className="footer-description">
               It is a long established fact that a reader will be distracted by
               the readable content of a page when looking at its layout. The
