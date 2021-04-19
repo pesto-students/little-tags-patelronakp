@@ -1,0 +1,116 @@
+.login-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+
+    .modal-outer {
+        background: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        color: black;
+        font-size: 20px;
+        width: 400px;
+        border-radius: 10px;
+
+        .modal-header {
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+
+            .app-logo {
+                display: flex;
+
+                img {
+                    width: 60px;
+                    height: 60px;
+                }
+
+                .app-name {
+                    font-family: bold 10px/12px Raleway, sans-serif;
+                    font-size: 30px;
+                    padding: 0px 15px 0 15px;
+                    font-weight: 300;
+                }
+            }
+
+            .close-modal {
+                font-size: 8px;
+                padding: 10px;
+                box-shadow: 0 11px 20px -6px rgba(70, 93, 169, 0.13);
+                background-color: black;
+                border-radius: 30%;
+                cursor: pointer;
+            }
+        }
+
+        .social-login {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;            
+
+            .modal-body {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+
+            span {
+                font-size: 16px;
+            }
+
+            .google-login {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 10px;
+                cursor: pointer;
+                width: 220px;
+                padding: 5px;
+                border-radius: 10px;
+                background-color: white;
+                border: 1px darkgray solid;
+                justify-content: flex-start;
+      
+                .google-img {
+                  width: 30x;
+                  height: 30px;
+                  margin: 0 10px 0 10px;
+                }
+              }              
+      
+              .facebook-login {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                width: 220px;
+                padding: 5px 10px 5px 5px;
+                border-radius: 10px;
+                background-color: white;
+                border: 1px darkgray solid;
+      
+                .fb-img {
+                  width: 30x;
+                  height: 30px;
+                  margin: 0 10px 0 0;
+                }
+              }
+        }
+    }
+}
