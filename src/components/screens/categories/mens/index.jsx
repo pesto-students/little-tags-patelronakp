@@ -4,7 +4,7 @@ import CategoryHeader from "../../../categoryHeader";
 import CategoryProduct from "../../../categoryProducts";
 import { withRouter } from "react-router";
 const Mens = (props) => {
-  const { id, title } = props.match.params;
+  // const { id, title } = props.match.params;
   console.log("Parameters pass to man cate :", props.match.params);
 
   return (
