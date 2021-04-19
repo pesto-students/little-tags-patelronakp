@@ -13,6 +13,7 @@ import Womens from './components/screens/categories/womens';
 import Kids from './components/screens/categories/kids';
 import Accessories from './components/screens/categories/accesories';
 import Cart from './components/screens/Cart';
+import ProductDetail from './components/screens/productDetail';
 
 function App() {
   const [toggleDrawer, setToggleDrawer] = useState(false);
@@ -51,6 +52,9 @@ function App() {
           </Route>
           <Route path={ROUTES.CART_PAGE}>
             <Cart />
+          </Route>
+          <Route path={ROUTES.PRODUCT_DETAIL} >
+            <ProductDetail />
           </Route>
         </Switch>
         <Footer />

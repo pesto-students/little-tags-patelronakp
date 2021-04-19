@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Link, useHistory } from 'react-router-dom';
 import './styles.scss';
 import * as ROUTES from '../../constants/Routes.jsx';
-import logo from '../../assets/logo_11.png';
+import logo from '../../assets/logo1.png';
 import SearchIcon from '../../assets/images/search.svg';
 import DrawerToggleButton from '../sideDrawer/DrawerToggleButton';
 import Login from '../login';
