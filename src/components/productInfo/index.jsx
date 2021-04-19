@@ -38,7 +38,7 @@ const ProductInfo = ({ id }) => {
     isLoading && (
       <div className="row productInfo">
         <div className="col-6">
-          <ProductCarousel />
+          <ProductCarousel imageArray={product.src} />
         </div>
         <div className="col-6 productDtlSection">
           <div>
