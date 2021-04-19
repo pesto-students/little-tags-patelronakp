@@ -1,6 +1,8 @@
 import React from "react";
 import "./styles.scss";
 import vectorCollection from "../../assets/images/vector-collections.svg";
+import * as ROUTES from "../../constants/Routes";
+import { Link } from "react-router-dom";
 //import ManCatImage from "../../../public/images/category/mencat.jpg";
 
 const FeatureCategory = (props) => {
@@ -19,14 +21,15 @@ const FeatureCategory = (props) => {
           <article className="categoryInfo">
             <div className="catgoryDetail">
               <div className="categoryImg">
-                <a
-                  href="/"
+                <Link
+                  to={ROUTES.ACCESSORIES_COLLECTION}
                   style={{
                     backgroundImage: `url("/images/category/assetscat.jpg")`,
                   }}
                 >
                   &nbsp;
-                </a>
+                </Link>
+
                 <span className="categoryTitle">accessories</span>
               </div>
               <div className="categoryAttributes setRight">
@@ -37,9 +40,12 @@ const FeatureCategory = (props) => {
                   Fashion for <br />
                   this summer
                 </h4>
-                <a className="collection__more read-more" href="shop.html">
+                <Link
+                  to={ROUTES.ACCESSORIES_COLLECTION}
+                  className="collection__more read-more"
+                >
                   Shop now
-                </a>
+                </Link>
               </div>
             </div>
           </article>
@@ -47,14 +53,15 @@ const FeatureCategory = (props) => {
           <article className="categoryInfo">
             <div className="catgoryDetail">
               <div className="categoryImg">
-                <a
-                  href="/"
+                <Link
+                  to={ROUTES.MENS_COLLECTION}
                   style={{
                     backgroundImage: `url("/images/category/mencat.jpg")`,
                   }}
                 >
                   &nbsp;
-                </a>
+                </Link>
+
                 <span className="categoryTitle">Mens</span>
               </div>
               <div className="categoryAttributes setRight">
@@ -65,9 +72,12 @@ const FeatureCategory = (props) => {
                   New Autumn <br />
                   Arrivals 2020
                 </h4>
-                <a className="collection__more read-more" href="shop.html">
+                <Link
+                  to={ROUTES.MENS_COLLECTION}
+                  className="collection__more read-more"
+                >
                   Shop now
-                </a>
+                </Link>
               </div>
             </div>
           </article>
@@ -76,14 +86,14 @@ const FeatureCategory = (props) => {
           <article className="categoryInfo">
             <div className="catgoryDetail">
               <div className="categoryImg">
-                <a
-                  href="/"
+                <Link
+                  to={ROUTES.KIDS_COLLECTION}
                   style={{
                     backgroundImage: `url("/images/category/kidscat.jpg")`,
                   }}
                 >
                   &nbsp;
-                </a>
+                </Link>
                 <span className="categoryTitle">Kids</span>
               </div>
               <div className="categoryAttributes setRight">
@@ -94,9 +104,12 @@ const FeatureCategory = (props) => {
                   Always Be <br />
                   Stylish
                 </h4>
-                <a className="collection__more read-more" href="shop.html">
+                <Link
+                  to={ROUTES.KIDS_COLLECTION}
+                  className="collection__more read-more"
+                >
                   Shop now
-                </a>
+                </Link>
               </div>
             </div>
           </article>
@@ -104,14 +117,14 @@ const FeatureCategory = (props) => {
           <article className="categoryInfo">
             <div className="catgoryDetail">
               <div className="categoryImg">
-                <a
-                  href="/"
+                <Link
+                  to={ROUTES.WOMENS_COLLECTION}
                   style={{
                     backgroundImage: `url("/images/category/womancat.jpg")`,
                   }}
                 >
                   &nbsp;
-                </a>
+                </Link>
                 <span className="categoryTitle">Women</span>
               </div>
               <div className="categoryAttributes setRight">
@@ -122,9 +135,12 @@ const FeatureCategory = (props) => {
                   Trendy Look <br />
                   For Every Day
                 </h4>
-                <a className="collection__more read-more" href="shop.html">
+                <Link
+                  to={ROUTES.WOMENS_COLLECTION}
+                  className="collection__more read-more"
+                >
                   Shop now
-                </a>
+                </Link>
               </div>
             </div>
           </article>
