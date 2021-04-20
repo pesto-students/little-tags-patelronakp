@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import ProductCarousel from "../productCarousel/index.jsx";
 import { Link } from "react-router-dom";
-import "./styles.scss";
 import { fetchProductById } from "../../services/productService.js";
 import { GoDash, GoPlus } from "react-icons/go";
+import { addToCart } from "../../actions/userCartActions.js";
+import { connect } from "react-redux";
+import "./styles.scss";
 
-const ProductInfo = ({ id }) => {
+const ProductInfo = ({ id, cartItem = [], addToCart }) => {
   const [product, setProduct] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [size, setSize] = useState("M");
@@ -32,6 +34,13 @@ const ProductInfo = ({ id }) => {
     }
   };
 
+  const onClickAddToCart = () => {
+    console.log("AddToCart Function Call");
+    debugger;
+    const { id, title, image, price } = product;
+    addToCart(id, title, image, price, qty, size);
+  };
+
   return (
     isLoading && (
       <div className="row productInfo">
@@ -47,7 +56,7 @@ const ProductInfo = ({ id }) => {
             </span>
             <p className="prodDesc">{product.description}</p>
             <div className="productPrice">
-              <span class="sellPrice">Rs. {product.price.toFixed(2)}</span>
+              <span className="sellPrice">Rs. {product.price.toFixed(2)}</span>
             </div>
             <div className="sizeSelection">
               <button
@@ -92,7 +101,7 @@ const ProductInfo = ({ id }) => {
               </button>
             </div>
             <div className="col-6">
-              <button className="button">
+              <button className="button" onClick={onClickAddToCart}>
                 <span className="button__text">Add to cart</span>
               </button>
             </div>
@@ -103,7 +112,16 @@ const ProductInfo = ({ id }) => {
   );
 };
 
-export default ProductInfo;
+const mapStateToProps = (state) => {
+  console.log("State", state);
+  return {
+    cartItem: state.userCartState.cartItem,
+  };
+};
+
+const mapDispatchToProps = { addToCart };
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductInfo);
 
 ProductInfo.prototype = {
   id: PropTypes.number,
