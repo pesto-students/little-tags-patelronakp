@@ -30,14 +30,15 @@
 
             .app-logo {
                 display: flex;
+                font-family: Bubblegum Sans;
 
                 img {
-                    width: 60px;
+                    width: 100px;
                     height: 60px;
                 }
 
                 .app-name {
-                    font-family: bold 10px/12px Raleway, sans-serif;
+                    font-family: 10px/12px Bubblegum Sans, sans-serif;
                     font-size: 30px;
                     padding: 0px 15px 0 15px;
                     font-weight: 300;
@@ -79,19 +80,21 @@
                 align-items: center;
                 margin-bottom: 10px;
                 cursor: pointer;
-                width: 220px;
+                width: 180px;
+                height: 45px;
                 padding: 5px;
                 border-radius: 10px;
-                background-color: white;
                 border: 1px darkgray solid;
                 justify-content: flex-start;
+                font-family: Bubblegum Sans;
+                font-weight: 300;
       
                 .google-img {
                   width: 30x;
                   height: 30px;
                   margin: 0 10px 0 10px;
                 }
-              }              
+              }
       
               .facebook-login {
                 display: flex;
@@ -99,11 +102,14 @@
                 justify-content: center;
                 align-items: center;
                 cursor: pointer;
-                width: 220px;
+                width: 180px;
+                height: 45px;
                 padding: 5px 10px 5px 5px;
                 border-radius: 10px;
                 background-color: white;
                 border: 1px darkgray solid;
+                font-family: Bubblegum Sans;
+                font-weight: 300;
       
                 .fb-img {
                   width: 30x;
