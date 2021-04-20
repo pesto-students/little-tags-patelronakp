@@ -5,7 +5,7 @@ import withAuthentication from './components/session/withAuthentication';
 import * as ROUTES from './constants/Routes';
 import Header from './components/header';
 import Footer from './components/footer';
-import SideDrawer from './components/sideDrawer/SideDrawer';
+import SideDrawer from './components/SideDrawer/SideDrawer.jsx';
 import Backdrop from './components/backdrop';
 import Home from './components/screens/homeScreen';
 import Mens from './components/screens/categories/mens';
