@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../../constants/Routes';
 import './styles.scss';
+import FirebaseContext from '../../firebase/context';
 
 export default function Dropdown() {
     const user = useSelector(state => state.sessionState.authUser);
+    const firebase = useContext(FirebaseContext);
+    const handleLogout = () => firebase.doSignOut();
     return(
             <ul className="drop-down">
                 <div >
@@ -20,7 +23,7 @@ export default function Dropdown() {
                         </Link>
                     </li>
                     <li>
-                        <Link className="dropdown-link" to={ROUTES.HOME}>
+                        <Link className="dropdown-link" to={ROUTES.HOME} onClick={handleLogout}>
                             Logout
                         </Link>
                     </li>

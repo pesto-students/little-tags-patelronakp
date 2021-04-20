@@ -35,6 +35,29 @@ function Login({ showLogin, handlePopupOpen }) {
         });
     };
 
+    const handleFacebookSignIn = () => {
+        firebase
+        .doFacebookSignIn()
+        .then((authUser) => {
+            const userDetails = {
+            email: authUser.email, 
+            name: authUser.displayName, 
+            emailVerified: authUser.emailVerified  
+            };        
+            saveToLocalStorage('authUser',userDetails);
+            setAuthUser(userDetails);
+            handlePopupOpen();
+            return firebase.user(authUser.user.uid).set({
+            email: authUser.user.email,
+            displayName: authUser.user.displayName,
+            roles: {},
+            });
+        })
+        .catch((error) => {
+            setErrorMessage(error.message);
+        });
+    };
+
     return(
         <>
             { showLogin ? (
@@ -63,7 +86,7 @@ function Login({ showLogin, handlePopupOpen }) {
                                 />
                                 <span>Google Account</span>
                             </button>
-                            <button className="facebook-login">
+                            <button className="facebook-login" onClick={handleFacebookSignIn}>
                                 <img src={FbIcon} alt="Facebook Icon" className="fb-img" />
                                 <span>Facebook Account</span>
                             </button>

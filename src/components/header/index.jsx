@@ -6,7 +6,7 @@ import './styles.scss';
 import * as ROUTES from '../../constants/Routes.jsx';
 import logo from '../../assets/logo1.png';
 import SearchIcon from '../../assets/images/search.svg';
-import DrawerToggleButton from '../sideDrawer/DrawerToggleButton';
+import DrawerToggleButton from '../SideDrawer/DrawerToggleButton.jsx';
 import Login from '../login';
 import Dropdown from './dropdown';
 
