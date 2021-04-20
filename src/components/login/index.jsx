@@ -7,6 +7,7 @@ import { setAuthUser } from "../../actions";
 import CloseIcon from "../../assets/images/close.svg";
 import FbIcon from "../../assets/images/facebook-logo.svg";
 import GoogleIcon from "../../assets/images/google-logo.svg";
+import logo from '../../assets/logo1.png';
 
 function Login({ showLogin, handlePopupOpen }) {
     const firebase = useContext(FirebaseContext);
@@ -64,14 +65,15 @@ function Login({ showLogin, handlePopupOpen }) {
                 <div className="login-modal">
                     <div className="modal-outer">
                         <div className="modal-header">
-                            <div className="app-logo">
-                                <span className="app-name">Login</span>
+                            <div className="app-logo d-flex">
+                                <img src={logo} alt="Logo" />
+                                <span className="app-name pt-4 ml-5">Login</span>
                             </div>
                             <img
                                 src={CloseIcon}
                                 alt="Close Button"
                                 onClick={handlePopupOpen}
-                                className="close-modal"
+                                className="close-modal d-flex align-self-start"
                             />
                         </div>                   
 
@@ -86,7 +88,7 @@ function Login({ showLogin, handlePopupOpen }) {
                                 />
                                 <span>Google Account</span>
                             </button>
-                            <button className="facebook-login" onClick={handleFacebookSignIn}>
+                            <button className="facebook-login mt-2" onClick={handleFacebookSignIn}>
                                 <img src={FbIcon} alt="Facebook Icon" className="fb-img" />
                                 <span>Facebook Account</span>
                             </button>
