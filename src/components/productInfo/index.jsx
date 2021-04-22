@@ -42,8 +42,8 @@ const ProductInfo = ({ id, cartItem = [], addToCart }) => {
   const onClickAddToCart = () => {
     console.log("AddToCart Function Call");
     debugger;
-    const { id, title, image, price } = product;
-    addToCart(id, title, image, price, qty, size);
+    const { id, title, image, price, category } = product;
+    addToCart(id, title, image, price, qty, size, category);
   };
 
   return (

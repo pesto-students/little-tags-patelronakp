@@ -7,10 +7,10 @@ const initialState = {
 const userCartReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_TO_CART:
-            const { id, title, image, price, qty, size } = action;
+            const { id, title, image, price, qty, size, category } = action;
             const index = state.cartItem.findIndex(product => product.id === id);
             if (index === -1) {
-                return { ...state, cartItem: [...state.cartItem, { id, title, image, price, qty, size }] }
+                return { ...state, cartItem: [...state.cartItem, { id, title, image, price, qty, size, category }] }
             } else {
                 const updatedCartItem = state.cartItem.map((product) => {
                     if (product.id === id) {
