@@ -8,11 +8,9 @@ import CloseIcon from "../../assets/images/close.svg";
 import FbIcon from "../../assets/images/facebook-logo.svg";
 import GoogleIcon from "../../assets/images/google-logo.svg";
 import logo from '../../assets/logo1.png';
-
 function Login({ showLogin, handlePopupOpen }) {
     const firebase = useContext(FirebaseContext);
     const [errorMessage, setErrorMessage] = useState("");
-
     const handleGoogleSignIn = () => {
         firebase
         .doGoogleSignIn()
@@ -35,7 +33,6 @@ function Login({ showLogin, handlePopupOpen }) {
             setErrorMessage(error.message);
         });
     };
-
     const handleFacebookSignIn = () => {
         firebase
         .doFacebookSignIn()
@@ -58,7 +55,6 @@ function Login({ showLogin, handlePopupOpen }) {
             setErrorMessage(error.message);
         });
     };
-
     return(
         <>
             { showLogin ? (
@@ -76,7 +72,6 @@ function Login({ showLogin, handlePopupOpen }) {
                                 className="close-modal d-flex align-self-start"
                             />
                         </div>                   
-
                 {!errorMessage ? (
                     <div className="social-login">
                         <div className="modal-body">
@@ -105,10 +100,8 @@ function Login({ showLogin, handlePopupOpen }) {
         </>
     )
 }
-
 Login.propTypes = {
     showLogin : PropTypes.bool,
     handlePopupOpen : PropTypes.func
 }
-
 export default Login;

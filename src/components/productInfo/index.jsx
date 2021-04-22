@@ -17,7 +17,12 @@ const ProductInfo = ({ id, cartItem = [], addToCart }) => {
   useEffect(() => {
     console.log("Product Id", id);
     let prodInfo = fetchProductById(id);
-    console.log(prodInfo);
+    let cartItemIndex = cartItem.findIndex(({ id }) => id === prodInfo.id);
+    if (cartItemIndex !== -1) {
+      const { qty, size } = cartItem[cartItemIndex];
+      setQty(qty);
+      setSize(size);
+    }
     setProduct(prodInfo);
     setIsLoading(true);
   }, [id]);
