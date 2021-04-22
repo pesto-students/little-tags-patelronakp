@@ -1,47 +1,87 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { GoDash, GoPlus } from "react-icons/go";
+import { AiOutlineCloseSquare } from "react-icons/ai";
 import PropTypes from "prop-types";
+import { Link } from 'react-router-dom';
+import { generatePath } from "react-router";
+import * as ROUTES from "../../constants/Routes.jsx";
+import { removeFromCart } from "../../actions/userCartActions";
 import "./styles.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
-const CartItem = ({ id, productName, productPrice }) => {
+const CartItem = ({ product }) => { 
+    const { id, image, price, qty, size, title, category } = product;
+    const categoryType= category;
+    const productURL = generatePath(ROUTES.PRODUCT_DETAIL, {
+        categoryType,
+        id,
+        title,
+    });
+    const [noOfItems, setNoOfItems] = useState(qty); 
+    const [totalPrice, setTotalPrice] = useState(noOfItems*price);
+    const dispatch = useDispatch();
+    
+    const onAddQty = () => {
+        if (noOfItems <= 99) {
+            setNoOfItems(noOfItems + 1);
+            setTotalPrice((noOfItems + 1) * price);
+        }
+    };
+    
+    const onRemoveQty = () => {
+        if (noOfItems > 1) {
+            setNoOfItems(noOfItems - 1);
+            setTotalPrice((noOfItems - 1) * price);
+        }
+    };
+
+    const handleRemoveItemFromCart = () => {
+        dispatch(removeFromCart(id));
+    };
+
     return (
-        <div className="row mb-4" key={id}>
-            <div className="col-md-4 col-lg-3 col-xl-3">
-                <div className="rounded mb-3 mb-md-0">
-                    <img className="img-fluid w-100"
-                        src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg" alt="Sample"/>
-                </div>
-            </div>
-            <div className="col-md-6 col-lg-5 col-xl-5">
-                <div className="d-flex flex-column justify-content-around h-100">
-                    <div className="mt-3 w-100">
-                        { productName }
+        <div className="cart-item">
+            <div className="row mb-4" key={id}>
+                <div className="col-2">
+                    <div className="rounded mb-3 mb-md-0 image-background">
+                        <Link to={productURL}>
+                            <img height="125" width="110"            
+                                src={image} alt="Product Picture"/>
+                        </Link>
                     </div>
-                    <div className="row w-100">
-                        <div className="col-5">
-                            { productPrice }
+                </div>
+                <div className="col-10">
+                    <div className="d-flex col-12 justify-content-end">
+                        <AiOutlineCloseSquare color="gray" size={30} onClick={handleRemoveItemFromCart}/>
+                    </div>
+                    <div className="d-flex mt-5">
+                        <Link to={productURL}><h2 className="title">{title}</h2></Link>
+                    </div>
+                    <div className="row mt-3">
+                        <div className="col-3 price mt-2">
+                            Rs. {price}
                         </div>
-                        <div className="col-5 count">
-                            <button onClick={()=> {}}
-                                    className="count-button count-button-minus"></button>
-                            <input className="count-input " type="text" value="1" maxLength="4" onChange={()=> {}}/>
-                            <button onClick={()=> {}}
-                                    className="count-button count-button-plus"></button>
-                        </div>                                
+                        <div className="qtyButton col-2">
+                            <button onClick={onRemoveQty}>
+                                <GoDash />
+                            </button>
+                            <input
+                                type="text"
+                                value={noOfItems}
+                                maxLength={2}
+                                onChange={(e) => setNoOfItems(e.target.value)}
+                            ></input>
+                            <button onClick={onAddQty}>
+                                <GoPlus />
+                            </button>
+                        </div>
+                        <div className="col-7 price mt-2 d-flex justify-content-end">
+                            Rs. {totalPrice}
+                        </div>
                     </div>
                 </div>
             </div>
-            <div className="col-md-2 col-lg-2 col-xl-2">
-            <div className="d-flex flex-column justify-content-around h-100">
-                <div className="ml-5">
-                    <FontAwesomeIcon icon={faTimesCircle} color="#ff8e8e"/>
-                </div>
-                <div className="p-2 flex-fill">
-                    { productPrice }
-                </div>
-            </div>
-        </div>
+            <div className="border-bottom mb-3 col-lg-12"></div>
         </div>
     );
 };

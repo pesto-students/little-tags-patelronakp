@@ -1,26 +1,17 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import './styles.scss';
 import CartItem from '../../cartItem';
 import Order from '../../order';
 import PromoCode from '../../promoCode';
 import CategoryHeader from '../../categoryHeader';
 
-const cartList = [
-    {
-        id: 1,
-        productName: 'Fashionee - Cotton Shirt (S)',
-        productPrice: '$35.99'
-    },
-    {
-        id: 2,
-        productName: 'Spray Wrap Skirt',
-        productPrice: '$110.99'
-    }
-]
-
 export default function Cart(props) {
-    const cartItems = cartList.map((cart) => (
-        <CartItem key={cart.id} id={cart.id} productName={cart.productName} productPrice={cart.productPrice}/>        
+    const productList = useSelector((state) => state.userCartState.cartItem);
+    const cartItems = productList.map((product) => (
+        <li key={product.id}>
+            <CartItem  product={product}/>
+        </li>                
     ));
     return(
         <section className="cart">
@@ -29,8 +20,10 @@ export default function Cart(props) {
                 categoryTitleText="Cart"
             />
             <div className="row">
-                <div className="col-lg-8">
-                    { cartItems }
+                <div className="col-lg-8 cart-items">
+                    <ul>
+                        { cartItems }
+                    </ul>                    
                 </div>          
                 <div className="col-lg-4">
                     <Order />

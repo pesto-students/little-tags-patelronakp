@@ -1,14 +1,15 @@
 import { ADD_TO_CART, REMOVE_FROM_CART } from '../constants/actionTypes';
 import PropTypes from "prop-types";
 
-export const addToCart = (id, title, image, price, qty, size) => ({
+export const addToCart = (id, title, image, price, qty, size, category) => ({
     type: ADD_TO_CART,
     id,
     title,
     image,
     price,
     qty,
-    size
+    size,
+    category
 });
 
 addToCart.proptypes = {
@@ -17,7 +18,8 @@ addToCart.proptypes = {
     image: PropTypes.string,
     price: PropTypes.number,
     qty: PropTypes.number,
-    size: PropTypes.size
+    size: PropTypes.size,
+    category: PropTypes.string
 };
 
 export const removeFromCart = (id) => ({
