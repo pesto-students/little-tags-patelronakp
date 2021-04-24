@@ -14,6 +14,7 @@ import Kids from './components/screens/categories/kids';
 import Accessories from './components/screens/categories/accesories';
 import Cart from './components/screens/Cart';
 import ProductDetail from './components/screens/productDetail';
+import Checkout from './components/screens/checkout';
 
 function App() {
   const [toggleDrawer, setToggleDrawer] = useState(false);
@@ -52,6 +53,9 @@ function App() {
           </Route>
           <Route path={ROUTES.CART_PAGE}>
             <Cart />
+          </Route>
+          <Route path={ROUTES.CHECKOUT_PAGE}>
+            <Checkout />
           </Route>
           <Route path={ROUTES.PRODUCT_DETAIL} >
             <ProductDetail />

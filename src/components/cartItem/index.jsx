@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import { Link } from 'react-router-dom';
 import { generatePath } from "react-router";
 import * as ROUTES from "../../constants/Routes.jsx";
-import { removeFromCart } from "../../actions/userCartActions";
+import { addToCart, removeFromCart } from "../../actions/userCartActions";
 import "./styles.scss";
 
 const CartItem = ({ product }) => { 
@@ -25,13 +25,19 @@ const CartItem = ({ product }) => {
         if (noOfItems <= 99) {
             setNoOfItems(noOfItems + 1);
             setTotalPrice((noOfItems + 1) * price);
+            handleQuantityChange(noOfItems + 1);
         }
     };
+
+    const handleQuantityChange = (noOfItems) => {
+        dispatch(addToCart(id, title, image, totalPrice, noOfItems, size, category));
+    }
     
     const onRemoveQty = () => {
         if (noOfItems > 1) {
             setNoOfItems(noOfItems - 1);
             setTotalPrice((noOfItems - 1) * price);
+            handleQuantityChange(noOfItems - 1);
         }
     };
 
