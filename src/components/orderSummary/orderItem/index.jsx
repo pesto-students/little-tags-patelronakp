@@ -19,7 +19,7 @@ export default function OrderItem({ product }){
                     <div className="rounded mb-3 mb-md-0 image-background">
                         <Link to={productURL}>
                             <img height="60" width="50"            
-                                src={image} alt="Product Picture"/>
+                                src={image} alt="Product"/>
                         </Link>
                     </div>                    
                 </div>
