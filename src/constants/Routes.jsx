@@ -9,3 +9,4 @@ export const ACCESSORIES_COLLECTION = "/accessories";
 export const CART_PAGE = "/cart";
 export const PRODUCT_CATEGORY = "/:category";
 export const PRODUCT_DETAIL = "/product/:categoryType/:id/:title";
+export const CHECKOUT_PAGE = "/checkout";

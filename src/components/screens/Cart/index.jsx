@@ -6,7 +6,7 @@ import Order from '../../order';
 import PromoCode from '../../promoCode';
 import CategoryHeader from '../../categoryHeader';
 
-export default function Cart(props) {
+export default function Cart() {
     const productList = useSelector((state) => state.userCartState.cartItem);
     const cartItems = productList.map((product) => (
         <li key={product.id}>

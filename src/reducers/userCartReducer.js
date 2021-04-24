@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from '../constants/actionTypes';
+import { ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART } from '../constants/actionTypes';
 
 const initialState = {
     cartItem: [],
@@ -23,6 +23,8 @@ const userCartReducer = (state = initialState, action) => {
         case REMOVE_FROM_CART:
             const updatedCartItems = state.cartItem.filter(({ id }) => id !== action.id);
             return { ...state, cartItem: updatedCartItems };
+        case CLEAR_CART:
+            return { ...state, cartItem: [] };
         default:
             return state;
     }

@@ -8,6 +8,7 @@ import CloseIcon from "../../assets/images/close.svg";
 import FbIcon from "../../assets/images/facebook-logo.svg";
 import GoogleIcon from "../../assets/images/google-logo.svg";
 import logo from '../../assets/logo1.png';
+
 function Login({ showLogin, handlePopupOpen }) {
     const firebase = useContext(FirebaseContext);
     const [errorMessage, setErrorMessage] = useState("");
