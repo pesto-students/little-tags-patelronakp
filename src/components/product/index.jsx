@@ -12,7 +12,7 @@ const Product = ({ id, image, title, price, categoryType }) => {
     title,
   });
   return (
-    <div className="item" key={id}>
+    <div className="item responsive" key={id}>
       <div className="short-item__all">
         <Link className="short-item__image-bg" to={productURL}>
           <img

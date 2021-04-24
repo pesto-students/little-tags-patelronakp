@@ -89,7 +89,7 @@ function Header({ drawerToggleClickHandler, cartItem }) {
           <li className="user-nav-item">
             <button
               className="user-nav-link"
-              onClick={() => history.push("/cart")}
+              onClick={() => history.push(ROUTES.CART_PAGE)}
             >
               <span className="user-nav-icon user-nav-icon4"></span>
               <span className="user-nav-text">{cartItem.length}</span>
