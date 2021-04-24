@@ -3,7 +3,7 @@ import "./styles.scss";
 import vectorCollection from "../../assets/images/vector-inner-top.svg";
 import PropTypes from "prop-types";
 
-const CategoryHeader = ({ categoryType, categoryTitleText }) => {
+const CategoryHeader = ({ categoryTitleText, headerImage }) => {
   return (
     <div className="categoryHeader">
       <div className="col-12 d-flex">
@@ -11,7 +11,7 @@ const CategoryHeader = ({ categoryType, categoryTitleText }) => {
           <h1 className="inner-top__title">{categoryTitleText}</h1>
         </div>
         <div className="col-6">
-          <img src="https://picsum.photos/800/400" alt="Category Header" />
+          <img src={headerImage} alt={categoryTitleText} />
         </div>
       </div>
       <img src={vectorCollection} className="bgImage" alt={categoryTitleText} />
@@ -21,7 +21,7 @@ const CategoryHeader = ({ categoryType, categoryTitleText }) => {
 
 export default CategoryHeader;
 
-CategoryHeader.prototype = {
-  categoryType: PropTypes.string,
+CategoryHeader.propTypes = {
   categoryTitleText: PropTypes.string,
+  headerImage: PropTypes.string,
 };

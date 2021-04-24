@@ -1,0 +1,26 @@
+[
+  {
+    "type": "mens",
+    "title": "Mens Collections",
+    "field": "men",
+    "image": "/images/categoryHeader/mens_collection.jpg"
+  },
+  {
+    "type": "womens",
+    "title": "Womens Collections",
+    "field": "women",
+    "image": "/images/categoryHeader/womens_collection.jpg"
+  },
+  {
+    "type": "kids",
+    "title": "Kids Collections",
+    "field": "kids",
+    "image": "/images/categoryHeader/kids_collection.jpg"
+  },
+  {
+    "type": "accessories",
+    "title": "Accessories Collections",
+    "field": "accessories",
+    "image": "/images/categoryHeader/accessories_collection.jpg"
+  }
+]
