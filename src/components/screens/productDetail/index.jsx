@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import CategoryHeader from "../../categoryHeader";
-import { fetchProductById } from "../../../services/productService";
 import "./styles.scss";
 import ProductInfo from "../../productInfo";
 import { fetchCategoryByType } from "../../../services/categoryService";
