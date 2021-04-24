@@ -25,7 +25,7 @@ const ProductInfo = ({ id, cartItem = [], addToCart }) => {
     }
     setProduct(prodInfo);
     setIsLoading(true);
-  }, [id]);
+  }, [id, cartItem]);
 
   const onAddQty = () => {
     if (qty <= 99) {
