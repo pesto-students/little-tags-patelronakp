@@ -52,7 +52,7 @@ const CartItem = ({ product }) => {
                     <div className="rounded mb-3 mb-md-0 image-background">
                         <Link to={productURL}>
                             <img height="125" width="110"            
-                                src={image} alt="Product Picture"/>
+                                src={image} alt=""/>
                         </Link>
                     </div>
                 </div>
