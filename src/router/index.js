@@ -6,26 +6,29 @@ import Cart from '../components/screens/Cart';
 import Checkout from '../components/screens/checkout';
 import ProductDetail from '../components/screens/productDetail';
 import Categories from '../components/screens/categories';
+import ScrollToTop from '../components/scrollToTop';
 
 const Router = () => {
     return (
-        <Switch>
-            <Route path={ROUTES.HOME} exact>
-                <Home />
-            </Route>
-            <Route path={ROUTES.PRODUCT_DETAIL} >
-                <ProductDetail />
-            </Route>
-            <Route path={ROUTES.PRODUCT_CATEGORY}>
-                <Categories />
-            </Route>
-            <Route path={ROUTES.CART_PAGE}>
-                <Cart />
-            </Route>
-            <Route path={ROUTES.CHECKOUT_PAGE}>
-                <Checkout />
-            </Route>
-        </Switch>
+        <ScrollToTop>
+            <Switch>
+                <Route path={ROUTES.HOME} exact>
+                    <Home />
+                </Route>
+                <Route path={ROUTES.CART_PAGE}>
+                    <Cart />
+                </Route>
+                <Route path={ROUTES.CHECKOUT_PAGE}>
+                    <Checkout />
+                </Route>
+                <Route path={ROUTES.PRODUCT_DETAIL} >
+                    <ProductDetail />
+                </Route>
+                <Route path={ROUTES.PRODUCT_CATEGORY}>
+                    <Categories />
+                </Route>
+            </Switch>
+        </ScrollToTop>
     );
 }
 
