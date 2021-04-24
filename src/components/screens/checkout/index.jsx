@@ -7,10 +7,7 @@ import { clearCart } from '../../../actions/userCartActions';
 
 export default function Checkout() {
     const [toggleState, setToggleState] = useState(1);
-    const dispatch = useDispatch();
-    // const toggleTab = (index) => {
-    //     setToggleState(index);
-    // };
+    const dispatch = useDispatch();    
     const handleCheckout = () => {
         dispatch(clearCart());
         setToggleState(2);
