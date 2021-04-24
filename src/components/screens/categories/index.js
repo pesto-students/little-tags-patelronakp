@@ -7,7 +7,6 @@ import { fetchCategoryInfo } from '../../../services/categoryService';
 import "./styles.scss";
 
 const Categories = () => {
-    debugger;
     const { category } = useParams();
     const { type, field, image, title } = fetchCategoryInfo(category);
 

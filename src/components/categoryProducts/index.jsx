@@ -24,7 +24,7 @@ const CategoryProduct = ({ categoryType }) => {
   ));
 
   return (
-    <section className="productContainer wrapper">
+    <section className=" productContainer wrapper">
       <div className="col-12">
         <span className="shop-panel__text">
           There are <b>{products.length}</b> products in&nbsp;this&nbsp;category

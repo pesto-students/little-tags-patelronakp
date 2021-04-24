@@ -30,7 +30,7 @@ body {
   line-height: 1;
   position: relative;
   background: #fff;
-	color: #444;
+  color: #444;
   overflow-x: hidden;
 }
 
@@ -62,6 +62,13 @@ a:hover {
   max-width: 1220px;
   margin: auto;
   padding: 0 40px;
+}
+
+.wrapper-full {
+  margin: auto;
+  padding: 0 40px;
+  justify-content: center;
+  align-items: center;
 }
 
 article,
