@@ -6,31 +6,20 @@ import SlideShow from "../slideShow";
 //"https://picsum.photos/486/500"
 
 const ProductCarousel = ({ imageArray }) => {
+  const images = imageArray.map((image, index) => (
+    <img
+      key={index}
+      className="mySlides"
+      src={image}
+      alt="First slide"
+      height={486}
+      width={500}
+    />
+  ));
+
   return (
     <div className="slider d-block w-100">
-      <SlideShow>
-        <img
-          className="mySlides"
-          src={imageArray[0]}
-          alt="First slide"
-          height={486}
-          width={500}
-        />
-        <img
-          className="mySlides"
-          src={imageArray[1]}
-          alt="First slide"
-          height={486}
-          width={500}
-        />
-        <img
-          className="mySlides"
-          src={imageArray[2]}
-          alt="First slide"
-          height={486}
-          width={500}
-        />
-      </SlideShow>
+      <SlideShow>{images}</SlideShow>
     </div>
   );
 };

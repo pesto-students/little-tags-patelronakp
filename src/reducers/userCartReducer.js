@@ -7,7 +7,6 @@ const initialState = {
 
 const userCartReducer = (state = initialState, action) => {
     let netAmount = state.netAmount;
-    debugger;
     switch (action.type) {
         case ADD_TO_CART:
             const { id, title, image, price, qty, size, category, total } = action;
