@@ -3,7 +3,6 @@ import "./styles.scss";
 import PropTypes from "prop-types";
 import Product from "../product";
 import {
-  fetchProductByCategoryType,
   fetchProductByCategoryWithPagination,
 } from "../../services/productService";
 
