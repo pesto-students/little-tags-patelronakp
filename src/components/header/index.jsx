@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect, useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import { Link, useHistory } from "react-router-dom";
@@ -11,7 +11,17 @@ import Login from "../login";
 import Dropdown from "./dropdown";
 
 function Header({ drawerToggleClickHandler, cartItem }) {
+  const [animate, setAnimate] = useState("");
   const history = useHistory();
+  const user = useSelector((state) => state.sessionState.authUser);
+  useEffect(() => {
+    console.log("Shake ::", cartItem);
+    setAnimate("shake");
+    setInterval(() => {
+      setAnimate("");
+    }, 500);
+  }, [cartItem]);
+
   const isUserAuthenticated = useSelector(
     (state) => state.sessionState.authUser
   )
@@ -25,7 +35,9 @@ function Header({ drawerToggleClickHandler, cartItem }) {
         <div className="menu-item">
           <li className="user-nav-item">
             <button className="user-nav-link">
-              <span className="user-nav-icon user-nav-icon2"></span>
+              <span >
+                Welcome {user.displayName.split(" ")[0]}
+              </span>
             </button>
           </li>
           <Dropdown />
@@ -79,7 +91,6 @@ function Header({ drawerToggleClickHandler, cartItem }) {
               alt="Search Products"
             />
           </li>
-          {userProfile()}
           <li className="user-nav-item">
             <button className="user-nav-link">
               <span className="user-nav-icon user-nav-icon3"></span>
@@ -88,13 +99,14 @@ function Header({ drawerToggleClickHandler, cartItem }) {
           </li>
           <li className="user-nav-item">
             <button
-              className="user-nav-link"
+              className={`user-nav-link ${animate}`}
               onClick={() => history.push(ROUTES.CART_PAGE)}
             >
               <span className="user-nav-icon user-nav-icon4"></span>
               <span className="user-nav-text">{cartItem.length}</span>
             </button>
           </li>
+          {userProfile()}
         </ul>
       </div>
       <Login showLogin={showLogin} handlePopupOpen={showLoginPopup} />

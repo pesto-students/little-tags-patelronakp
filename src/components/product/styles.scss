@@ -16,6 +16,10 @@
     border-radius: 12px;
   }
 
+  .short-item__image {
+    object-fit: contain;
+  }
+
   .short-item__image-bg:hover {
     opacity: 1;
     box-shadow: 2px 4px 7px rgb(0 0 0 / 65%);
