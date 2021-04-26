@@ -14,14 +14,10 @@
             text-align: center;
             font: 400 20px/24px 'Josefin Sans',sans-serif;
             width: 50%;
-            //background: rgba(128, 128, 128, 0.075);
             cursor: pointer;
             background-color: white;
-            //border-bottom: 1px solid rgba(0, 0, 0, 0.274);
-            //box-sizing: content-box;
             position: relative;
             outline: none;
-            //border-bottom: 2px solid lightgreen;
           }
           
           .tabs:not(:last-child){
@@ -57,7 +53,6 @@
             transform: translateX(-50%);
             width: calc(100% + 2px);
             height: 5px;
-            //background: rgb(88, 147, 241);
           }
         }
 
@@ -103,33 +98,6 @@ button {
   padding: 0 0 30px;
 	font: 400 40px/1 'Josefin Sans', sans-serif;
 	text-transform: capitalize
-}
-
-.text-input {
-	width: 100%;
-	height: 50px;
-	margin: 0 0 20px;
-	padding: 7px 0 13px;
-	display: block;
-	font: 14px/1 Raleway, sans-serif;
-	background: #fff;
-	color: #000;
-	border-bottom: 1px solid rgba(68, 68, 68, .2);
-	-webkit-transition: .3s ease-out;
-	-ms-transition: .3s ease-out;
-	transition: .3s ease-out;
-}
-
-.text-input:focus {
-	border-color: #000
-}
-
-:focus {
-	outline: 0
-}
-
-.label-text {
-    font: 14px/1 Raleway, sans-serif;
 }
 
 .order-button {
