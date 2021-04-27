@@ -26,6 +26,15 @@ class Firebase {
 
     doSignOut = () => this.auth.signOut();
 
+    setDefaultAddress = (uid, address) => {
+      this.db.ref(`/users/${uid}/defaultAddress`).set(address);
+    }
+
+    getDefaultAddress = async (uid) => {
+      let ref = this.db.ref(`/users/${uid}/defaultAddress`);
+      return await ref.once("value");
+    }
+
     onAuthChangeListener = (next, fallback = () => {}) => {
         return this.auth.onAuthStateChanged((authUser) => {
           if (authUser) {

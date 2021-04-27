@@ -2,8 +2,6 @@ import React, { useState, useContext } from "react";
 import PropTypes from 'prop-types';
 import './styles.scss';
 import FirebaseContext from "../firebase/context";
-import { saveToLocalStorage } from '../../utils/utils';
-import { setAuthUser } from "../../actions";
 import CloseIcon from "../../assets/images/close.svg";
 import FbIcon from "../../assets/images/facebook-logo.svg";
 import GoogleIcon from "../../assets/images/google-logo.svg";
@@ -16,19 +14,14 @@ function Login({ showLogin, handlePopupOpen }) {
         firebase
         .doGoogleSignIn()
         .then((authUser) => {
-            const userDetails = {
-            email: authUser.email, 
-            name: authUser.displayName, 
-            emailVerified: authUser.emailVerified  
-            };        
-            saveToLocalStorage('authUser',userDetails);
-            setAuthUser(userDetails);
             handlePopupOpen();
-            return firebase.user(authUser.user.uid).set({
-            email: authUser.user.email,
-            displayName: authUser.user.displayName,
-            roles: {},
-            });
+            if (authUser.additionalUserInfo.isNewUser) {
+                return firebase.user(authUser.user.uid).set({
+                    email: authUser.user.email,
+                    displayName: authUser.user.displayName,
+                    roles: {},
+                });
+            }            
         })
         .catch((error) => {
             setErrorMessage(error.message);
@@ -38,19 +31,14 @@ function Login({ showLogin, handlePopupOpen }) {
         firebase
         .doFacebookSignIn()
         .then((authUser) => {
-            const userDetails = {
-            email: authUser.email, 
-            name: authUser.displayName, 
-            emailVerified: authUser.emailVerified  
-            };        
-            saveToLocalStorage('authUser',userDetails);
-            setAuthUser(userDetails);
             handlePopupOpen();
-            return firebase.user(authUser.user.uid).set({
-            email: authUser.user.email,
-            displayName: authUser.user.displayName,
-            roles: {},
-            });
+            if (authUser.additionalUserInfo.isNewUser) {
+                return firebase.user(authUser.user.uid).set({
+                    email: authUser.user.email,
+                    displayName: authUser.user.displayName,
+                    roles: {},
+                });
+            }            
         })
         .catch((error) => {
             setErrorMessage(error.message);
