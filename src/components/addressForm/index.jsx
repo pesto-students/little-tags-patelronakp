@@ -1,6 +1,5 @@
-import React, { useReducer, useEffect, useContext } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import FirebaseContext from '../../components/firebase/context';
 import './styles.scss';
 
 const initialState = {
@@ -22,7 +21,6 @@ function addressReducer(state=initialState, { field, value}) {
 export default function AddressForm({ handleCheckout }) {
     const [ address, dispatch ] = useReducer(addressReducer, initialState);
     const user = useSelector((state) => state.sessionState.authUser);
-    const firebase = useContext(FirebaseContext);
     
     useEffect( () => {
         if(user && user.defaultAddress) {
