@@ -11,7 +11,6 @@ const fetchProductById = (productID) => {
 
 
 const fetchProductByCategoryWithPagination = (categoryType, pageNo = 1, noOfPrdPerPage = 4) => {
-    debugger;
     const productData = prodData.filter(product => product.category === categoryType);
     const noOfProducts = productData.length;
     if (noOfProducts > 0) {
