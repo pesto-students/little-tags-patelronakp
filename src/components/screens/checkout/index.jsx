@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, useContext } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './styles.scss';
+import FirebaseContext from '../../../components/firebase/context';
 import CategoryHeader from '../../categoryHeader';
 import OrderSummary from '../../orderSummary';
 import AddressForm from '../../addressForm';
@@ -8,10 +9,15 @@ import { clearCart } from '../../../actions/userCartActions';
 
 export default function Checkout() {
     const [toggleState, setToggleState] = useState(1);
-    const dispatch = useDispatch();    
-    const handleCheckout = () => {
+    const dispatch = useDispatch();
+    const user = useSelector((state) => state.sessionState.authUser);
+    const firebase = useContext(FirebaseContext);
+    const handleCheckout = (address) => {
         dispatch(clearCart());
         setToggleState(2);
+        if(address.defaultAddressChecked) {
+            firebase.setDefaultAddress(user.uid,address.deliveryAddress);
+        }
     };
     return(
         <section className="checkout">

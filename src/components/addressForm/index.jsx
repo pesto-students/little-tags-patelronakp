@@ -1,4 +1,6 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useEffect, useContext } from 'react';
+import { useSelector } from 'react-redux';
+import FirebaseContext from '../../components/firebase/context';
 import './styles.scss';
 
 const initialState = {
@@ -6,7 +8,8 @@ const initialState = {
     lastName: '',
     phoneNumber: '',
     emailAddress: '',
-    deliveryAddress: ''
+    deliveryAddress: '',
+    defaultAddressChecked: true
 };
 
 function addressReducer(state=initialState, { field, value}) {
@@ -17,11 +20,26 @@ function addressReducer(state=initialState, { field, value}) {
 }
 
 export default function AddressForm({ handleCheckout }) {
-    const [ state, dispatch ] = useReducer(addressReducer, initialState);
+    const [ address, dispatch ] = useReducer(addressReducer, initialState);
+    const user = useSelector((state) => state.sessionState.authUser);
+    const firebase = useContext(FirebaseContext);
+    
+    useEffect( () => {
+        if(user && user.defaultAddress) {
+            dispatch({ field: 'deliveryAddress', value: user.defaultAddress });
+        }        
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
     const onChange = (e) => {
-        dispatch({ field: e.target.name, value: e.target.value });
+        if(e.target.name === 'defaultAddressChecked') {
+            dispatch({ field: e.target.name, value: e.target.checked });
+        } else {
+            dispatch({ field: e.target.name, value: e.target.value });
+        }        
     };
-    const { firstName, lastName, phoneNumber, emailAddress, deliveryAddress, defaultAddressChecked } = state;
+
+    const { firstName, lastName, phoneNumber, emailAddress, deliveryAddress, defaultAddressChecked } = address;
     return(
         <form className="mt-5 addressForm">
             <h2 className="title">Contact Person</h2>
@@ -66,7 +84,7 @@ export default function AddressForm({ handleCheckout }) {
                     </button>                                       
                 </div>
                 <div className="col-2">
-                    <div className="order-button button" onClick={() => handleCheckout()}>
+                    <div className="order-button button" onClick={() => handleCheckout(address)}>
                         <span className="button-text">Continue</span>
                     </div>
                 </div>
