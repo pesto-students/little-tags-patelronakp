@@ -7,6 +7,7 @@ import Checkout from '../components/screens/checkout';
 import ProductDetail from '../components/screens/productDetail';
 import Categories from '../components/screens/categories';
 import ScrollToTop from '../components/scrollToTop';
+import SearchResults from '../components/screens/categories/searchResults';
 
 const Router = () => {
     return (
@@ -14,6 +15,9 @@ const Router = () => {
             <Switch>
                 <Route path={ROUTES.HOME} exact>
                     <Home />
+                </Route>
+                <Route path={ROUTES.SEARCH_RESULTS}>
+                    <SearchResults />
                 </Route>
                 <Route path={ROUTES.CART_PAGE}>
                     <Cart />
@@ -26,7 +30,7 @@ const Router = () => {
                 </Route>
                 <Route path={ROUTES.PRODUCT_CATEGORY}>
                     <Categories />
-                </Route>
+                </Route>                
             </Switch>
         </ScrollToTop>
     );

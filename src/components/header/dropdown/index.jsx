@@ -11,11 +11,11 @@ export default function Dropdown() {
     const handleLogout = () => firebase.doSignOut();
     return(
             <ul className="drop-down">
-                <div >
+                {/*<div >
                     <div className="user-menu">
                         <span className="username">Hello {user.displayName.split(' ')[0]}</span>
                     </div>
-                </div>                
+                </div>*/}                
                 <div className="list-container">
                     <li>
                         <Link className="dropdown-link" to={ROUTES.ACCOUNT}>

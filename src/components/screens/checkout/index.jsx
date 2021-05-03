@@ -10,8 +10,8 @@ import { clearCart } from '../../../actions/userCartActions';
 export default function Checkout() {
     const [toggleState, setToggleState] = useState(1);
     const dispatch = useDispatch();
-    const user = useSelector((state) => state.sessionState.authUser);
-    const firebase = useContext(FirebaseContext);
+    const user = useSelector((state) => state.sessionState.authUser);    
+    const firebase = useContext(FirebaseContext);   
     const handleCheckout = (address) => {
         dispatch(clearCart());
         setToggleState(2);

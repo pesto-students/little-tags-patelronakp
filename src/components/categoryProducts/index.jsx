@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 import "./styles.scss";
 import PropTypes from "prop-types";
 import Product from "../product";
-import { fetchProductByCategoryWithPagination } from "../../services/productService";
-
+import {
+  fetchProductByCategoryWithPagination,
+  searchProductsWithPagination
+} from "../../services/productService";
 import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 
 const pageSize = 4;
 
-const CategoryProduct = ({ categoryType }) => {
+const CategoryProduct = ({ categoryType, searchText = "" }) => {
   const [products, setProducts] = useState([]);
   const [pageNo, setPageNo] = useState(1);
   const [noOfTotalRecords, setNoOfTotalRecords] = useState(0);
@@ -24,11 +26,12 @@ const CategoryProduct = ({ categoryType }) => {
       totalRec,
       products: items,
       noOfPage,
-    } = fetchProductByCategoryWithPagination(categoryType, pageNo, pageSize);
+    } = searchText !== "" ? searchProductsWithPagination(searchText, pageNo, pageSize)
+                          : fetchProductByCategoryWithPagination(categoryType, pageNo, pageSize);
     setProducts(items);
     setNoOfTotalRecords(totalRec);
-    setNoOfPages(noOfPage);
-  }, [categoryType, pageNo]);
+    setNoOfPages(noOfPage);    
+  }, [categoryType, pageNo,searchText]);
 
   const onNext = () => {
     if (pageNo < noOfPages) {
@@ -70,7 +73,6 @@ const CategoryProduct = ({ categoryType }) => {
         endPageIndex = pageNo + maxPagesAfterCurrentPage;
       }
     }
-
     console.log(
       startPageIndex,
       endPageIndex,
