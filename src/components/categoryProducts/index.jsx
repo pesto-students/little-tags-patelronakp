@@ -4,27 +4,28 @@ import PropTypes from "prop-types";
 import Product from "../product";
 import {
   fetchProductByCategoryWithPagination,
+  searchProductsWithPagination
 } from "../../services/productService";
 
 const pageSize = 4;
 
-const CategoryProduct = ({ categoryType }) => {
+const CategoryProduct = ({ categoryType, searchText = "" }) => {
   const [products, setProducts] = useState([]);
   const [pageNo, setPageNo] = useState(1);
   const [noOfTotalRecords, setNoOfTotalRecords] = useState(0);
   const [noOfPages, setNoOfPages] = useState(0);
 
   useEffect(() => {
-    console.log("useEffect call");
     const {
       totalRec,
       products: items,
       noOfPage,
-    } = fetchProductByCategoryWithPagination(categoryType, pageNo, pageSize);
+    } = searchText !== "" ? searchProductsWithPagination(searchText, pageNo, pageSize)
+                          : fetchProductByCategoryWithPagination(categoryType, pageNo, pageSize);
     setProducts(items);
     setNoOfTotalRecords(totalRec);
-    setNoOfPages(noOfPage);
-  }, [categoryType, pageNo]);
+    setNoOfPages(noOfPage);    
+  }, [categoryType, pageNo,searchText]);
 
   const onNext = () => {
     if (pageNo < noOfPages) {
@@ -67,7 +68,7 @@ const CategoryProduct = ({ categoryType }) => {
       }
     }
 
-    debugger;
+    //debugger;
     console.log(
       startPageIndex,
       endPageIndex,

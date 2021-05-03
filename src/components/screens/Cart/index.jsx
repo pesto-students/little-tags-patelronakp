@@ -8,6 +8,7 @@ import CategoryHeader from '../../categoryHeader';
 
 export default function Cart() {
     const productList = useSelector((state) => state.userCartState.cartItem);
+    sessionStorage.setItem('productList',JSON.stringify(productList));
     const cartItems = productList.map((product) => (
         <li key={product.id}>
             <CartItem  product={product}/>
