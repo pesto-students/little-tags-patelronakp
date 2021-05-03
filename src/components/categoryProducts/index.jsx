@@ -6,6 +6,7 @@ import {
   fetchProductByCategoryWithPagination,
   searchProductsWithPagination
 } from "../../services/productService";
+import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 
 const pageSize = 4;
 
@@ -14,6 +15,11 @@ const CategoryProduct = ({ categoryType, searchText = "" }) => {
   const [pageNo, setPageNo] = useState(1);
   const [noOfTotalRecords, setNoOfTotalRecords] = useState(0);
   const [noOfPages, setNoOfPages] = useState(0);
+
+  useEffect(() => {
+    console.log("useEffect call resett call");
+    setPageNo(1);
+  }, []);
 
   useEffect(() => {
     const {
@@ -40,7 +46,7 @@ const CategoryProduct = ({ categoryType, searchText = "" }) => {
   };
 
   const gotoPageNo = (page) => {
-    setPageNo(page);
+    if (page !== pageNo) setPageNo(page);
   };
 
   const PageNumbers = () => {
@@ -67,23 +73,31 @@ const CategoryProduct = ({ categoryType, searchText = "" }) => {
         endPageIndex = pageNo + maxPagesAfterCurrentPage;
       }
     }
-
-    //debugger;
     console.log(
       startPageIndex,
       endPageIndex,
       pageNo,
       endPageIndex - startPageIndex
     );
-    return Array(endPageIndex - startPageIndex).map((value, index) => {
-      return (
-        <li className="page-item" key={index}>
-          <button className="page-link" onClick={() => gotoPageNo(index)}>
-            {index}
-          </button>
-        </li>
-      );
-    });
+
+    let pages = [];
+    for (let i = startPageIndex; i <= endPageIndex; i++) {
+      pages.push(i);
+    }
+
+    let a = pages.map((value, index) => (
+      <li
+        className={value === pageNo ? "page-item active" : "page-item"}
+        key={index}
+      >
+        <button className="page-link" onClick={() => gotoPageNo(value)}>
+          {value}
+        </button>
+      </li>
+    ));
+
+    console.log(a);
+    return a;
   };
 
   const productContent = products.map(({ id, image, title, price }) => (
@@ -99,32 +113,34 @@ const CategoryProduct = ({ categoryType, searchText = "" }) => {
 
   return (
     <section className=" productContainer wrapper">
-      <div className="col-12">
-        <span className="shop-panel__text">
-          There are <b>{noOfTotalRecords}</b> products
-          in&nbsp;this&nbsp;category
-        </span>
+      <div className="row">
+        <div className="col-6">
+          <span className="shop-panel__text">
+            There are <b>{noOfTotalRecords}</b> products
+            in&nbsp;this&nbsp;category
+          </span>
+        </div>
+        {products.length !== 0 && (
+          <div className="d-flex justify-content-end m1 col-6">
+            <nav aria-label="Page navigation example">
+              <ul className="pagination">
+                <li className="page-item">
+                  <button className="page-link" onClick={onPrev}>
+                    <GrLinkPrevious />
+                  </button>
+                </li>
+                <PageNumbers />
+                <li className="page-item">
+                  <button className="page-link" onClick={onNext}>
+                    <GrLinkNext />
+                  </button>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        )}
       </div>
       <div className="productList ">{productContent}</div>
-      {products.length !== 0 && (
-        <div className="d-flex justify-content-center m1">
-          <nav aria-label="Page navigation example">
-            <ul className="pagination">
-              <li className="page-item">
-                <button className="page-link" onClick={onPrev}>
-                  Previous
-                </button>
-              </li>
-              <PageNumbers />
-              <li className="page-item">
-                <button className="page-link" onClick={onNext}>
-                  Next
-                </button>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      )}
     </section>
   );
 };
