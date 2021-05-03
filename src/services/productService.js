@@ -32,11 +32,12 @@ const fetchProductByCategoryWithPagination = (categoryType, pageNo = 1, noOfPrdP
 }
 
 const searchProductsWithPagination = (searchText, pageNo = 1, noOfPrdPerPage = 4) => {
+    // eslint-disable-next-line
     const productData = prodData.filter(product => {
         if (
-            product.title.toLowerCase().indexOf(searchText) != -1 ||
-            product.description.toLowerCase().indexOf(searchText) != -1 ||
-            product.category.toLowerCase().indexOf(searchText) != -1
+            product.title.toLowerCase().indexOf(searchText) !== -1 ||
+            product.description.toLowerCase().indexOf(searchText) !== -1 ||
+            product.category.toLowerCase().indexOf(searchText) !== -1
           ) {
             return product;
           }
