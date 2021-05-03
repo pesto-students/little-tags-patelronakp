@@ -52,6 +52,7 @@ function Header({ drawerToggleClickHandler }) {
           updateCookie("Yes",365);
           showLoginPopup();
         } 
+        // eslint-disable-next-line
     }, [cartItem]);
 
     const userProfile = () => {
