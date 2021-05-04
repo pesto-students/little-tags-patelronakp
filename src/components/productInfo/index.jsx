@@ -1,18 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import ProductCarousel from "../productCarousel/index.jsx";
 import { Link } from "react-router-dom";
 import { fetchProductById } from "../../services/productService.js";
 import { GoDash, GoPlus } from "react-icons/go";
 import { addToCart } from "../../actions/userCartActions.js";
+import { showLoginPopup } from "../../actions/index";
 import { connect } from "react-redux";
+import FirebaseContext from "../../../components/firebase/context";
 import "./styles.scss";
 
-const ProductInfo = ({ id, cartItem = [], addToCart }) => {
+const ProductInfo = ({
+  id,
+  cartItem = [],
+  showLogin,
+  addToCart,
+  authUser,
+  showLoginPopup,
+}) => {
   const [product, setProduct] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [size, setSize] = useState("M");
   const [qty, setQty] = useState(1);
+  const firebase = useContext(FirebaseContext);
 
   useEffect(() => {
     console.log("Product Id", id);
@@ -42,8 +52,12 @@ const ProductInfo = ({ id, cartItem = [], addToCart }) => {
   const onClickAddToCart = () => {
     console.log("AddToCart Function Call");
     debugger;
-    const { id, title, image, price, category } = product;
-    addToCart(id, title, image, price, qty, size, category);
+    if (authUser !== null) {
+      const { id, title, image, price, category } = product;
+      addToCart(id, title, image, price, qty, size, category);
+    } else {
+      showLoginPopup();
+    }
   };
 
   return (
@@ -121,10 +135,12 @@ const mapStateToProps = (state) => {
   console.log("State", state);
   return {
     cartItem: state.userCartState.cartItem,
+    authUser: state.sessionState.authUser,
+    showLogin: state.sessionState.showLogin,
   };
 };
 
-const mapDispatchToProps = { addToCart };
+const mapDispatchToProps = { addToCart, showLoginPopup };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductInfo);
 

@@ -9,8 +9,14 @@ import SearchIcon from "../../assets/images/search.svg";
 import DrawerToggleButton from "../sideDrawer/DrawerToggleButton.jsx";
 import Login from "../login";
 import Dropdown from "./dropdown";
+import { showLoginPopup } from "../../actions/index";
 
-function Header({ drawerToggleClickHandler, cartItem }) {
+function Header({
+  drawerToggleClickHandler,
+  cartItem,
+  showLogin,
+  showLoginPopup,
+}) {
   const [animate, setAnimate] = useState("");
   const history = useHistory();
   const user = useSelector((state) => state.sessionState.authUser);
@@ -27,17 +33,15 @@ function Header({ drawerToggleClickHandler, cartItem }) {
   )
     ? true
     : false;
-  const [showLogin, setShowLogin] = useState(false);
-  const showLoginPopup = () => setShowLogin(!showLogin);
+  // const [showLogin, setShowLogin] = useState(false);
+  // const showLoginPopup = () => setShowLogin(!showLogin);
   const userProfile = () => {
     if (isUserAuthenticated) {
       return (
         <div className="menu-item">
           <li className="user-nav-item">
             <button className="user-nav-link">
-              <span >
-                Welcome {user.displayName.split(" ")[0]}
-              </span>
+              <span>Welcome {user.displayName.split(" ")[0]}</span>
             </button>
           </li>
           <Dropdown />
@@ -119,10 +123,12 @@ Header.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  console.log("State", state);
   return {
     cartItem: state.userCartState.cartItem,
+    showLogin: state.sessionState.showLogin,
   };
 };
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = { showLoginPopup };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
