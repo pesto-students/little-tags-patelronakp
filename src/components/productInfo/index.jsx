@@ -7,8 +7,8 @@ import { GoDash, GoPlus } from "react-icons/go";
 import { addToCart } from "../../actions/userCartActions.js";
 import { showLoginPopup } from "../../actions/index";
 import { connect } from "react-redux";
-import FirebaseContext from "../../../components/firebase/context";
 import "./styles.scss";
+import FirebaseContext from "../firebase/context.js";
 
 const ProductInfo = ({
   id,
