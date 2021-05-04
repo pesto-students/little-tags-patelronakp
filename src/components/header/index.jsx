@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { connect, useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import PropTypes from "prop-types";
 import { Link, useHistory } from "react-router-dom";
 import "./styles.scss";
@@ -8,112 +8,128 @@ import logo from "../../assets/logo1.png";
 import SearchIcon from "../../assets/images/search.svg";
 import DrawerToggleButton from "../sideDrawer/DrawerToggleButton.jsx";
 import Login from "../login";
-import Dropdown from "./dropdown";
+//import Dropdown from "./dropdown";
+import useCookie from "../../utils/customHooks/useCookie";
 import { showLoginPopup } from "../../actions/index";
 
-function Header({
-  drawerToggleClickHandler,
-  cartItem,
-  showLogin,
-  showLoginPopup,
-}) {
+function Header({ drawerToggleClickHandler }) {
   const [animate, setAnimate] = useState("");
+  const dispatch = useDispatch();
+  const [search, setSearch] = useState("");
   const history = useHistory();
   const user = useSelector((state) => state.sessionState.authUser);
+  const cartItem = useSelector((state) => state.userCartState.cartItem);
+  const showLogin = useSelector((state) => state.sessionState.showLogin);
+  const isUserAuthenticated = user ? true : false;
+  const [cookie, updateCookie] = useCookie("visited", "No");
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value.toLowerCase());
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      history.push({
+        pathname: "/searchResults",
+        searchText: { search },
+      });
+    }
+  };
+
+  const handleSearchIconClick = (e) => {
+    history.push({
+      pathname: "/searchResults",
+      searchText: { search },
+    });
+  };
+
   useEffect(() => {
-    console.log("Shake ::", cartItem);
     setAnimate("shake");
     setInterval(() => {
       setAnimate("");
     }, 500);
+    if (cookie === "No") {
+      updateCookie("Yes", 365);
+      showHideLoginPopup();
+    }
+    // eslint-disable-next-line
   }, [cartItem]);
 
-  const isUserAuthenticated = useSelector(
-    (state) => state.sessionState.authUser
-  )
-    ? true
-    : false;
-  // const [showLogin, setShowLogin] = useState(false);
-  // const showLoginPopup = () => setShowLogin(!showLogin);
+  const showHideLoginPopup = () => {
+    dispatch(showLoginPopup());
+  };
+
   const userProfile = () => {
     if (isUserAuthenticated) {
       return (
-        <div className="menu-item">
-          <li className="user-nav-item">
-            <button className="user-nav-link">
-              <span>Welcome {user.displayName.split(" ")[0]}</span>
-            </button>
-          </li>
-          <Dropdown />
+        <div className="p-0 user-icon nav-icon menu-item col-lg-2">
+          <span className="login-text display-6">
+            Welcome {user.displayName.split(" ")[0]}
+          </span>
+          {/*<Dropdown />*/}
         </div>
       );
     } else {
       return (
-        <li className="user-nav-item">
-          <button className="user-nav-link" onClick={showLoginPopup}>
-            <span className="user-nav-text">LOGIN</span>
+        <div className="nav-icon p-0 user-icon login-button ml-3 col-lg-2">
+          <button className="login-link" onClick={showHideLoginPopup}>
+            <span className="login-text">LOGIN</span>
           </button>
-        </li>
+        </div>
       );
     }
   };
+
   return (
     <div className="header fixed-top">
-      <div className="toggle-button">
-        <DrawerToggleButton
-          drawerToggleClickHandler={drawerToggleClickHandler}
-        />
-      </div>
-      <div className="logo">
-        <Link to={ROUTES.HOME}>
-          <img src={logo} alt="Logo" />
-        </Link>
-      </div>
-      <div className="header-nav">
-        <ul className="header-navlist">
-          <li className="header-navlink">
+      <DrawerToggleButton
+        className="col-1"
+        drawerToggleClickHandler={drawerToggleClickHandler}
+      />
+      <Link to={ROUTES.HOME} className="logo col-4 col-sm-4 col-lg-1 p-0">
+        <img src={logo} alt="Urbantouch Logo" />
+      </Link>
+      <div className="categories-list col-3 col-lg-4 ml-4">
+        <ul>
+          <li>
             <Link to={ROUTES.MENS_COLLECTION}>Mens</Link>
           </li>
-          <li className="header-navlink">
+          <li>
             <Link to={ROUTES.WOMENS_COLLECTION}>Womens</Link>
           </li>
-          <li className="header-navlink">
+          <li>
             <Link to={ROUTES.KIDS_COLLECTION}>Kids</Link>
           </li>
-          <li className="header-navlink">
+          <li>
             <Link to={ROUTES.ACCESSORIES_COLLECTION}>Accessories</Link>
           </li>
         </ul>
       </div>
-      <div className="header-right">
-        <ul className="user-nav">
-          <li className="user-nav-search">
-            <input type="text" placeholder="Search Products" />
-            <img
-              className="search-icon"
-              src={SearchIcon}
-              alt="Search Products"
-            />
-          </li>
-          <li className="user-nav-item">
-            <button className="user-nav-link">
-              <span className="user-nav-icon user-nav-icon3"></span>
-              <span className="user-nav-text">0</span>
-            </button>
-          </li>
-          <li className="user-nav-item">
-            <button
-              className={`user-nav-link ${animate}`}
-              onClick={() => history.push(ROUTES.CART_PAGE)}
-            >
-              <span className="user-nav-icon user-nav-icon4"></span>
-              <span className="user-nav-text">{cartItem.length}</span>
-            </button>
-          </li>
-          {userProfile()}
-        </ul>
+      <div className="search-input col-sm-1 col-lg-3 no-gutters">
+        <input
+          type="text"
+          placeholder="Search Products"
+          onChange={handleSearch}
+          onKeyPress={handleKeyPress}
+        />
+        <img
+          className="search-icon"
+          src={SearchIcon}
+          alt="Search Products"
+          onClick={handleSearchIconClick}
+        />
       </div>
-      <Login showLogin={showLogin} handlePopupOpen={showLoginPopup} />
+      <div className="nav-icon p-0 mr-2 col-lg-1">
+        <button
+          className={`user-nav-link ${animate}`}
+          onClick={() => history.push(ROUTES.CART_PAGE)}
+        >
+          <span className="user-nav-icon user-cart-icon"></span>
+          <span className="user-nav-text">{cartItem.length}</span>
+        </button>
+      </div>
+      {userProfile()}
+      <Login showLogin={showLogin} handlePopupOpen={showHideLoginPopup} />
     </div>
   );
 }
@@ -122,13 +138,5 @@ Header.propTypes = {
   drawerToggleClickHandler: PropTypes.func,
 };
 
-const mapStateToProps = (state) => {
-  return {
-    cartItem: state.userCartState.cartItem,
-    showLogin: state.sessionState.showLogin,
-  };
-};
-
-const mapDispatchToProps = { showLoginPopup };
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default Header;
+// export default connect(mapStateToProps, mapDispatchToProps)(Header);

@@ -25,7 +25,7 @@ function Order () {
                             <span className="order-text">Discount for promo&nbsp;code</span>
                         </div>
                         <div className="order-col">
-                            <span className="order-text">No</span>
+                            <span className="order-price">0</span>
                         </div>
                     </li>
                     <li className="order-item">

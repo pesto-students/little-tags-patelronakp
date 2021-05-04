@@ -22,5 +22,11 @@
     "title": "Accessories Collections",
     "field": "accessories",
     "image": "/images/categoryHeader/accessories_collection.jpg"
+  },
+  {
+    "type": "search",
+    "title": "Search Results",
+    "field": "search",
+    "image": "/images/categoryHeader/search_collection.jpg"
   }
 ]

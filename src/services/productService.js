@@ -31,4 +31,34 @@ const fetchProductByCategoryWithPagination = (categoryType, pageNo = 1, noOfPrdP
     }
 }
 
-export { fetchProductByCategoryWithPagination, fetchProductByCategoryType, fetchProductById }
+const searchProductsWithPagination = (searchText, pageNo = 1, noOfPrdPerPage = 4) => {
+    // eslint-disable-next-line
+    const productData = prodData.filter(product => {
+        if (
+            product.title.toLowerCase().indexOf(searchText) !== -1 ||
+            product.description.toLowerCase().indexOf(searchText) !== -1 ||
+            product.category.toLowerCase().indexOf(searchText) !== -1
+          ) {
+            return product;
+          }
+    });
+    const noOfProducts = productData.length;
+    if (noOfProducts > 0) {
+        const noOfPage = Math.ceil(noOfProducts / noOfPrdPerPage);
+        const startRec = pageNo === 1 ? 0 : (pageNo - 1) * noOfPrdPerPage;
+        const filterPrd = productData.slice(startRec, noOfPage !== pageNo ? (startRec + noOfPrdPerPage) : undefined);
+        return {
+            totalRec: noOfProducts,
+            products: filterPrd,
+            noOfPage
+        }
+    } else {
+        return {
+            totalRec: noOfProducts,
+            products: [],
+            noOfPage: 0
+        }
+    }
+}
+
+export { fetchProductByCategoryWithPagination, fetchProductByCategoryType, fetchProductById, searchProductsWithPagination }

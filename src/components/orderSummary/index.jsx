@@ -1,10 +1,9 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import OrderItem from './orderItem';
 import './styles.scss';
 
 export default function OrderSummary() {
-    const productList = useSelector((state) => state.userCartState.cartItem);
+    const productList = JSON.parse(sessionStorage.getItem('productList'));
     const orderPrice = productList.reduce((price, product) => price + product.price * product.qty, 0);
     const orderItems = productList.map((product) => (
         <li key={product.id}>
@@ -31,16 +30,16 @@ export default function OrderSummary() {
                         </div>
                 </div>
                 <div className="border-bottom mt-4 row ml-4"></div>
-                <div className="d-flex w-100 mt-3">
+                <div className="row mt-3">
                     <div className="col-6 ml-5">
                         Discount for promo code
                     </div>
                     <div className="col-5 d-flex justify-content-end">
-                        No
+                        0
                     </div>
                 </div>
                 <div className="border-last mt-4 row ml-4"></div>
-                <div className="d-flex w-100 mt-3">
+                <div className="row mt-3">
                     <div className="col-6 ml-5">
                         Total
                     </div>
