@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import ProductCarousel from "../productCarousel/index.jsx";
 import { Link } from "react-router-dom";
@@ -8,12 +8,11 @@ import { addToCart } from "../../actions/userCartActions.js";
 import { showLoginPopup } from "../../actions/index";
 import { connect } from "react-redux";
 import "./styles.scss";
-import FirebaseContext from "../firebase/context.js";
+// import FirebaseContext from "../firebase/context.js";
 
 const ProductInfo = ({
   id,
   cartItem = [],
-  showLogin,
   addToCart,
   authUser,
   showLoginPopup,
@@ -22,7 +21,7 @@ const ProductInfo = ({
   const [isLoading, setIsLoading] = useState(false);
   const [size, setSize] = useState("M");
   const [qty, setQty] = useState(1);
-  const firebase = useContext(FirebaseContext);
+  // const firebase = useContext(FirebaseContext);
 
   useEffect(() => {
     console.log("Product Id", id);
