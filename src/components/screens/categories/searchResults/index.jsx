@@ -11,7 +11,7 @@ const SearchResults = () => {
      <CategoryHeader
         categoryType="search"
         categoryTitleText="Search Results"
-        headerImage = "/images/categoryHeader/search_collection.jpg"
+        headerImage = "/images/categoryHeader/category.jpg"
       />
       <CategoryProduct categoryType="search" searchText={location.searchText ? location.searchText.search : ''}/>
     </div>
