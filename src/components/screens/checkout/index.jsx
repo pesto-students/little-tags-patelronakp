@@ -10,14 +10,16 @@ import { clearCart } from '../../../actions/userCartActions';
 export default function Checkout() {
     const [toggleState, setToggleState] = useState(1);
     const dispatch = useDispatch();
-    const user = useSelector((state) => state.sessionState.authUser);    
+    const user = useSelector((state) => state.sessionState.authUser);  
+    const productList = useSelector((state) => state.userCartState.cartItem);  
     const firebase = useContext(FirebaseContext);   
     const handleCheckout = (address) => {
-        dispatch(clearCart());
+        firebase.setOrderData(user.uid,productList);        
         setToggleState(2);
         if(address.defaultAddressChecked) {
             firebase.setDefaultAddress(user.uid,address.deliveryAddress);
         }
+        dispatch(clearCart());
     };
     return(
         <section className="checkout">

@@ -139,4 +139,3 @@ Header.propTypes = {
 };
 
 export default Header;
-// export default connect(mapStateToProps, mapDispatchToProps)(Header);
