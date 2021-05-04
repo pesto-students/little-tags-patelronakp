@@ -38,6 +38,16 @@ class Firebase {
     return await ref.once("value");
   }
 
+  setOrderData = (uid, products) => {
+    const currentTimeStamp = Math.floor(Date.now() / 1000);
+    this.db.ref(`/users/${uid}/orders/${currentTimeStamp}/`).set(products);
+  };
+
+  getOrderData = async (uid) => {
+    let ref = this.db.ref(`/users/${uid}/orders/`);
+    return await ref.once("value");
+  };
+
   onAuthChangeListener = (next, fallback = () => { }) => {
     return this.auth.onAuthStateChanged((authUser) => {
       if (authUser) {

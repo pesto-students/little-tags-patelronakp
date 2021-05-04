@@ -32,10 +32,7 @@ const SideDrawer = ({ backDropClickHandler, toggleDrawer }) => {
                     <Link to={ROUTES.ACCESSORIES_COLLECTION} onClick={ backDropClickHandler }>Accessories</Link>
                 </li>
                 <li>
-                    <a href=".">Account</a>
-                </li>
-                <li>
-                    <a href=".">Order Summary</a>
+                    <a href=".">Order History</a>
                 </li>
                 <li>
                     <button className="logout-link" onClick={handleLogout}>
