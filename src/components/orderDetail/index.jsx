@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import React  from "react";
 import OrderItem from "../orderSummary/orderItem";
 import "./styles.scss";
 
@@ -19,7 +18,7 @@ const OrderDetail = ({ order }) => {
     deliveryAddress,
     city,
     pincode,
-    id,
+    // id,
   } = order.deliverAddress;
 
   return (
