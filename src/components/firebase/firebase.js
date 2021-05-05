@@ -27,7 +27,19 @@ class Firebase {
   doSignOut = () => this.auth.signOut();
 
   setDefaultAddress = (uid, address) => {
+
     this.db.ref(`/users/${uid}/defaultAddress`).set(address);
+  }
+
+  addNewAddress = (uid, address) => {
+    const currentTimeStamp = Math.floor(Date.now() / 1000);
+    address.id = currentTimeStamp;
+    this.db.ref(`/users/${uid}/Addresses/${currentTimeStamp}`).set(address);
+  }
+
+  getAddress = async (uid) => {
+    let ref = this.db.ref(`/users/${uid}/Addresses`);
+    return await ref.once("value");
   }
 
   userCart = (uid) => this.db.ref(`/users/${uid}/cart`);
@@ -38,9 +50,16 @@ class Firebase {
     return await ref.once("value");
   }
 
-  setOrderData = (uid, products) => {
+  setOrderData = (uid, products, netTotal, deliverAddress) => {
+    debugger;
     const currentTimeStamp = Math.floor(Date.now() / 1000);
-    this.db.ref(`/users/${uid}/orders/${currentTimeStamp}/`).set(products);
+    let cartItem = {
+      id: currentTimeStamp,
+      products,
+      deliverAddress,
+      netTotal
+    }
+    this.db.ref(`/users/${uid}/orders/${currentTimeStamp}/`).set(cartItem);
   };
 
   getOrderData = async (uid) => {

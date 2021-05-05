@@ -8,6 +8,7 @@ import ProductDetail from '../components/screens/productDetail';
 import Categories from '../components/screens/categories';
 import ScrollToTop from '../components/scrollToTop';
 import SearchResults from '../components/screens/categories/searchResults';
+import OrderHistory from '../components/screens/orderHistory';
 
 const Router = () => {
     return (
@@ -25,12 +26,15 @@ const Router = () => {
                 <Route path={ROUTES.CHECKOUT_PAGE}>
                     <Checkout />
                 </Route>
+                <Route path={ROUTES.ORDER_HISTORY}>
+                    <OrderHistory />
+                </Route>
                 <Route path={ROUTES.PRODUCT_DETAIL} >
                     <ProductDetail />
                 </Route>
                 <Route path={ROUTES.PRODUCT_CATEGORY}>
                     <Categories />
-                </Route>                
+                </Route>
             </Switch>
         </ScrollToTop>
     );

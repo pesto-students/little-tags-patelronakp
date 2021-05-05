@@ -1,0 +1,36 @@
+.orderSection {
+  border: 1px solid black;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 40px 20px;
+  position: relative;
+
+  ul li {
+    list-style: none;
+  }
+
+  .orderID {
+    position: absolute;
+    background-color: white;
+    top: -12px;
+    left: 40px;
+
+    h4 {
+      font-weight: 700;
+      font-size: 18px;
+    }
+  }
+
+  img {
+    height: 80px !important;
+    width: 80px !important;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 768px) {
+  .orderSection {
+    margin: 40px 5px;
+    font-size: 12px;
+  }
+}
