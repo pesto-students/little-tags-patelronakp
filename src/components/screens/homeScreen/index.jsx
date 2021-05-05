@@ -3,9 +3,6 @@ import Slider from "../../slider";
 import FeatureCategory from "../../featureCategory";
 import Product from "../../featureProducts";
 
-
-
-
 const Home = () => {
   return (
     <>
