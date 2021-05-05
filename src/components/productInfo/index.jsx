@@ -50,7 +50,7 @@ const ProductInfo = ({
 
   const onClickAddToCart = () => {
     console.log("AddToCart Function Call");
-    debugger;
+    //debugger;
     if (authUser !== null) {
       const { id, title, image, price, category } = product;
       addToCart(id, title, image, price, qty, size, category);
@@ -62,11 +62,11 @@ const ProductInfo = ({
   return (
     isLoading && (
       <div className="row productInfo">
-        <div className="col-6">
+        <div className="col-12 col-lg-6">
           <ProductCarousel imageArray={product.src} />
         </div>
         <div className="col-1"></div>
-        <div className="col-5 productDtlSection">
+        <div className="col-12 col-lg-5 productDtlSection">
           <div>
             <h2>{product.title}</h2>
             <span className="backdrops">
@@ -105,7 +105,7 @@ const ProductInfo = ({
             </div>
           </div>
           <div className="row">
-            <div className="qtyButton col-4">
+            <div className="qtyButton col-5 col-lg-4">
               <button onClick={onRemoveQty}>
                 <GoDash />
               </button>
@@ -119,7 +119,7 @@ const ProductInfo = ({
                 <GoPlus />
               </button>
             </div>
-            <div className="col-6">
+            <div className="col-12 col-lg-6">
               <button className="button" onClick={onClickAddToCart}>
                 <span className="button__text">Add to cart</span>
               </button>
