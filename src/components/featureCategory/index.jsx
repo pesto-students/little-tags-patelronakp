@@ -98,7 +98,7 @@ const FeatureCategory = (props) => {
               </div>
               <div className="categoryAttributes setRight">
                 <span className="categorytype">
-                  <b>men</b> collection
+                  <b>kids</b> collection
                 </span>
                 <h4 className="categoryTitleBig">
                   Always Be <br />
