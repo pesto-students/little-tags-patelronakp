@@ -50,13 +50,14 @@ class Firebase {
     return await ref.once("value");
   }
 
-  setOrderData = (uid, products, deliverAddress) => {
+  setOrderData = (uid, products, netTotal, deliverAddress) => {
     debugger;
     const currentTimeStamp = Math.floor(Date.now() / 1000);
     let cartItem = {
       id: currentTimeStamp,
       products,
-      deliverAddress
+      deliverAddress,
+      netTotal
     }
     this.db.ref(`/users/${uid}/orders/${currentTimeStamp}/`).set(cartItem);
   };

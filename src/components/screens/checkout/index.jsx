@@ -12,9 +12,9 @@ export default function Checkout() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.sessionState.authUser);
   const productList = useSelector((state) => state.userCartState.cartItem);
+  const netTotal = useSelector((state) => state.userCartState.netAmount);
   const firebase = useContext(FirebaseContext);
   const handleCheckout = (address) => {
-  
     setToggleState(2);
     if (address.defaultAddressChecked) {
       firebase.setDefaultAddress(user.uid, address);
@@ -22,7 +22,7 @@ export default function Checkout() {
     if (!address.hasOwnProperty("id")) {
       firebase.addNewAddress(user.uid, address);
     }
-    firebase.setOrderData(user.uid, productList, address);
+    firebase.setOrderData(user.uid, productList, netTotal, address);
     dispatch(clearCart());
   };
   return (

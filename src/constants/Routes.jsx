@@ -11,3 +11,4 @@ export const CART_PAGE = "/user/cart";
 export const PRODUCT_CATEGORY = "/:category";
 export const PRODUCT_DETAIL = "/product/:categoryType/:id/:title";
 export const CHECKOUT_PAGE = "/checkout";
+export const ORDER_HISTORY = "/orderHistory";
