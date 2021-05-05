@@ -65,14 +65,15 @@ const ProductInfo = ({
         <div className="col-6">
           <ProductCarousel imageArray={product.src} />
         </div>
-        <div className="col-6 productDtlSection">
+        <div className="col-1"></div>
+        <div className="col-5 productDtlSection">
           <div>
             <h2>{product.title}</h2>
             <span className="backdrops">
               <Link to="/">Home</Link> {"/ "}
               <Link to="/">{product.category}</Link>
             </span>
-            <p className="prodDesc">{product.description}</p>
+            <p className="prodDesc col-10">{product.description}</p>
             <div className="productPrice">
               <span className="sellPrice">Rs. {product.price.toFixed(2)}</span>
             </div>
