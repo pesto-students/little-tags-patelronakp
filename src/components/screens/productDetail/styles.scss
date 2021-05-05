@@ -2,7 +2,7 @@
   margin: 9rem 3.5rem;
 
   .product {
-    padding-top: 120px;
+    //padding-top: 120px;
     padding-bottom: 26px;
     position: relative;
   }
@@ -122,4 +122,15 @@
   color: #fff;
   text-decoration: none;
   background: #ff8e8e;
+}
+
+@media (max-width: 768px) {
+  .detail-collection {
+    .hide-mobile {
+      display: none;
+    }
+  }
+  .qtyButton {
+    margin: 2rem 0 2rem 1.2rem;
+  }
 }

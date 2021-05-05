@@ -213,6 +213,22 @@
           }
       }
 
+      .nav-icon .user-nav-link {
+        .user-cart-icon {
+          width: 21px;
+					height: 20px;
+					margin: 1px 0 0
+        }
+        .user-nav-text {
+          min-width: 18px;
+          height: 18px;
+					//margin: 2px 0 0;
+					padding: 0 3px;
+          font: bold 14px/16px Raleway, sans-serif;
+          border-radius: 9px;
+        }
+      }
+
       .user-icon {
         display: none;
       }
@@ -227,6 +243,9 @@
           font: 500 1.8rem/3rem Raleway, sans-serif;
           color: #444;
       }
+      .mobile-login{
+        display: none;
+      }
   }
 }
 @media (min-width: 1440px) {
@@ -238,6 +257,9 @@
   }
   .login-button {
     margin-left: 1.2rem;
+  }
+  .mobile-login{
+    display: none;
   }
 }
 }

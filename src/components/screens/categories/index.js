@@ -17,8 +17,8 @@ const Categories = () => {
     }
 
     return (
-        <div className="mens-collection">
-            <CategoryHeader categoryTitleText={title} headerImage={image} />
+        <div className="categories-collection">
+            <CategoryHeader categoryTitleText={title} headerImage={image} className="hide-mobile" />
             <CategoryProduct categoryType={field} />
         </div>
     );

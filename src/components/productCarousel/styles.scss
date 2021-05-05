@@ -1,4 +1,14 @@
 .slider {
-  width: 639px;
-  height: 500px;
+  width: 63.9rem;
+  height: 50rem;  
+}
+@media (max-width: 768px) {
+  .slider {
+    width: 40rem;
+    height: 35rem;  
+  }
+  #carousel-image {
+    width: 22rem;
+    height: 30rem;
+  }
 }

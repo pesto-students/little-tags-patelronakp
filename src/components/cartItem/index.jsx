@@ -48,19 +48,20 @@ const CartItem = ({ product }) => {
   return (
     <div className="cart-item">
       <div className="row mb-4" key={id}>
-        <div className="col-2">
+        <div className="col-lg-2 col-12">
           <div className="rounded mb-3 mb-md-0 image-background">
             <Link to={productURL}>
               <img height="125" width="110" src={image} alt="" />
             </Link>
           </div>
         </div>
-        <div className="col-10">
+        <div className="col-lg-10 col-12">
           <div className="d-flex col-12 justify-content-end">
             <AiOutlineCloseSquare
               color="gray"
               size={30}
               onClick={handleRemoveItemFromCart}
+              id="hide-mobile"
             />
           </div>
           <div className="d-flex mt-5">
@@ -69,8 +70,8 @@ const CartItem = ({ product }) => {
             </Link>
           </div>
           <div className="row mt-3">
-            <div className="col-3 price mt-2">Rs. {price}</div>
-            <div className="qtyButton col-2">
+            <div className="col-lg-3 col-12 price mt-2">Rs. {price}</div>
+            <div className="qtyButton col-lg-2 col-4">
               <button onClick={onRemoveQty}>
                 <GoDash />
               </button>
@@ -85,7 +86,7 @@ const CartItem = ({ product }) => {
               </button>
             </div>
             <div className="col-7 price mt-2 d-flex justify-content-end">
-              Rs. {totalPrice}
+              <span id="hide-mobile">Rs. {totalPrice}</span>
             </div>
           </div>
         </div>

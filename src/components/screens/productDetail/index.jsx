@@ -20,7 +20,9 @@ const ProductDetail = () => {
 
   return (
     <div className="detail-collection">
-      <CategoryHeader categoryTitleText="Shop" headerImage={image} />
+      <div className="hide-mobile">
+        <CategoryHeader categoryTitleText="Shop" headerImage={image} />
+      </div>      
       <section className="product wrapper justify-content-md-center">
         <ProductInfo id={id} />
       </section>

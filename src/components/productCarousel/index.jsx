@@ -14,6 +14,7 @@ const ProductCarousel = ({ imageArray }) => {
       alt="First slide"
       height={486}
       width={500}
+      id="carousel-image"
     />
   ));
 
