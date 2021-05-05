@@ -25,3 +25,11 @@ input {
     background: none;
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+    .cart {
+        .hide-mobile {
+            display: none;
+        }
+    }
+}

@@ -16,10 +16,12 @@ export default function Cart() {
     ));
     return(
         <section className="cart">
-            <CategoryHeader
-                categoryType="cart"
-                categoryTitleText="Cart"
-            />
+            <div className="hide-mobile">
+                <CategoryHeader
+                    categoryType="cart"
+                    categoryTitleText="Cart"
+                />
+            </div>            
             <div className="row">
                 <div className="col-lg-8 cart-items">
                     <ul>
