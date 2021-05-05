@@ -1,3 +1,9 @@
 .ordersHistory {
   margin: 9rem 3.5rem;
 }
+
+@media (max-width: 768px) {
+  .hideHeaderInSmallDv {
+    display: none;
+  }
+}

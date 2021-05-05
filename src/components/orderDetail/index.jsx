@@ -23,16 +23,16 @@ const OrderDetail = ({ order }) => {
   } = order.deliverAddress;
 
   return (
-    <div className=" col-12 orderSection">
+    <div className="col-12 orderSection">
       <span className="orderID">
         <h4>#{order.id}</h4>
       </span>
       <div className="row">
-        <div className="col-8 order-items">
+        <div className="col-lg-8 col-12 order-items">
           <ul>{orderItems}</ul>
         </div>
-        <div className="col-4 order-items">
-          <div className="addresses">
+        <div className="col-lg-4 col-12 order-items">
+          <div className="addresses col-12 ">
             <h2>Shipping Address</h2>
             <b>{`${firstName} ${lastName}`}</b>
             <br />
@@ -45,20 +45,20 @@ const OrderDetail = ({ order }) => {
             <br />
           </div>
           <div className="row mt-3">
-            <div className="col-6 ml-5">Оrder price</div>
-            <div className="col-5 d-flex justify-content-end">
+            <div className="col-lg-6 col-3 ml-5">Оrder price</div>
+            <div className="col-lg-5 col-6 d-flex justify-content-end">
               Rs. {order.netTotal.toFixed(2)}
             </div>
           </div>
           <div className="border-bottom mt-4 row ml-4"></div>
           <div className="row mt-3">
-            <div className="col-6 ml-5">Discount for promo code</div>
-            <div className="col-5 d-flex justify-content-end">0</div>
+            <div className="col-lg-6 col-3 ml-5">Discount for promo code</div>
+            <div className="col-lg-5 col-6 d-flex justify-content-end">0</div>
           </div>
           <div className="border-last mt-4 row ml-4"></div>
           <div className="row mt-3">
-            <div className="col-6 ml-5">Total</div>
-            <div className="col-5 d-flex justify-content-end">
+            <div className="col-lg-6 col-3 ml-5">Total</div>
+            <div className="col-lg-5 col-6 d-flex justify-content-end">
               Rs. {order.netTotal.toFixed(2)}
             </div>
           </div>

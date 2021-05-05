@@ -38,7 +38,6 @@
   margin-bottom: 5px;
   border-radius: 20px;
   background-color: #f4f4f4;
-  margin: 31px;
   cursor: pointer;
   padding: 20px;
 }
@@ -51,4 +50,10 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+@media (max-width: 768px) {
+  .addresses {
+    margin: 0px;
+  }
 }

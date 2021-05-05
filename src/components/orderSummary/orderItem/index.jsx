@@ -15,7 +15,7 @@ export default function OrderItem({ product }){
     return(
         <div className="order-item mt-5">
             <div className="row mb-4" key={id}>
-                <div className="col-2">
+                <div className="col-lg-2 col-12">
                     <div className="rounded mb-3 mb-md-0 image-background">
                         <Link to={productURL}>
                             <img height="60" width="50"            

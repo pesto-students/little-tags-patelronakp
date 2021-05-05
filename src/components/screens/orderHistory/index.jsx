@@ -35,10 +35,12 @@ const OrderHistory = () => {
 
   return (
     <div className="ordersHistory">
-      <CategoryHeader
-        categoryType="checkout"
-        categoryTitleText="Order History"
-      />
+      <div class="hideHeaderInSmallDv">
+        <CategoryHeader
+          categoryType="checkout"
+          categoryTitleText="Order History"
+        />
+      </div>
       {displayOrderHistory()}
     </div>
   );
