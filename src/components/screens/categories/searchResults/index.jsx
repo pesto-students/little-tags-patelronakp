@@ -8,11 +8,13 @@ const SearchResults = () => {
   const location = useLocation();
   return (
     <div className="search-collection">
-     <CategoryHeader
-        categoryType="search"
-        categoryTitleText="Search Results"
-        headerImage = "/images/categoryHeader/category.jpg"
-      />
+      <div className="hide-mobile">
+        <CategoryHeader
+          categoryType="search"
+          categoryTitleText="Search Results"
+          headerImage = "/images/categoryHeader/category.jpg"
+        />
+      </div>     
       <CategoryProduct categoryType="search" searchText={location.searchText ? location.searchText.search : ''}/>
     </div>
   );

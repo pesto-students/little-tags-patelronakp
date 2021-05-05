@@ -146,3 +146,12 @@
 .payments__item {
   padding: 0 3.5px;
 }
+
+@media (max-width: 768px) {
+  .footer-title {
+    font: 400 16px/20px "Josefin Sans", sans-serif;
+  }
+  .subscription {
+    display: none;
+  }
+}
