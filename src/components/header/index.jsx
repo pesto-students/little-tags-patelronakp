@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import PropTypes from "prop-types";
 import { Link, useHistory } from "react-router-dom";
@@ -11,6 +11,8 @@ import Login from "../login";
 //import Dropdown from "./dropdown";
 import useCookie from "../../utils/customHooks/useCookie";
 import { showLoginPopup } from "../../actions/index";
+import FirebaseContext from '../../components/firebase/context';
+import { GrLogin, GrLogout } from "react-icons/gr";
 
 function Header({ drawerToggleClickHandler }) {
   const [animate, setAnimate] = useState("");
@@ -22,6 +24,7 @@ function Header({ drawerToggleClickHandler }) {
   const showLogin = useSelector((state) => state.sessionState.showLogin);
   const isUserAuthenticated = user ? true : false;
   const [cookie, updateCookie] = useCookie("visited", "No");
+  const firebase = useContext(FirebaseContext);
 
   const handleSearch = (e) => {
     setSearch(e.target.value.toLowerCase());
@@ -59,23 +62,45 @@ function Header({ drawerToggleClickHandler }) {
     dispatch(showLoginPopup());
   };
 
+  const handleLogout = () => {
+    firebase.doSignOut();
+  }
+
   const userProfile = () => {
     if (isUserAuthenticated) {
       return (
+        <>
         <div className="p-0 user-icon nav-icon menu-item col-lg-2">
           <span className="login-text display-6">
             Welcome {user.displayName.split(" ")[0]}
           </span>
           {/*<Dropdown />*/}
         </div>
+        <div className="mobile-login col-sm-1">
+          <button onClick={handleLogout}>
+            <div className="d-flex">
+              <GrLogout size={18}/>{/*<span className="pt-1 pl-1">Logout</span>*/}
+            </div>                
+          </button>
+        </div>
+        </>
       );
     } else {
       return (
+        <>
         <div className="nav-icon p-0 user-icon login-button ml-3 col-lg-2">
           <button className="login-link" onClick={showHideLoginPopup}>
             <span className="login-text">LOGIN</span>
           </button>
         </div>
+        <div className="mobile-login col-sm-1">
+          <button onClick={showHideLoginPopup}>
+            <div className="d-flex">
+             <GrLogin size={18}/>{/*<span className="pt-1 pl-1">Login</span>*/}
+            </div>          
+          </button>
+        </div>
+      </>
       );
     }
   };
@@ -83,10 +108,10 @@ function Header({ drawerToggleClickHandler }) {
   return (
     <div className="header fixed-top">
       <DrawerToggleButton
-        className="col-1"
+        className="col-1 col-sm-1"
         drawerToggleClickHandler={drawerToggleClickHandler}
       />
-      <Link to={ROUTES.HOME} className="logo col-4 col-sm-4 col-lg-1 p-0">
+      <Link to={ROUTES.HOME} className="logo col-sm-1 col-lg-1 p-0">
         <img src={logo} alt="Urbantouch Logo" />
       </Link>
       <div className="categories-list col-3 col-lg-4 ml-4">
@@ -119,7 +144,7 @@ function Header({ drawerToggleClickHandler }) {
           onClick={handleSearchIconClick}
         />
       </div>
-      <div className="nav-icon p-0 mr-2 col-lg-1">
+      <div className="nav-icon p-0 col-1">
         <button
           className={`user-nav-link ${animate}`}
           onClick={() => history.push(ROUTES.CART_PAGE)}

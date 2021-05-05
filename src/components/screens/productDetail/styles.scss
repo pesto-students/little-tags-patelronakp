@@ -123,3 +123,11 @@
   text-decoration: none;
   background: #ff8e8e;
 }
+
+@media (max-width: 768px) {
+  .detail-collection {
+    .hide-mobile {
+      display: none;
+    }
+  }
+}
