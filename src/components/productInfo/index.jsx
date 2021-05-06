@@ -50,7 +50,6 @@ const ProductInfo = ({
 
   const onClickAddToCart = () => {
     console.log("AddToCart Function Call");
-    //debugger;
     if (authUser !== null) {
       const { id, title, image, price, category } = product;
       addToCart(id, title, image, price, qty, size, category);

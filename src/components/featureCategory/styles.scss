@@ -1,5 +1,4 @@
 .categorySection {
-  margin: 9rem 3.5rem;
   padding-top: 101px;
   padding-bottom: 176px;
   position: relative;
@@ -167,11 +166,12 @@
 }
 @media (max-width: 768px) {
   .categorySection {
+    margin: 9rem 3.5rem;
     .leftSideBG {
-      display:none;
-    }  
+      display: none;
+    }
     .rightSideBG {
-      display:none;
+      display: none;
     }
   }
 }
