@@ -121,7 +121,7 @@ export default function AddressForm({ handleCheckout }) {
         id,
       }) => {
         return (
-          <li>
+          <li key={id}>
             <div className="addresses">
               <b>{`${firstName} ${lastName}`}</b>
               <br />
