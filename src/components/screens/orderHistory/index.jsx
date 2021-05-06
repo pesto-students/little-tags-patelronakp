@@ -11,24 +11,29 @@ const OrderHistory = () => {
   const [orders, setorders] = useState([]);
 
   const fetchOrderData = async () => {
-    let snapshotOrderData = await firebase.getOrderData(user.uid);
-    const snapshotValues = snapshotOrderData.val();
-    const allOrders = [];
-    if (snapshotValues != null) {
-      Object.keys(snapshotValues).forEach((key) => {
-        allOrders.push(snapshotValues[key]);
-      });
-      console.log("allOrders", allOrders);
-      setorders(allOrders);
+    if (user) {
+      let snapshotOrderData = await firebase.getOrderData(user.uid);
+      const snapshotValues = snapshotOrderData.val();
+      const allOrders = [];
+      if (snapshotValues != null) {
+        Object.keys(snapshotValues).forEach((key) => {
+          allOrders.push(snapshotValues[key]);
+        });
+        console.log("allOrders", allOrders);
+        setorders(allOrders);
+      }
     }
   };
 
   useEffect(() => {
     fetchOrderData();
     //eslint-disable-next-line
-  }, []);
+  }, [user]);
 
   const displayOrderHistory = () => {
+    if (orders.length === 0) {
+      return <h2>No Orders Found!!</h2>;
+    }
     return orders.map((order) => {
       return <OrderDetail order={order} />;
     });
@@ -36,7 +41,7 @@ const OrderHistory = () => {
 
   return (
     <div className="ordersHistory">
-      <div class="hideHeaderInSmallDv">
+      <div className="hideHeaderInSmallDv">
         <CategoryHeader
           categoryType="checkout"
           categoryTitleText="Order History"

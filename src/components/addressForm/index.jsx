@@ -36,17 +36,19 @@ export default function AddressForm({ handleCheckout }) {
 
     fetchAddresses();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [user]);
 
   const fetchAddresses = async () => {
-    const snapshot = await firebase.getAddress(user.uid);
-    const snapshotValues = snapshot.val();
-    const allAdd = [];
-    if (snapshotValues != null) {
-      Object.keys(snapshotValues).forEach((key) => {
-        allAdd.push(snapshotValues[key]);
-      });
-      setAllAddress(allAdd);
+    if (user) {
+      const snapshot = await firebase.getAddress(user.uid);
+      const snapshotValues = snapshot.val();
+      const allAdd = [];
+      if (snapshotValues != null) {
+        Object.keys(snapshotValues).forEach((key) => {
+          allAdd.push(snapshotValues[key]);
+        });
+        setAllAddress(allAdd);
+      }
     }
   };
 
@@ -64,8 +66,6 @@ export default function AddressForm({ handleCheckout }) {
   };
 
   const displayAddresses = () => {
-    console.log("test");
-    debugger;
     return allAddress.map(
       ({
         firstName,
