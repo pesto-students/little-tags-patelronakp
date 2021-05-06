@@ -158,4 +158,16 @@ button {
 	padding: 0 0 20px;
 	font: 20px/34px Raleway, sans-serif
 }
+
+@media (max-width: 768px) {
+  .checkout {
+    .hide-mobile {
+      display: none;
+    }
+    .tab-section .bloc-tabs .tabs {
+      font: 400 14px/16px 'Josefin Sans',sans-serif;
+      text-align: left;
+    }
+  }
+}
   

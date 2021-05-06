@@ -61,38 +61,26 @@
       //color: #fff;
     }
 
-    .user-nav-link:hover .user-nav-icon:before {
-      opacity: 0;
-    }
+        .welcome-text {
+          font: bold 16px/22px Raleway, sans-serif;
+        }
 
-    .user-nav-link:hover .user-nav-icon:after {
-      opacity: 1;
-    }
-
-    .user-nav-link:hover .user-nav-text {
-      background: #ff8e8e;
-    }
-
-    .login-link {
-      height: 42px;
-      position: relative;
-      top: 2px;
-      white-space: nowrap;
-      .login-text {
-        min-width: 38px;
-        font: bold 20px/24px Raleway, sans-serif;
-        color: #fff;
-        background: #000;
-        border-radius: 8px;
-        transition: 0.2s ease-out;
-        padding: 0 5px;
-        margin: 2px 0 0;
-      }
-    }
-
-    .login-link:hover .login-text {
-      background: #ff8e8e;
-    }
+        .login-link {
+          height: 42px;
+          position: relative;
+          top: 2px;
+          white-space: nowrap;
+          .login-text {
+            min-width: 38px;
+            font: bold 20px/24px Raleway, sans-serif;
+            color: #fff;
+            background: #000;
+            border-radius: 8px;
+            transition: 0.2s ease-out;
+            padding: 0 5px;
+            margin: 2px 0 0;
+          }
+        }
 
     .user-nav-link {
       height: 42px;
@@ -194,7 +182,7 @@
     }
 
     .search-input {
-      position: absolute;
+   
       margin: 0;
       border: none;
       input[type="text"] {
