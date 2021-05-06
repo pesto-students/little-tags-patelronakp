@@ -1,0 +1,14 @@
+export const HOME = "/";
+export const SIGN_IN = "/signin";
+export const SIGN_UP = "/signup";
+export const ACCOUNT = "/account";
+export const MENS_COLLECTION = "/mens";
+export const WOMENS_COLLECTION = "/womens";
+export const KIDS_COLLECTION = "/kids";
+export const ACCESSORIES_COLLECTION = "/accessories";
+export const SEARCH_RESULTS = "/searchResults";
+export const CART_PAGE = "/user/cart";
+export const PRODUCT_CATEGORY = "/:category";
+export const PRODUCT_DETAIL = "/product/:categoryType/:id/:title";
+export const CHECKOUT_PAGE = "/checkout";
+export const ORDER_HISTORY = "/orderHistory";

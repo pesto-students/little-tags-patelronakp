@@ -1,0 +1,82 @@
+.productList {
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+
+  .item {
+    margin-bottom: 10px;
+    margin: 0 15px 47px;
+    border-radius: 12px;
+
+    // border: 1px solid black;
+  }
+
+  .short-item__all {
+    position: relative;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .short-item__image {
+    object-fit: contain;
+  }
+
+  .short-item__image-bg:hover {
+    opacity: 1;
+    box-shadow: 2px 4px 7px rgb(0 0 0 / 65%);
+    border-radius: 12px 12px;
+  }
+
+  .short-item__image-bg:hover .overlay {
+    opacity: 1;
+    max-width: 262px;
+    max-height: 360px;
+  }
+
+  .short-item__image-bg {
+    height: 360px;
+    margin: 0 0 20px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background: #f8f8fb;
+
+    img {
+      border-radius: 12px 12px;
+    }
+  }
+
+  .short-item__top {
+    width: 100%;
+    position: absolute;
+    top: 17px;
+    z-index: 1;
+  }
+  h4 {
+    padding: 0 0 30px;
+    font: 400 28px/31px "Josefin Sans", sans-serif;
+    color: #000;
+  }
+  .short-item__title {
+    padding: 0 0 8px;
+    font: 16px/27px Raleway, sans-serif;
+    text-overflow: ellipsis;
+    max-width: 262px;
+  }
+  .short-item__price {
+    padding: 0 12px 0 0;
+    display: inline-block;
+    vertical-align: top;
+    font: 20px/22px "Josefin Sans", sans-serif;
+    color: #000;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}

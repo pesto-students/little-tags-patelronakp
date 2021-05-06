@@ -1,0 +1,173 @@
+.checkout {
+    margin: 9rem 3.5rem;
+    
+    .tab-section {
+      display: flex;
+      flex-direction: column;
+      background: #f1f1f1;
+
+        .bloc-tabs {
+          display: flex;
+
+          .tabs {  
+            padding: 15px;
+            text-align: center;
+            font: 400 20px/24px 'Josefin Sans',sans-serif;
+            width: 50%;
+            cursor: pointer;
+            background-color: white;
+            position: relative;
+            outline: none;
+          }
+          
+          .tabs:not(:last-child){
+            //border-right: 1px solid rgba(0, 0, 0, 0.274);
+          }
+
+          .active-second-tab  {
+            background: white;
+            border-bottom: 3px solid green;
+          }
+          
+          .active-tabs  {
+            background: white;
+            border-bottom: 3px solid green;
+          }
+        
+          .active-tabs::after  {
+            content: "";
+            width: 50px;
+            height: 39px;
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            background: url(../../../assets/images/car.svg) 0 0/100% 100% no-repeat;
+          }
+          
+          .active-tabs::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% + 2px);
+            height: 5px;
+          }
+        }
+
+        .content-tabs {
+          flex-grow : 1;
+
+          .content {
+            background: white;
+            padding: 20px;
+            width: 100%;
+            height: 100%;
+            display: none;
+
+              h2 {
+                padding: 0px 0 5px 0px;
+              }
+
+              hr {
+                width: 100px;
+                height: 2px;
+                background: #222;
+                margin-bottom: 5px;
+              }
+
+              p {
+                width: 100%;
+                height: 100%;
+              }
+          }
+
+          .active-content {
+            display: block;
+          }
+        }
+    }
+}
+
+button {
+  border: none;
+}
+
+.title {
+  padding: 0 0 30px;
+	font: 400 40px/1 'Josefin Sans', sans-serif;
+	text-transform: capitalize
+}
+
+.order-button {
+    width: 100%;
+    margin: 0 0 20px;
+    display: block;
+}
+
+.button {
+    max-width: 100%;
+    height: 50px;
+    // margin: 0 0 22px;
+    padding: 0 4px 0 0;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    border: none;
+    font: 600 16px/52px Raleway, sans-serif;
+    color: #fff;
+    text-align: center;
+    text-transform: capitalize;
+    user-select: none
+}
+
+.button:after {
+    content: "";
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #000;
+    transition: .3s ease-out
+}
+
+.button:hover {
+    color: #fff;
+    text-decoration: none
+}
+
+.button:hover .button-text,
+.button:hover:after {
+    background: #ff8e8e
+}
+
+.button-text {
+    height: 100%;
+    padding: 0 30px;
+    display: block;
+    // overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background: #000;
+    transition: .3s ease-out
+}
+
+.thanks-text {
+	padding: 0 0 20px;
+	font: 20px/34px Raleway, sans-serif
+}
+
+@media (max-width: 768px) {
+  .checkout {
+    .hide-mobile {
+      display: none;
+    }
+    .tab-section .bloc-tabs .tabs {
+      font: 400 14px/16px 'Josefin Sans',sans-serif;
+      text-align: left;
+    }
+  }
+}
+  

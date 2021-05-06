@@ -1,0 +1,39 @@
+.productContainer {
+  margin-top: 100px;
+  padding: 0 20px;
+  margin-bottom: 100px;
+
+  .main-block__top {
+    padding: 0 0 27px;
+    text-align: center;
+  }
+  .main-block__title {
+    padding: 0 0 20px;
+    font: 400 40px/1 "Josefin Sans", sans-serif;
+    text-transform: capitalize;
+  }
+  .main-block__subtitle {
+    padding: 0 0 19px;
+  }
+  .category-subtitle {
+    padding: 0 0 20px;
+    display: block;
+    font: 14px/20px Raleway, sans-serif;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+}
+
+.productList {
+  padding-top: 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.shop-panel__text {
+  padding: 0 0 20px;
+  display: block;
+  font: 16px/27px Raleway, sans-serif;
+}
+

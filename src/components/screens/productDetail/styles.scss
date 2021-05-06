@@ -1,0 +1,136 @@
+.productInfo {
+  margin: 9rem 3.5rem;
+
+  .product {
+    //padding-top: 120px;
+    padding-bottom: 26px;
+    position: relative;
+  }
+
+  h2 {
+    padding: 0 0 20px;
+    font: 400 40px/1 "Josefin Sans", sans-serif;
+    text-transform: capitalize;
+  }
+
+  .backdrops {
+    display: block;
+    font: 14px/20px Raleway, sans-serif;
+    color: #999;
+    padding-bottom: 20px;
+  }
+  .prodDesc {
+    padding: 0 0 20px;
+  }
+
+  .productPrice {
+    padding: 0 0 37px;
+
+    .sellPrice {
+      padding: 3px 16px 3px 0;
+      display: inline-block;
+      vertical-align: middle;
+      font: 30px/1 "Josefin Sans", sans-serif;
+      color: #000;
+    }
+  }
+
+  .sizeSelection {
+    .btnStyle {
+      min-width: 40px;
+      height: 40px;
+      transition: 0.3s ease-out;
+      background-color: #e4e4e4;
+      text-align: center;
+      font-weight: 700;
+      margin-right: 10px;
+    }
+    .btnStyle:hover {
+      background: rgba(0, 0, 0, 0.2);
+    }
+    .active {
+      background-color: black;
+      color: white;
+    }
+  }
+}
+
+.qtyButton {
+  background-color: #e4e4e4;
+  display: flex;
+  flex-direction: "row";
+  input {
+    width: 100%;
+    height: 50px;
+    background-color: #e4e4e4;
+    font: 16px/1 Raleway, sans-serif;
+    color: #000;
+    text-align: center;
+    border: none;
+  }
+
+  .button {
+    height: 100%;
+    width: 36px;
+  }
+
+  input:focus {
+    border: none;
+  }
+}
+
+.productDtlSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.button {
+  max-width: 100%;
+  height: 50px;
+  margin: 0 0 22px;
+  padding: 0 4px 0 0;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  border: none;
+  font: 600 16px/52px Raleway, sans-serif;
+  color: #fff;
+  text-align: center;
+  text-transform: capitalize;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 0;
+  background: #000;
+}
+
+.button__text {
+  height: 100%;
+  padding: 0 30px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  -webkit-transition: 0.3s ease-out;
+  -ms-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+.button:hover {
+  color: #fff;
+  text-decoration: none;
+  background: #ff8e8e;
+}
+
+@media (max-width: 768px) {
+  .detail-collection {
+    .hide-mobile {
+      display: none;
+    }
+  }
+  .qtyButton {
+    margin: 2rem 0 2rem 1.2rem;
+  }
+}

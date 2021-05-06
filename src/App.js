@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { BrowserRouter} from 'react-router-dom';
+import './global.scss';
+import withAuthentication from './components/session/withAuthentication';
+import Header from './components/header';
+import Footer from './components/footer';
+import SideDrawer from './components/sideDrawer/SideDrawer.jsx';
+import Backdrop from './components/backdrop';
+import Router from './router';
 
 function App() {
+  const [toggleDrawer, setToggleDrawer] = useState(false);
+  const drawerToggleClickHandler = () => {
+    setToggleDrawer(!toggleDrawer);
+  }
+  const backDropClickHandler = () => {
+    setToggleDrawer(false);
+  }
+
+  let backdrop = null;
+  if (toggleDrawer) {
+    backdrop = <Backdrop backDropClickHandler={backDropClickHandler} />;
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header drawerToggleClickHandler={drawerToggleClickHandler} />
+        <SideDrawer toggleDrawer={toggleDrawer} backDropClickHandler={backDropClickHandler} />
+        {backdrop}
+        <Router />
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
-export default App;
+export default withAuthentication(App);

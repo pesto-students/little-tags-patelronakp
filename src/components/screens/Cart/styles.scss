@@ -1,0 +1,35 @@
+.cart {
+    margin: 9rem 3.5rem;
+
+    .border-bottom {
+        border-bottom: 10px solid #000;
+    }
+
+    ul li:last-child .border-bottom {
+        display: none;
+    }
+    
+    ul li {
+        list-style: none;
+    }
+}
+
+button {
+    border:none;
+    background: none;
+    cursor: pointer;
+}
+
+input {
+    border:none;
+    background: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .cart {
+        .hide-mobile {
+            display: none;
+        }
+    }
+}

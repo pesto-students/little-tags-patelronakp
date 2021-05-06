@@ -1,0 +1,485 @@
+[
+  {
+    "id": 1,
+    "title": "Men Blue Regular Fit Solid Casual Shirt",
+    "price": 799,
+    "description": "Blue solid casual shirt, has a spread collar, a full button placket, long sleeves, a patch pocket, curved hem",
+    "category": "men",
+    "image": "/images/blue_shirt_.jpg",
+    "src": [
+      "/images/blue_shirt_1.jpg",
+      "/images/blue_shirt_2.jpg",
+      "/images/blue_shirt_3.jpg",
+      "/images/blue_shirt_4.jpg"
+    ],
+    "colors": ["green", "red", "pink"]
+  },
+  {
+    "id": 2,
+    "title": "US Polo Association Men's Slim Shirt",
+    "price": 3299,
+    "description": "Black and grey checked casual shirt, has a spread collar, long roll-up sleeves, button placket, curved hem, and 1 patch pocket",
+    "category": "men",
+    "image": "/images/black_shirt.jpg",
+    "src": [
+      "/images/black_shirt_1.jpg",
+      "/images/black_shirt_2.jpg",
+      "/images/black_shirt_3.jpg",
+      "/images/black_shirt_4.jpg"
+    ],
+    "colors": ["green", "red", "pink"]
+  },
+  {
+    "id": 3,
+    "title": "Diverse Men's Regular Fit Casual Shirt",
+    "price": 1499,
+    "description": "Blue and white striped casual shirt, has a spread collar, long roll-up sleeves, button placket, curved hem, and 1 patch pocket",
+    "category": "men",
+    "image": "/images/bw_shirt.jpg",
+    "src": [
+      "/images/bw_shirt_1.jpg",
+      "/images/bw_shirt_2.jpg",
+      "/images/bw_shirt_3.jpg",
+      "/images/bw_shirt_4.jpg"
+    ],
+    "colors": ["green", "red", "pink"]
+  },
+  {
+    "id": 4,
+    "title": "ACCOX Men's Regular Fit Formal Shirt",
+    "price": 1899,
+    "description": "Red and white striped casual shirt, has a spread collar, half sleeves, button placket, curved hem, and 1 patch pocket",
+    "category": "men",
+    "image": "/images/rw_shirt.jpg",
+    "src": [
+      "/images/rw_shirt_1.jpg",
+      "/images/rw_shirt_2.jpg",
+      "/images/rw_shirt_3.jpg",
+      "/images/rw_shirt_4.jpg"
+    ],
+    "colors": ["green", "red", "pink"]
+  },
+  {
+    "id": 5,
+    "title": "Sanskar Fashion",
+    "price": 2899,
+    "description": "Sanskar Fashion Mens' Shirts, Digital Printed Half Sleeves Shirts for Men, Rayon Cotton (M-40, Sky-Blue Maroon Leaf)",
+    "category": "men",
+    "image": "/images/printed_shirt.jpg",
+    "src": ["/images/printed_shirt_1.jpg", "/images/printed_shirt_2.jpg"],
+    "colors": ["green", "red", "pink"]
+  },
+  {
+    "id": 6,
+    "title": "Ben Martin",
+    "price": 4899,
+    "description": "Ben Martin Men's Relaxed Jeans",
+    "category": "men",
+    "image": "/images/relaxed_.jpg",
+    "src": [
+      "/images/relaxed_1.jpg",
+      "/images/relaxed_2.jpg",
+      "/images/relaxed_3.jpg",
+      "/images/relaxed_4.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Pepe Jeans",
+    "price": 2899,
+    "description": "Men Blue Jeans",
+    "category": "men",
+    "image": "/images/blue_jean.jpg",
+    "src": [
+      "/images/blue_jean_1.jpg",
+      "/images/blue_jean_2.jpg",
+      "/images/blue_jean_3.jpg",
+      "/images/blue_jean_4.jpg"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Cherokee by Unlimited",
+    "price": 3899,
+    "description": "Men's Straight Fit Jeans",
+    "category": "men",
+    "image": "/images/straight_jean.jpg",
+    "src": [
+      "/images/straight_jean_1.jpg",
+      "/images/straight_jean_2.jpg",
+      "/images/straight_jean_3.jpg",
+      "/images/straight_jean_4.jpg"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Levi's",
+    "price": 2899,
+    "description": "Men's Straight Fit Jeans",
+    "category": "men",
+    "image": "/images/straight1_jean.jpg",
+    "src": [
+      "/images/straight1_jean_1.jpg",
+      "/images/straight1_jean_2.jpg",
+      "/images/straight1_jean_3.jpg",
+      "/images/straight1_jean_4.jpg"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Mersha Fashion",
+    "price": 5899,
+    "description": "Women's Embroidered Anarkali Kurti with Pant and Net Frill Dupatta (Standard)",
+    "category": "women",
+    "image": "/images/chudi1_.jpg",
+    "src": [
+      "/images/chudi1_1.jpg",
+      "/images/chudi1_2.jpg",
+      "/images/chudi1_3.jpg"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Ritu Kumar",
+    "price": 3899,
+    "description": "Round Neck Sleeveless Long Inner Kurta with Printed Full Sleeve Cape",
+    "category": "women",
+    "image": "/images/chudi2_.jpg",
+    "src": [
+      "/images/chudi2_1.jpg",
+      "/images/chudi2_2.jpg",
+      "/images/chudi2_3.jpg",
+      "/images/chudi2_4.jpg"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Sheetal Batra",
+    "price": 4899,
+    "description": "Women's Silk and Georgette -Safia-Short Kurta with Garara and Odhni (White , Medium)",
+    "category": "women",
+    "image": "/images/chudi3_.jpg",
+    "src": [
+      "/images/chudi3_1.jpg",
+      "/images/chudi3_2.jpg",
+      "/images/chudi3_3.jpg",
+      "/images/chudi3_4.jpg"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Ritu Kumar",
+    "price": 2900,
+    "description": "Round Neck 3/4 Sleeve Long Solid Kurta With Trouser",
+    "category": "women",
+    "image": "/images/chudi4_.jpg",
+    "src": [
+      "/images/chudi4_1.jpg",
+      "/images/chudi4_2.jpg",
+      "/images/chudi4_3.jpg",
+      "/images/chudi4_4.jpg"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Wishful",
+    "price": 6899,
+    "description": "Women's synthetic anarkali Kurta",
+    "category": "women",
+    "image": "/images/chudi5_.jpg",
+    "src": [
+      "/images/chudi5_1.jpg",
+      "/images/chudi5_2.jpg",
+      "/images/chudi5_3.jpg",
+      "/images/chudi5_4.jpg"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "AELOMART",
+    "price": 599,
+    "description": "AELOMART Women's Tshirt",
+    "category": "women",
+    "image": "/images/tshirt_.jpg",
+    "src": [
+      "/images/tshirt_1.jpg",
+      "/images/tshirt_2.jpg",
+      "/images/tshirt_3.jpg",
+      "/images/tshirt_4.jpg"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Mercedes-Benz",
+    "price": 4599,
+    "description": "Women's T-Shirt (B67996_Black_Medium)",
+    "category": "women",
+    "image": "/images/tshirt1_.jpg",
+    "src": ["/images/tshirt1_1.jpg"]
+  },
+  {
+    "id": 18,
+    "title": "Nike",
+    "price": 2099,
+    "description": "Women's Regular Fit T-Shirt",
+    "category": "women",
+    "image": "/images/tshirt2_.jpg",
+    "src": [
+      "/images/tshirt2_1.jpg",
+      "/images/tshirt2_2.jpg",
+      "/images/tshirt2_3.jpg",
+      "/images/tshirt2_4.jpg"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Rocky Star ",
+    "price": 3099,
+    "description": "Women Multi-Coloured Digital Printed Cotton Knit T-Shirt(Small)",
+    "category": "women",
+    "image": "/images/tshirt4_.jpg",
+    "src": [
+      "/images/tshirt4_1.jpg",
+      "/images/tshirt4_2.jpg",
+      "/images/tshirt4_3.jpg"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Nike",
+    "price": 2399,
+    "description": "Women's Regular fit T-Shirt",
+    "category": "women",
+    "image": "/images/tshirt5_.jpg",
+    "src": [
+      "/images/tshirt5_1.jpg",
+      "/images/tshirt5_2.jpg",
+      "/images/tshirt5_3.jpg",
+      "/images/tshirt5_4.jpg"
+    ]
+  },
+  {
+    "id": 21,
+    "title": "Rosy Posy",
+    "price": 1099,
+    "description": "Adorable Two Tone A-Line Flower Dress for Girls",
+    "category": "kids",
+    "image": "/images/kid.jpg",
+    "src": ["/images/kid_1.jpg", "/images/kid_2.jpg", "/images/kid_3.jpg"]
+  },
+  {
+    "id": 22,
+    "title": "Iuhan Organza Frock",
+    "price": 2099,
+    "description": "Summer Girls Kids Flower Princess Dress Pageant Party Evening Dress",
+    "category": "kids",
+    "image": "/images/kid1.jpg",
+    "src": [
+      "/images/kid1_1.jpg",
+      "/images/kid1_2.jpg",
+      "/images/kid1_3.jpg",
+      "/images/kid1_4.jpg"
+    ]
+  },
+  {
+    "id": 23,
+    "title": "Ripening Baby Girls",
+    "price": 1899,
+    "description": "Black Strap Body with Bow Red Chiffon Rose Gown Dress (BRP_072)",
+    "category": "kids",
+    "image": "/images/kid2.jpg",
+    "src": ["/images/kid2_1.jpg", "/images/kid2_2.jpg", "/images/kid2_3.jpg"]
+  },
+  {
+    "id": 24,
+    "title": "CUPIDVIBE Girls'",
+    "price": 2033,
+    "description": "Cotton Lycra 2 PCs Maxi Dress (Pink)",
+    "category": "kids",
+    "image": "/images/kid3.jpg",
+    "src": ["/images/kid3_1.jpg", "/images/kid3_2.jpg", "/images/kid3_3.jpg"]
+  },
+  {
+    "id": 25,
+    "title": "Krishna Dresses",
+    "price": 1599,
+    "description": "Girl's A-Line Knee Length Dress",
+    "category": "kids",
+    "image": "/images/kid4.jpg",
+    "src": [
+      "/images/kid4_1.jpg",
+      "/images/kid4_2.jpg",
+      "/images/kid4_3.jpg",
+      "/images/kid4_4.jpg"
+    ]
+  },
+  {
+    "id": 26,
+    "title": "FancyDressWale",
+    "price": 2899,
+    "description": "Indo Western Premium Party Ocassion Dress For Boys",
+    "category": "kids",
+    "image": "/images/kid5.jpg",
+    "src": ["/images/kid5_1.jpg", "/images/kid5_2.jpg", "/images/kid5_3.jpg"]
+  },
+  {
+    "id": 27,
+    "title": "Nickoteen",
+    "price": 2720,
+    "description": "Ethnic wear Indo Western for Kids - White color",
+    "category": "kids",
+    "image": "/images/kid6.jpg",
+    "src": [
+      "/images/kid6_1.jpg",
+      "/images/kid6_2.jpg",
+      "/images/kid6_3.jpg",
+      "/images/kid6_4.jpg"
+    ]
+  },
+  {
+    "id": 28,
+    "title": "Generic",
+    "price": 1099,
+    "description": "Camouflage Print Full Sleeves Slim Fit Casual Shirt for Boys",
+    "category": "kids",
+    "image": "/images/kid7.jpg",
+    "src": [
+      "/images/kid7_1.jpg",
+      "/images/kid7_2.jpg",
+      "/images/kid7_3.jpg",
+      "/images/kid7_4.jpg"
+    ]
+  },
+  {
+    "id": 29,
+    "title": " Jam & Honey Store",
+    "price": 1199,
+    "description": "Boys' Regular Fit Jeans",
+    "category": "kids",
+    "image": "/images/kid8.jpg",
+    "src": ["/images/kid8_1.jpg", "/images/kid8_2.jpg"]
+  },
+  {
+    "id": 30,
+    "title": "chopper club Store",
+    "price": 1799,
+    "description": "Boy's Slim Fit Jeans",
+    "category": "kids",
+    "image": "/images/kid9.jpg",
+    "src": ["/images/kid9_1.jpg", "/images/kid9_2.jpg", "/images/kid9_3.jpg"]
+  },
+  {
+    "id": 31,
+    "title": "Seiko Lord Chronograph",
+    "price": 21799,
+    "description": "White Dial Women's Watch",
+    "category": "accessories",
+    "image": "/images/acc.jpg",
+    "src": [
+      "/images/acc_1.jpg",
+      "/images/acc_2.jpg",
+      "/images/acc_3.jpg",
+      "/images/acc_4.jpg"
+    ]
+  },
+  {
+    "id": 32,
+    "title": "Daniel Wellington",
+    "price": 17499,
+    "description": "Petite Melrose 32mm & Classic Bracelet Gift",
+    "category": "accessories",
+    "image": "/images/acc1.jpg",
+    "src": [
+      "/images/acc1_1.jpg",
+      "/images/acc1_2.jpg",
+      "/images/acc1_3.jpg",
+      "/images/acc1_4.jpg"
+    ]
+  },
+  {
+    "id": 33,
+    "title": "Titan Raga",
+    "price": 16995,
+    "description": "Analog Mother of Pearl Dial Women's Watch",
+    "category": "accessories",
+    "image": "/images/acc2.jpg",
+    "src": [
+      "/images/acc2_1.jpg",
+      "/images/acc2_2.jpg",
+      "/images/acc2_3.jpg",
+      "/images/acc2_4.jpg"
+    ]
+  },
+  {
+    "id": 34,
+    "title": "Michael Kors",
+    "price": 14929,
+    "description": "Analog Rose Dial Women's Watch",
+    "category": "accessories",
+    "image": "/images/acc3.jpg",
+    "src": [
+      "/images/acc3_1.jpg",
+      "/images/acc3_2.jpg",
+      "/images/acc3_3.jpg",
+      "/images/acc3_4.jpg"
+    ]
+  },
+  {
+    "id": 35,
+    "title": "BERING",
+    "price": 15144,
+    "description": "Classic Analog Rose Gold Dial Women's Watch",
+    "category": "accessories",
+    "image": "/images/acc4.jpg",
+    "src": ["/images/acc4_1.jpg", "/images/acc4_2.jpg", "/images/acc4_3.jpg"]
+  },
+  {
+    "id": 36,
+    "title": "HRX by Hrithik Roshan",
+    "price": 799,
+    "description": "Men Yellow Printed Round Neck T-Shirt",
+    "category": "men",
+    "image": "/images/HRX_by_Hrithik.png",
+    "src": [
+      "/images/HRX_by_Hrithik.png",
+      "/images/HRX_by_Hrithik_1.png",
+      "/images/HRX_by_Hrithik_3.png"
+    ],
+    "colors": ["green", "red", "pink"]
+  },
+  {
+    "id": 37,
+    "title": "Kook N Keech",
+    "price": 319,
+    "description": "Men Peach-Coloured Printed Round Neck T-shirt",
+    "category": "men",
+    "image": "/images/36.png",
+    "src": ["/images/36.png", "/images/36_1.png", "/images/36_2.png"],
+    "colors": ["green", "red", "pink"]
+  },
+  {
+    "id": 38,
+    "title": "HRX - Men Charcoal Grey Slim Advanced Rapid Dry Raglan T-shirt",
+    "price": 499,
+    "description": "When you step out in the HRX Men's Active T-shirt you'll have the perfect balance of comfort and style. This charcoal grey T-shirt with raglan sleeves can be paired with chinos or shorts depending on where you're going",
+    "category": "men",
+    "image": "/images/37.png",
+    "src": [
+      "/images/37.png",
+      "/images/37_1.png",
+      "/images/37_2.png",
+      "/images/37_3.png"
+    ],
+    "colors": ["green", "red", "pink"]
+  },
+  {
+    "id": 39,
+    "title": "Mast & Harbour-Men Mustard Yellow Solid Polo Collar T-shirt",
+    "price": 539,
+    "description": "Mustard yellow solid T-shirt, has a polo collar, short sleeves, 100% cotton, Machine-wash",
+    "category": "men",
+    "image": "/images/39.png",
+    "src": ["/images/39.png", "/images/39_1.png", "/images/39_2.png"],
+    "colors": ["green", "red", "pink"]
+  }
+]

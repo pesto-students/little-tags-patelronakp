@@ -1,0 +1,11 @@
+.search-collection {
+    margin: 9rem 3.5rem;
+}
+
+@media (max-width: 768px) {
+    .search-collection {
+        .hide-mobile {
+            display: none;
+        }
+    }
+}

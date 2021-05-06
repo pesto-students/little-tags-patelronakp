@@ -1,0 +1,15 @@
+.productInfo {
+  .h2 {
+    padding: 0 0 20px;
+    font: 400 40px/1 "Josefin Sans", sans-serif;
+    text-transform: capitalize;
+  }
+}
+
+@media (max-width: 768px) {
+  .productInfo {
+    h2 {
+      font: 400 20px/1 "Josefin Sans", sans-serif;
+    }
+  }
+}

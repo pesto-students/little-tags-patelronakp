@@ -1,0 +1,40 @@
+.categoryHeader {
+  margin: 6rem 3.5rem;
+  // margin-bottom: 80px;
+  width: 100%;
+  display: flex;
+
+  .bgImage {
+    width: 354px;
+    height: 322px;
+    position: absolute;
+    top: 32px;
+  }
+
+  .titleSection {
+    width: 100%;
+    display: flex;
+  }
+
+  .inner-top__left {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .inner-top__left:before {
+    content: "";
+    width: 10000px;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    right: 150px;
+    background: #000;
+  }
+
+  .inner-top__title {
+    padding: 0 0 21px;
+    font: 400 80px/1 "Josefin Sans", sans-serif;
+    text-transform: capitalize;
+  }
+}
