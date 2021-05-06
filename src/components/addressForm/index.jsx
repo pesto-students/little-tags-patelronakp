@@ -26,6 +26,8 @@ export default function AddressForm({ handleCheckout }) {
   const [address, dispatch] = useReducer(addressReducer, initialState);
   const [allAddress, setAllAddress] = useState([]);
   const user = useSelector((state) => state.sessionState.authUser);
+  const [validation, setValidation] = useState([]);
+  const [forceUpdate, setforceUpdate] = useState(false);
 
   useEffect(() => {
     // if (user && user.defaultAddress) {
@@ -57,12 +59,52 @@ export default function AddressForm({ handleCheckout }) {
       dispatch({ field: e.target.name, value: e.target.checked });
     } else {
       dispatch({ field: e.target.name, value: e.target.value });
+      let allValidattor = checkValidation(e.target.name, e.target.value);
+      setValidation(allValidattor);
     }
+  };
+
+  const checkValidation = (name, value) => {
+    const allValidattor = validation;
+    if (value === "") {
+      allValidattor[name] = true;
+    } else if (name === "emailAddress") {
+      let isEmailVerified = validateEmail(value);
+      if (isEmailVerified) {
+        delete allValidattor[name];
+      } else {
+        allValidattor[name] = true;
+      }
+    } else {
+      delete allValidattor[name];
+    }
+    return allValidattor;
+  };
+
+  const validateEmail = (email) => {
+    debugger;
+    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
   };
 
   const selectAddress = (id) => {
     const addres = allAddress.find((addres) => addres.id === id);
     handleCheckout(addres);
+  };
+
+  const onContinueValidate = (address) => {
+    debugger;
+    let allValidattor;
+    for (let key in address) {
+      allValidattor = checkValidation(key, address[key]);
+    }
+    delete allValidattor["defaultAddressChecked"];
+    if (Object.keys(allValidattor).length > 0) {
+      setValidation(allValidattor);
+      setforceUpdate(!forceUpdate);
+    } else {
+      handleCheckout(address);
+    }
   };
 
   const displayAddresses = () => {
@@ -123,86 +165,114 @@ export default function AddressForm({ handleCheckout }) {
         <form className="mt-5 addressForm">
           <h2 className="title">Contact Person</h2>
           <div className="row mt-4">
-            <div className="col-lg-4 col-12">
+            <div className="col-lg-4 col-12 mb-4">
               <input
                 className="text-input"
                 type="text"
                 name="firstName"
                 value={firstName}
                 onChange={onChange}
+                onBlur={onChange}
                 placeholder="Enter your name"
               />
+              {validation["firstName"] && (
+                <span className="error">First Name is required!</span>
+              )}
             </div>
-            <div className="col-lg-4 col-12">
+            <div className="col-lg-4 col-12 mb-4">
               <input
                 className="text-input"
                 type="text"
                 name="lastName"
                 value={lastName}
                 onChange={onChange}
+                onBlur={onChange}
                 placeholder="Enter last name"
               />
+              {validation["lastName"] && (
+                <span className="error">Last Name is required!</span>
+              )}
             </div>
           </div>
           <div className="row">
-            <div className="col-lg-4 col-12">
+            <div className="col-lg-4 col-12 mb-4">
               <input
                 className="text-input"
                 type="text"
                 name="phoneNumber"
                 value={phoneNumber}
                 onChange={onChange}
+                onBlur={onChange}
                 placeholder="Enter your phone"
               />
+              {validation["phoneNumber"] && (
+                <span className="error">Phone Number is required!</span>
+              )}
             </div>
-            <div className="col-lg-4 col-12">
+            <div className="col-lg-4 col-12 mb-4">
               <input
                 className="text-input"
                 type="text"
                 name="emailAddress"
                 value={emailAddress}
                 onChange={onChange}
+                onBlur={onChange}
                 placeholder="Enter your email"
               />
+              {validation["emailAddress"] && (
+                <span className="error">Valid Email is required!</span>
+              )}
             </div>
           </div>
           <h2 className="title mt-4">Delivery Address</h2>
           <div className="row">
-            <div className="col-lg-8 col-12">
+            <div className="col-lg-8 col-12 mb-4">
               <input
                 className="text-input"
                 type="text"
                 name="deliveryAddress"
                 value={deliveryAddress}
                 onChange={onChange}
+                onBlur={onChange}
                 placeholder="Enter the delivery address"
               />
+              {validation["deliveryAddress"] && (
+                <span className="error">Address is required!</span>
+              )}
             </div>
           </div>
           <div className="row">
-            <div className="col-lg-4 col-12">
+            <div className="col-lg-4 col-12 mb-4">
               <input
                 className="text-input"
                 type="text"
                 name="city"
                 value={city}
                 onChange={onChange}
+                onBlur={onChange}
                 placeholder="Enter your city"
               />
+              {validation["city"] && (
+                <span className="error">City is required!</span>
+              )}
             </div>
-            <div className="col-lg-4 col-12">
+            <div className="col-lg-4 col-12 mb-4">
               <input
                 className="text-input"
                 type="text"
                 name="pincode"
                 value={pincode}
                 onChange={onChange}
+                onBlur={onChange}
                 placeholder="Enter your pincode"
               />
+              {validation["pincode"] && (
+                <span className="error">Pincode is required!</span>
+              )}
             </div>
           </div>
           <div className="row">
-            <div className="col-lg-8 col-12">
+            <div className="col-lg-8 col-12 mb-4">
               <span>
                 <input
                   type="checkbox"
@@ -210,6 +280,7 @@ export default function AddressForm({ handleCheckout }) {
                   name="defaultAddressChecked"
                   value={defaultAddressChecked}
                   onChange={onChange}
+                  onBlur={onChange}
                   defaultChecked
                 />
                 <label htmlFor="shipDefaultAddress" className="p-2 label-text">
@@ -235,7 +306,7 @@ export default function AddressForm({ handleCheckout }) {
             <div className="col-lg-3 col-6">
               <div
                 className="order-button button"
-                onClick={() => handleCheckout(address)}
+                onClick={() => onContinueValidate(address)}
               >
                 <span className="button-text">Continue</span>
               </div>
