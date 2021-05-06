@@ -25,6 +25,7 @@ const OrderHistory = () => {
 
   useEffect(() => {
     fetchOrderData();
+    //eslint-disable-next-line
   }, []);
 
   const displayOrderHistory = () => {
