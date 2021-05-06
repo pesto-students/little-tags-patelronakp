@@ -51,7 +51,6 @@ class Firebase {
   }
 
   setOrderData = (uid, products, netTotal, deliverAddress) => {
-    debugger;
     const currentTimeStamp = Math.floor(Date.now() / 1000);
     let cartItem = {
       id: currentTimeStamp,

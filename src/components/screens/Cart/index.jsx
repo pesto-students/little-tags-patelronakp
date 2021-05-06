@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import './styles.scss';
 import CartItem from '../../cartItem';
 import Order from '../../order';
-import PromoCode from '../../promoCode';
+// import PromoCode from '../../promoCode';
 import CategoryHeader from '../../categoryHeader';
 
 export default function Cart() {
@@ -33,7 +33,7 @@ export default function Cart() {
                 </div>
             </div>
             <div className="border-bottom col-lg-8"></div>
-            <PromoCode />
+            {/* <PromoCode /> */}
         </section>
     )
 }
