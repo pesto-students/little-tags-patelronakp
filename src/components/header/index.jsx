@@ -71,12 +71,12 @@ function Header({ drawerToggleClickHandler }) {
       return (
         <>
         <div className="p-0 user-icon nav-icon menu-item col-lg-2">
-          <span className="login-text display-6">
+          <span className="welcome-text">
             Welcome {user.displayName.split(" ")[0]}
           </span>
           {/*<Dropdown />*/}
         </div>
-        <div className="mobile-login col-sm-1">
+        <div className="mobile-login col-1">
           <button onClick={handleLogout}>
             <div className="d-flex">
               <GrLogout size={18}/>{/*<span className="pt-1 pl-1">Logout</span>*/}
@@ -93,7 +93,7 @@ function Header({ drawerToggleClickHandler }) {
             <span className="login-text">LOGIN</span>
           </button>
         </div>
-        <div className="mobile-login col-sm-1">
+        <div className="mobile-login col-1">
           <button onClick={showHideLoginPopup}>
             <div className="d-flex">
              <GrLogin size={18}/>{/*<span className="pt-1 pl-1">Login</span>*/}
@@ -108,13 +108,13 @@ function Header({ drawerToggleClickHandler }) {
   return (
     <div className="header fixed-top">
       <DrawerToggleButton
-        className="col-1 col-sm-1"
+        className="col-1 col-lg-1"
         drawerToggleClickHandler={drawerToggleClickHandler}
       />
-      <Link to={ROUTES.HOME} className="logo col-sm-1 col-lg-1 p-0">
+      <Link to={ROUTES.HOME} className="logo col-4 col-lg-2 p-0">
         <img src={logo} alt="Urbantouch Logo" />
       </Link>
-      <div className="categories-list col-3 col-lg-4 ml-4">
+      <div className="categories-list col-3 col-lg-4">
         <ul>
           <li>
             <Link to={ROUTES.MENS_COLLECTION}>Mens</Link>
@@ -130,7 +130,7 @@ function Header({ drawerToggleClickHandler }) {
           </li>
         </ul>
       </div>
-      <div className="search-input col-sm-1 col-lg-3 no-gutters">
+      <div className="search-input col-5 col-lg-3 no-gutters">
         <input
           type="text"
           placeholder="Search Products"
@@ -144,7 +144,7 @@ function Header({ drawerToggleClickHandler }) {
           onClick={handleSearchIconClick}
         />
       </div>
-      <div className="nav-icon p-0 col-1">
+      <div className="nav-icon p-0 col-1 col-lg-auto">
         <button
           className={`user-nav-link ${animate}`}
           onClick={() => history.push(ROUTES.CART_PAGE)}

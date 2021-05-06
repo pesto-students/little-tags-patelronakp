@@ -11,7 +11,7 @@ export default function OrderSummary() {
         </li>                
     ));
     return(
-        <aside className="finish-pageRight col-6 mt-4">
+        <aside className="finish-pageRight col-lg-6 col-12 mt-4">
             <section className="order-details">
                 <h3 className="d-flex order-title">Your order</h3>
                 <div className="row p-0">
@@ -22,16 +22,16 @@ export default function OrderSummary() {
                     </div>                    
                 </div>
                 <div className="row mt-3">
-                        <div className="col-6 ml-5">
+                        <div className="col-lg-6 col-4 ml-5">
                             Оrder price
                         </div>
-                        <div className="col-5 d-flex justify-content-end">
+                        <div className="col-lg-5 col-5 d-flex justify-content-end">
                             Rs. { orderPrice }
                         </div>
                 </div>
                 <div className="border-bottom mt-4 row ml-4"></div>
                 <div className="row mt-3">
-                    <div className="col-6 ml-5">
+                    <div className="col-lg-6 col-4 ml-5">
                         Discount for promo code
                     </div>
                     <div className="col-5 d-flex justify-content-end">
@@ -40,7 +40,7 @@ export default function OrderSummary() {
                 </div>
                 <div className="border-last mt-4 row ml-4"></div>
                 <div className="row mt-3">
-                    <div className="col-6 ml-5">
+                    <div className="col-lg-6 col-4 ml-5">
                         Total
                     </div>
                     <div className="col-5 d-flex justify-content-end">

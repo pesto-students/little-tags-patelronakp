@@ -15,7 +15,7 @@
   transform: translateX(0);
 }
 .side-drawer ul {
-  margin-top: 4rem;
+  margin: 4rem 0 1rem 2rem;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -79,6 +79,9 @@ button {
 @media (max-width: 768px) {
   .side-drawer {
     width: 20rem;
+  }
+  .side-drawer ul {
+    margin: 0 0 1rem 1rem;    
   }
 }
 .toggle-button {
