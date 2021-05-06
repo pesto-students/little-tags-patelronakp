@@ -65,7 +65,7 @@ export default function AddressForm({ handleCheckout }) {
 
   const displayAddresses = () => {
     console.log("test");
-    debugger;
+    //debugger;
     return allAddress.map(
       ({
         firstName,
@@ -114,16 +114,16 @@ export default function AddressForm({ handleCheckout }) {
   } = address;
 
   return (
-    <div className="d-flex">
-      <div className="col-4 mt-5 addressForm">
+    <div className="row">
+      <div className="col-lg-4 col-12 mt-5 addressForm">
         <h2 className="title">Select Address</h2>
         <ul>{displayAddresses()}</ul>
       </div>
-      <div className="col-8">
+      <div className="col-lg-8 col-12">
         <form className="mt-5 addressForm">
           <h2 className="title">Contact Person</h2>
-          <div className="d-flex mt-4">
-            <div className="col-4">
+          <div className="row mt-4">
+            <div className="col-lg-4 col-12">
               <input
                 className="text-input"
                 type="text"
@@ -133,7 +133,7 @@ export default function AddressForm({ handleCheckout }) {
                 placeholder="Enter your name"
               />
             </div>
-            <div className="col-4">
+            <div className="col-lg-4 col-12">
               <input
                 className="text-input"
                 type="text"
@@ -144,8 +144,8 @@ export default function AddressForm({ handleCheckout }) {
               />
             </div>
           </div>
-          <div className="d-flex">
-            <div className="col-4">
+          <div className="row">
+            <div className="col-lg-4 col-12">
               <input
                 className="text-input"
                 type="text"
@@ -155,7 +155,7 @@ export default function AddressForm({ handleCheckout }) {
                 placeholder="Enter your phone"
               />
             </div>
-            <div className="col-4">
+            <div className="col-lg-4 col-12">
               <input
                 className="text-input"
                 type="text"
@@ -167,8 +167,8 @@ export default function AddressForm({ handleCheckout }) {
             </div>
           </div>
           <h2 className="title mt-4">Delivery Address</h2>
-          <div className="d-flex">
-            <div className="col-8">
+          <div className="row">
+            <div className="col-lg-8 col-12">
               <input
                 className="text-input"
                 type="text"
@@ -179,8 +179,8 @@ export default function AddressForm({ handleCheckout }) {
               />
             </div>
           </div>
-          <div className="d-flex">
-            <div className="col-4">
+          <div className="row">
+            <div className="col-lg-4 col-12">
               <input
                 className="text-input"
                 type="text"
@@ -190,7 +190,7 @@ export default function AddressForm({ handleCheckout }) {
                 placeholder="Enter your city"
               />
             </div>
-            <div className="col-4">
+            <div className="col-lg-4 col-12">
               <input
                 className="text-input"
                 type="text"
@@ -201,8 +201,8 @@ export default function AddressForm({ handleCheckout }) {
               />
             </div>
           </div>
-          <div className="d-flex">
-            <div className="col-8">
+          <div className="row">
+            <div className="col-lg-8 col-12">
               <span>
                 <input
                   type="checkbox"
@@ -227,12 +227,12 @@ export default function AddressForm({ handleCheckout }) {
                 </div>
             </div> */}
           <div className="d-flex mt-4">
-            <div className="col-2">
+            <div className="col-lg-2 col-5">
               <button className="order-button button">
                 <span className="button-text">Back</span>
               </button>
             </div>
-            <div className="col-2">
+            <div className="col-lg-3 col-6">
               <div
                 className="order-button button"
                 onClick={() => handleCheckout(address)}

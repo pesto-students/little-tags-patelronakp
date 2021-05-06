@@ -1,5 +1,5 @@
 .categorySection {
-  margin-top: 50px;
+  margin: 9rem 3.5rem;
   padding-top: 101px;
   padding-bottom: 176px;
   position: relative;
@@ -164,4 +164,14 @@
 .setRight {
   margin-top: 50%;
   margin-left: 45%;
+}
+@media (max-width: 768px) {
+  .categorySection {
+    .leftSideBG {
+      display:none;
+    }  
+    .rightSideBG {
+      display:none;
+    }
+  }
 }

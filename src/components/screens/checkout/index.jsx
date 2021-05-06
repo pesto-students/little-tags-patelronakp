@@ -27,7 +27,9 @@ export default function Checkout() {
   };
   return (
     <section className="checkout">
-      <CategoryHeader categoryType="checkout" categoryTitleText="Checkout" />
+      <div className="hide-mobile">
+        <CategoryHeader categoryType="checkout" categoryTitleText="Checkout" />
+      </div>      
       <div className="tab-section">
         <div className="bloc-tabs">
           <div
@@ -60,8 +62,8 @@ export default function Checkout() {
               toggleState === 2 ? "content  active-content" : "content"
             }
           >
-            <div className="d-flex">
-              <div className="col-6">
+            <div className="row">
+              <div className="col-lg-6 col-12">
                 <h2 className="title mt-4">Thanks For Your Purchase!</h2>
                 <p className="thanks-text">
                   Everything went well, wait for the order to arrive at the time

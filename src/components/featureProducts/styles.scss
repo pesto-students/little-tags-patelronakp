@@ -41,6 +41,10 @@
   .short-item__all {
     position: relative;
     border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .short-item__image-bg:hover .overlay {
