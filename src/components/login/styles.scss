@@ -120,3 +120,20 @@
         }
     }
 }
+@media (max-width: 768px) {
+    .login-modal {
+        .modal-outer {
+            top: 40%;
+            width: 300px;
+            .modal-header .app-logo {
+                img {
+                    width: 80px;
+                    height: 60px;
+                }
+                .app-name {
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}
